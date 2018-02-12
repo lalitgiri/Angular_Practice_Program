@@ -13,8 +13,8 @@ import {trigger,state,style,transition,animate} from '@angular/animations'
     +'text-align:center;'
     +'width:200px;     }'
     +'.rotate{'
-    +'width:100px;'
-    +'height:100px;'
+    +'width:200px;'
+    +'height:200px;'
     +'border:solid 1px red;'
   ],
   animations:[
