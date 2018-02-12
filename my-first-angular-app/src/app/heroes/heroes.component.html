@@ -1,0 +1,41 @@
+<h2>{{ hero.name | uppercase }} DETAILS</h2>
+<div style="text-align: center;" ><span class="abc">Id: </span>{{hero.id}}</div>
+<div style="text-align: center;">
+    <label class="abc">Name:
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </label>
+</div>
+
+<h2> My Heroes</h2>
+<ul >
+  <li class="block" *ngFor="let hero1 of heroes" (click)="onSelect(hero1)" [class.selected]="hero1 === selectedHero">
+      
+    <span class="block2">{{hero1.id  }}  </span>{{hero1.name}}
+    
+  </li>
+</ul>
+<!--
+<div *ngIf="selectedHero">
+ 
+  <h2>{{ selectedHero.name | uppercase }} DETAILS</h2>
+  <div style="text-align: center;"><span class="abc">id: </span>{{selectedHero.id}}</div>
+  <div style="text-align: center;">
+    <label class="abc">name:
+      <label>{{selectedHero.name}}</label>    </label>
+  </div>
+ 
+</div>
+
+<ul >
+  <li *ngFor="let hero of heroes"
+    [ngclass.block]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span >{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+-->
+
+
+<p>  Hero Detail Component Start Working</p><br/><br/>
+
+<app-hero-detail [hero1]="selectedHero"></app-hero-detail> <!-- Why it ake hero here-->

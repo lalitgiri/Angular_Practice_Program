@@ -1,0 +1,37 @@
+h2{
+    color:burlywood;
+    text-align: center;
+
+}
+
+.abc{
+    color:deepskyblue;
+    font-size:24px;
+    text-align:center;
+}
+
+ul{
+    display:inline;
+    
+}
+.block{
+    display:inline-block;
+    list-style-type: none;
+    background: antiquewhite;
+    padding:2%;
+    margin: 4px;
+    border: 1px solid black;
+    border-radius:10px;
+    
+}
+ul :hover {
+    background-color:yellowgreen;
+}
+
+.block2{
+    display:inline-block;
+    background:chocolate;
+    padding:10px;
+    border-radius:5px;
+    margin:10px;
+}
