@@ -1,0 +1,18 @@
+<ul>
+  <li><a [routerLink] = "['/Product']">Product</a></li>
+  <li><a [routerLink] = "['/Inventory']">Inventory</a></li>
+</ul>
+<router-outlet></router-outlet>
+
+<ul>
+  <li *ngFor = "let item of collection | paginate: {
+     itemsPerPage: 5, currentPage: p }"> ... </li>
+</ul>
+<pagination-controls (pageChange) = "p = $event"></pagination-controls>
+<div *ngFor = 'let lst of appList'> 
+  <ul> 
+     <li>{{lst.ID}}</li> 
+     <li>{{lst.Name}}</li> 
+     <!--<img [src] = 'lst.url'>--> 
+  </ul> 
+</div>
