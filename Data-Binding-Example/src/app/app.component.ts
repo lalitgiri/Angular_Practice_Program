@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  appList:any[]=[{
+    "ID":"1",
+    "url":"assets/images/download.jpg"
+  },
+{
+  "ID":"2",
+  "url":"assets/images/embed2.jpg"
+}];
 }
