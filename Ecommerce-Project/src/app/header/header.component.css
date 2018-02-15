@@ -1,6 +1,5 @@
 .divStyle{
     background:black;
-    color:wheat;
     display: block;
     height:70px;
     padding-left: 20px;    
@@ -9,18 +8,30 @@
 
         font-size: 40px;
         font-style: oblique;
-
+        color:wheat;
 }
 input[type=text]
 {
-    margin-left: 0vw;
+    
     width:30vw;
-    height:3vw;
-    border-radius:1vw;
-    border-collapse:collapse;
+    height:3vw;    
+    border-left: none;
+    border-top-right-radius:1vw;
+    border-bottom-right-radius: 1vw;
+    padding-left: 1vw;
 }
 select{
     margin-left: 3vw;
-    width:10vw;
+    width:7vw;
     height:3vw;
+    text-overflow: ellipsis;
+    border-top-left-radius:1vw;
+    border-bottom-left-radius: 1vw;    
+}
+.loginLabel{
+    color:whitesmoke;
+    float:right;
+    padding-right: 3vw;
+    padding-top: 1vw;
+    font-size: 1.5vw;
 }
