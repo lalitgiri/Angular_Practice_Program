@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 .divStyle{
     background:black;
-=======
-div{
-    margin-top: -0.5vw;
+
+   margin-top: -0.5vw;
     margin-left: -1.4vw;
     margin-right: -1.4vw;
     background:black;
     color:wheat;
->>>>>>> 7d564645c681c4d92a27f69d1b12948f1728f1cc
     display: block;
     height:70px;
     padding-left: 20px;    
@@ -21,8 +18,7 @@ div{
 }
 input[type=text]
 {
-    
-<<<<<<< HEAD
+
     width:30vw;
     height:3vw;    
     border-left: none;
@@ -44,21 +40,4 @@ select{
     padding-right: 3vw;
     padding-top: 1vw;
     font-size: 1.5vw;
-=======
-    height:70px;
-    padding-top:10px;
-    padding-left: 20px;    
-}
-.webSiteName{
-
-        font-size: 40px;
-        font-style: oblique;
-
-}
-input[type=text]
-{
-    margin-left: 3vw;
-    width:30vw;
-    height:2vw;
->>>>>>> 7d564645c681c4d92a27f69d1b12948f1728f1cc
 }
