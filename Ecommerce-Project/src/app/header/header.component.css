@@ -1,4 +1,4 @@
-div{
+.divStyle{
     background:black;
     color:wheat;
     display: block;
@@ -13,7 +13,14 @@ div{
 }
 input[type=text]
 {
-    margin-left: 3vw;
+    margin-left: 0vw;
     width:30vw;
-    height:2vw;
+    height:3vw;
+    border-radius:1vw;
+    border-collapse:collapse;
+}
+select{
+    margin-left: 3vw;
+    width:10vw;
+    height:3vw;
 }
