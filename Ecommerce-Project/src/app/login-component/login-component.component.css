@@ -1,0 +1,8 @@
+.pop-up{
+ height:20vw;
+ width:40vw;
+ visibility:  hidden;
+ background: aqua; 
+ position: absolute; 
+ display: block; 
+}
