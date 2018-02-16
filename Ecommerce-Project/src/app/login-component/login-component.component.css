@@ -1,19 +1,31 @@
 .pop-up{
-    width: 105vw;
-    height:100vw;
+   
     background:rgba(0,0,0,0.4); 
-    position: fixed;
-    margin-left:-5vw;
-    
-    
+    padding-top:20px;
+    height:730px;
 }
 .popUpBox{
     width:35vw;
-    height:30vw;
-    background: rgba(0, 0,0, 0.3);
+    height:auto;
+    background:rgba(0,0,0,0.1);                 /*rgba(69, 187, 223,0.5);*/
     margin-left: 35vw;
     margin-top: 5vw;
+    padding:2vw;
     border-top-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
+    position: relative;
+}
 
+.padding{
+    margin-top:1.5vw;
+}
+.text-color{
+    color: wheat;
+}
+.textField{
+    border-radius:10px;
+    width:380px;
+}
+.selectField{
+    border-radius:10px;
 }

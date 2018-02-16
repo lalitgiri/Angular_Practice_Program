@@ -5,7 +5,8 @@
     height:70px;
     padding-left: 20px;   
     position: sticky;
-    z-index: 2; 
+    z-index:1;
+     
 }
 .webSiteName{
 
