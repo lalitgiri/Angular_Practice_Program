@@ -23,9 +23,13 @@
     color: wheat;
 }
 .textField{
-    border-radius:10px;
-    width:380px;
+    border-radius:5px;
+    width:26.5vw;
+    height:40px;
+    padding:7px;
 }
 .selectField{
-    border-radius:10px;
+    border-radius:5px;
+    height:40px;
+    width:4.5vw;
 }
