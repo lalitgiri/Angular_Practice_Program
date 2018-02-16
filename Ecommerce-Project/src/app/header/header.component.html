@@ -1,21 +1,14 @@
-<div class="divStyle ">
+<span class="spanStyle ">
     <span class="webSiteName">eShopping</span>
-<span>
-        <select >
+           <select  class="header">
             <option>All</option>
             <option>Electronics</option>
             <option>Computer And Laptop</option>
             <option>Accesories</option>
         </select>    
-    <input type="text"  placeholder="Search">
+    <input type="text" class="header" placeholder="Search">
     <input type="button" class="btnSearch btn-info"value="Search">
+<pre class="Label"><button onclick="confirm()">Login</button> / <button [routerLink]="['/login']">SignUp</button>                Cart    </pre>
 </span>
 
-<label class="loginLabel">
-    <span> <a [routerLink]="['/login']">Login</a></span>
-    <span>/</span>
-    <span onclick='alert("Call SignUp Page")'>SignUp</span>
-    <span style="padding-left:30px">Cart</span>
-</label>
-</div>
 <router-outlet></router-outlet>

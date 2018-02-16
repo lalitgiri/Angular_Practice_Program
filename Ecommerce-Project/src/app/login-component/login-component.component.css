@@ -2,7 +2,8 @@
    
     background:rgba(0,0,0,0.4); 
     padding-top:20px;
-    height:730px;
+    overflow: hidden;
+    height:700px;
 }
 .popUpBox{
     width:35vw;
@@ -32,4 +33,7 @@
     border-radius:5px;
     height:40px;
     width:4.5vw;
+}
+.signUp{
+    font-size: 3vw;
 }

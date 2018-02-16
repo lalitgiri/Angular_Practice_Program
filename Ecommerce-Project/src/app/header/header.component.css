@@ -1,50 +1,47 @@
-.divStyle{
+.spanStyle{
     background:black;
     color:wheat;
-    display: block;
-    height:5vw;
-    padding-left: 2vw;;   
-    position: sticky;
-    z-index:1;
-    padding-top:0.7vw;
-    overflow:auto;
+    width:100%;
+    height:auto;
+    z-index:1;       
+    position:fixed;    
+    padding:1vw;    
 }
 .webSiteName
 {
         font-size: 2vw;
         font-style: oblique;
         color:wheat;
-        padding-top:0.5vw;
+        
+        
 }
-
-select{
-    margin-left: 3vw;
-    width:7vw;
+.header{
     height:3vw;
-    text-overflow: ellipsis;
+    padding-left: 1vw;
+ 
+}
+select{
+    
+    width:7vw;
     border-top-left-radius:1vw;
     border-bottom-left-radius: 1vw;    
     border-right:none;
-    margin-top:0.5vw;
-    
 }
 input[type=text]
 {
-
     width:30vw;
-    height:3vw;    
     border-left: none;
     border-top-right-radius:1vw;
     border-bottom-right-radius: 1vw;
-    padding-left: 1vw;
-    margin-top:0.5vw;
+    
+    
 }
-.loginLabel{
+.Label{
+    
     color:whitesmoke;
     float:right;
-    padding-right: 3vw;
-    padding-top: 1vw;
-    font-size: 1.5vw;
+    padding-right: 1vw;
+    font-size: 1vw;
 }
 a:link{
     color:white;
@@ -58,5 +55,5 @@ a:visited{
     height:3vw;
     width:5vw;
     font-size: 1vw;
-    margin-top:0.5vw;
+    
 }
