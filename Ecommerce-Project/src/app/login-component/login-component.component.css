@@ -1,8 +1,19 @@
 .pop-up{
- height:20vw;
- width:40vw;
- visibility:  hidden;
- background: aqua; 
- position: absolute; 
- display: block; 
+    width: 105vw;
+    height:100vw;
+    background:rgba(0,0,0,0.4); 
+    position: fixed;
+    margin-left:-5vw;
+    
+    
+}
+.popUpBox{
+    width:35vw;
+    height:30vw;
+    background: rgba(0, 0,0, 0.3);
+    margin-left: 35vw;
+    margin-top: 5vw;
+    border-top-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+
 }

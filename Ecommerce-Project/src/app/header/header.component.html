@@ -1,22 +1,22 @@
 <div class="divStyle ">
- <span class="webSiteName">eShopping</span>
- <span class="form-group ">
-    <select class="">
-        <option>All</option>
-        <option>Electronics</option>
-        <option>Computer And Laptop</option>
-        <option>Accesories</option>
-    </select>    
+    <span class="webSiteName">eShopping</span>
+    <span class="form-group ">
+        <select class="">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Computer And Laptop</option>
+            <option>Accesories</option>
+        </select>    
     <input type="text" class="" placeholder="Search">
     <input type="button" class="btn btn-info"value="Search">
    <!-- <span class="glyphicon glyphicon-search"></span>-->
 </span>
 
 <label class="loginLabel">
-    <span onclick='alert("Call Login Page")'>Login</span>
+    <span onclick='alert("Call Login Page")'><a [routerLink]="['/login']">Login</a></span>
     <span>/</span>
     <span onclick='alert("Call SignUp Page")'>SignUp</span>
     <span style="padding-left:30px">Cart</span>
 </label>
-
-
+</div>
+<router-outlet></router-outlet>

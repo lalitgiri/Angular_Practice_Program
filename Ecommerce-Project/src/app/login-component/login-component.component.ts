@@ -7,21 +7,23 @@ import { Component, OnInit, style } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  ab;
   constructor() { }
 
   ngOnInit() {
   }
+      
+ab;
+  
    
   abc(event)
   {
-    this.ab='visible';
+    this.ab='none';
   }
       
   abc1(event)
   {
-    this.ab='hidden';
+    this.ab='block';
   }
-      
   
 }
+
