@@ -13,10 +13,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
    
-  abc()
+  abc(event)
   {
     this.ab='visible';
   }
-       
+      
+  abc1(event)
+  {
+    this.ab='hidden';
+  }
+      
   
 }
