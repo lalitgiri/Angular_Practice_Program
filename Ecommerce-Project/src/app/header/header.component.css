@@ -2,17 +2,31 @@
     background:black;
     color:wheat;
     display: block;
-    height:70px;
-    padding-left: 20px;   
+    height:5vw;
+    padding-left: 2vw;;   
     position: sticky;
     z-index:1;
-     
+    padding-top:0.7vw;
+    overflow:auto;
 }
-.webSiteName{
-
-        font-size: 40px;
+.webSiteName
+{
+        font-size: 2vw;
         font-style: oblique;
         color:wheat;
+        padding-top:0.5vw;
+}
+
+select{
+    margin-left: 3vw;
+    width:7vw;
+    height:3vw;
+    text-overflow: ellipsis;
+    border-top-left-radius:1vw;
+    border-bottom-left-radius: 1vw;    
+    border-right:none;
+    margin-top:0.5vw;
+    
 }
 input[type=text]
 {
@@ -23,14 +37,7 @@ input[type=text]
     border-top-right-radius:1vw;
     border-bottom-right-radius: 1vw;
     padding-left: 1vw;
-}
-select{
-    margin-left: 3vw;
-    width:7vw;
-    height:3vw;
-    text-overflow: ellipsis;
-    border-top-left-radius:1vw;
-    border-bottom-left-radius: 1vw;    
+    margin-top:0.5vw;
 }
 .loginLabel{
     color:whitesmoke;
@@ -38,4 +45,18 @@ select{
     padding-right: 3vw;
     padding-top: 1vw;
     font-size: 1.5vw;
+}
+a:link{
+    color:white;
+}
+a:visited{
+    color:white;
+}
+
+.btnSearch{
+    border-radius: 0.4vw;
+    height:3vw;
+    width:5vw;
+    font-size: 1vw;
+    margin-top:0.5vw;
 }
