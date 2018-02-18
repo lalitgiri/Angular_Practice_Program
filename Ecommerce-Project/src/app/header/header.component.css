@@ -1,4 +1,4 @@
-.spanStyle{
+.divStyle{
     background:black;
     color:wheat;
     width:100%;
@@ -6,6 +6,13 @@
     z-index:1;       
     position:fixed;    
     padding:1vw;    
+}
+.nav{
+    padding-top:5.5vw;
+    z-index: -1;
+    background-color: white;
+    height:10vw;
+    color:black;
 }
 .webSiteName
 {
@@ -21,7 +28,7 @@
  
 }
 select{
-    
+
     width:7vw;
     border-top-left-radius:1vw;
     border-bottom-left-radius: 1vw;    
@@ -37,9 +44,7 @@ input[type=text]
     
 }
 .Label{
-    
-    color:whitesmoke;
-    float:right;
+   float:right;
     padding-right: 1vw;
     font-size: 1vw;
 }
@@ -55,5 +60,6 @@ a:visited{
     height:3vw;
     width:5vw;
     font-size: 1vw;
-    
+    margin:0.5vw;
+    background-color: black;
 }

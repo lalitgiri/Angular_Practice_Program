@@ -1,4 +1,4 @@
-<span class="spanStyle ">
+<!--<div class="divStyle">
     <span class="webSiteName">eShopping</span>
            <select  class="header">
             <option>All</option>
@@ -7,8 +7,16 @@
             <option>Accesories</option>
         </select>    
     <input type="text" class="header" placeholder="Search">
-    <input type="button" class="btnSearch btn-info"value="Search">
-<pre class="Label"><button onclick="confirm()">Login</button> / <button [routerLink]="['/login']">SignUp</button>                Cart    </pre>
-</span>
+    <input type="button" class="btnSearch text-info btn-info"value="Search">
+    <button onclick="confirm()" class="Label btnSearch text-light">Login</button>
+    <button  class="Label btnSearch text-light" [routerLink]="['/login']">SignUp</button>  
+    <button onclick="confirm()" class="Label btnSearch text-light">Cart</button>    
+    
+</div>-->
+<div class="nav">
+    <ul *ngFor = "let data of navData">
+        <li>Name : {{data.name}} </li>
+     </ul>
+</div>
 
 <router-outlet></router-outlet>

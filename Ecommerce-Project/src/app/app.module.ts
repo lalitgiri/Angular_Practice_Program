@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login-component/login-component.component';
 import { RouterModule,Routes} from '@angular/router';
 
+import {HttpModule} from '@angular/http';
 const appRoutes: Routes = [
  
 ];
@@ -17,8 +18,7 @@ const appRoutes: Routes = [
     LoginComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot( [{ path: 'login', component: LoginComponent }])
-  ],
+    BrowserModule,RouterModule.forRoot([{ path: 'login', component: LoginComponent }]),HttpModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })
