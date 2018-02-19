@@ -1,4 +1,4 @@
-<!--<div class="divStyle">
+<div class="divStyle">
     <span class="webSiteName">eShopping</span>
            <select  class="header">
             <option>All</option>
@@ -12,11 +12,11 @@
     <button  class="Label btnSearch text-light" [routerLink]="['/login']">SignUp</button>  
     <button onclick="confirm()" class="Label btnSearch text-light">Cart</button>    
     
-</div>-->
+</div>
 <div class="nav">
-    <ul *ngFor = "let data of navData">
-        <li>Name : {{data.name}} </li>
-     </ul>
+    
+        <span class="navSpan" *ngFor = "let data of navData">Name : {{data.name}}</span>
+     
 </div>
 
 <router-outlet></router-outlet>

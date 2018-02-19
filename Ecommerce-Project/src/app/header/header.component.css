@@ -8,11 +8,10 @@
     padding:1vw;    
 }
 .nav{
-    padding-top:5.5vw;
-    z-index: -1;
-    background-color: white;
-    height:10vw;
-    color:black;
+    overflow: intial;
+    padding-top:6vw;
+    background-color:black;
+    height:9vw;
 }
 .webSiteName
 {
@@ -62,4 +61,21 @@ a:visited{
     font-size: 1vw;
     margin:0.5vw;
     background-color: black;
+}
+ul{
+    list-style: none;
+}
+
+.navSpan{
+    border:1px solid white;
+    padding-top:0.5vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height:3vw;
+    width:auto;
+    border-radius:0.5vw;
+    color:whitesmoke;
+    background-color:rgba(0,0,0,0.7);
+    font-size: 1vw;
+    
 }
