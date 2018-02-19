@@ -11,7 +11,7 @@
 .popUpBox{
     width:35vw;
     height:auto;
-    background:rgba(0,0,0,0.1);                 /*rgba(69, 187, 223,0.5);*/
+    background:rgba(0,0,0,0.1);                 
     margin-left: 35vw;
     margin-top: 5vw;
     padding:2vw;
@@ -27,14 +27,15 @@
     color: wheat;
 }
 .textField{
-    border-radius:5px;
+    border-radius:0.5vw;
     width:26.5vw;
-    height:40px;
-    padding:7px;
+    height:3vw;
+    padding-left:0.5vw;
+    
 }
 .selectField{
     border-radius:5px;
-    height:40px;
+    height:3vw;
     width:4.5vw;
 }
 .signUp{
