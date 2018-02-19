@@ -80,12 +80,12 @@ ul{
     border:0.1vw solid rgba(9, 44, 114, 0.5);
     padding:1vw 5vw;
     height:3vw;
-    
     width:auto;
     border-radius:0.5vw;
     color:black;
     font-size: 1vw;
     display:table-cell;
+    margin:2vw;
 }
 .navSpan:hover
 {

@@ -6,7 +6,8 @@
     margin-bottom: 1vw;
     padding:0.5vw;
     overflow: scroll;
-    overflow-y: hidden;
+    
+   
     
 }
 h1{
@@ -18,7 +19,7 @@ h1{
     border: 0.1vw solid navy;
     margin:0.2vw;
     border-radius:0.5vw;
-    display: inline-block;
-    overflow:scroll;
+    display:inline-block;
     
+
 }
