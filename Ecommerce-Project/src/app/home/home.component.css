@@ -1,0 +1,24 @@
+.divParentBlock{
+    height:25vw;
+    background: white;
+    border:0.1vw solid aliceblue;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding:0.5vw;
+    overflow: scroll;
+    overflow-y: hidden;
+    
+}
+h1{
+    text-align: center;
+}
+.divBlock{
+    width:20vw;
+    height:23vw;
+    border: 0.1vw solid navy;
+    margin:0.2vw;
+    border-radius:0.5vw;
+    display: inline-block;
+    overflow:scroll;
+    
+}

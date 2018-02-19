@@ -8,6 +8,7 @@ import { LoginComponent } from './login-component/login-component.component';
 import { RouterModule,Routes} from '@angular/router';
 
 import {HttpModule} from '@angular/http';
+import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
  
 ];
@@ -15,7 +16,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot([{ path: 'login', component: LoginComponent }]),HttpModule  ],

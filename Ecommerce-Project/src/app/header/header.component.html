@@ -1,21 +1,27 @@
 <div class="divStyle">
-    <span class="webSiteName">eShopping</span>
-           <select  class="header">
+    
+    <label class="webSiteName">eShopping</label>
+       
+    
+    <select>
             <option>All</option>
             <option>Electronics</option>
             <option>Computer And Laptop</option>
             <option>Accesories</option>
-        </select>    
-    <input type="text" class="header" placeholder="Search">
-    <input type="button" class="btnSearch text-info btn-info"value="Search">
+        </select>  
+        
+    <input type="text" placeholder="Search">
+        <input type="button" class="btnSearch text-light "value="Search">
+
     <button onclick="confirm()" class="Label btnSearch text-light">Login</button>
     <button  class="Label btnSearch text-light" [routerLink]="['/login']">SignUp</button>  
     <button onclick="confirm()" class="Label btnSearch text-light">Cart</button>    
     
 </div>
-<div class="nav">
+
+<div class="navC   ">
     
-        <span class="navSpan" *ngFor = "let data of navData">Name : {{data.name}}</span>
+        <span class="navSpan" *ngFor = "let data of navData">{{data.name}}</span>
      
 </div>
 
