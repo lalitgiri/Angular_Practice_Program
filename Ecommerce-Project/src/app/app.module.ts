@@ -9,7 +9,7 @@ import { RouterModule,Routes} from '@angular/router';
 
 import {HttpModule} from '@angular/http';
 import { HomeComponent } from './home/home.component';
-import {CarouselModule } from 'angular4-carousel';
+
 
 const appRoutes: Routes = [
  
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot([{ path: 'login', component: LoginComponent }]),HttpModule,CarouselModule  ],
+    BrowserModule,RouterModule.forRoot([{ path: 'login', component: LoginComponent }]),HttpModule],
   providers: [],
   bootstrap: [AppComponent]
 })
