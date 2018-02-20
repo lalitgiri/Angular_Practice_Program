@@ -1,28 +1,81 @@
-<div class="divStyle">
-    
-    <label class="webSiteName">eShopping</label>
-       
-    
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark indigo">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul>
+        <!-- Links -->
+
+        <!-- Search form -->
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        </form>
+    </div>
+    <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+                
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light primary-color-dark">
+
+    <a class="navbar-brand" href="#">eShopping</a>
     <select>
-            <option>All</option>
-            <option>Electronics</option>
-            <option>Computer And Laptop</option>
-            <option>Accesories</option>
-        </select>  
-        
+        <option>All</option>
+        <option>Electronics</option>
+        <option>Computer And Laptop</option>
+        <option>Accesories</option>
+    </select>  
     <input type="text" placeholder="Search">
+    <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item waves-light" mdbRippleRadius>
+            <a class="nav-link"><i class="fa fa-search"></i></a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+            <a class="nav-link"><i class="fa fa-login" [routerLink]="['/login']"></i></a>
+        </li>
+        <li class="nav-item waves-light" mdbRippleRadius>
+            <a class="nav-link"><i class="fa fa-instagram"></i></a>
+        </li>
+    </ul>
         <input type="button" class="btnSearch text-light "value="Search">
 
-    <button onclick="confirm()" class="Label btnSearch text-light">Login</button>
+        <button onclick="confirm()" class="Label btnSearch text-light">Login</button>
     <button  class="Label btnSearch text-light" [routerLink]="['/login']">SignUp</button>  
     <button onclick="confirm()" class="Label btnSearch text-light">Cart</button>    
+    <span class="navSpan" *ngFor = "let data of navData">{{data.name}}</span>
     
-</div>
-
-<div class="navC">
-    
-        <span class="navSpan" *ngFor = "let data of navData">{{data.name}}</span>
-     
-</div>
-
+</nav>
 <router-outlet></router-outlet>
