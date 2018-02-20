@@ -7,7 +7,8 @@
         margin-top: 1vw;
         margin-bottom: 1vw;
         padding:0.5vw;
-        overflow: scroll;
+        overflow: hidden;
+
         
     }
     .displayParent{

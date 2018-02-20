@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   navData;
  // constructor(private _testService:TestService){}
   ngOnInit() {
-    console.log("Sucess");
      this.http.get("../../assets/testServiceData/navData.json").
     map(response=>response.json()).
     subscribe((data)=>{this.displayData(data);});
