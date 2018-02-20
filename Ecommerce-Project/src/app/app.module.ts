@@ -23,7 +23,7 @@ const appRoutes: Routes = [
     HomeComponent
   ],
   imports: [MDBBootstrapModule.forRoot(),
-    BrowserModule,RouterModule.forRoot([{ path: 'login', component: LoginComponent }]),HttpModule],
+    BrowserModule,RouterModule.forRoot([{ path: 'signup', component: LoginComponent }]),HttpModule],
     schemas:[NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
