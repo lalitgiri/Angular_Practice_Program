@@ -1,0 +1,57 @@
+
+.webSiteName
+{
+        margin-left: 2vw;
+        font-size: 2.5vw;
+        font-style: oblique;
+        color:blanchedalmond;
+        text-shadow:0.2vw 0.3vw  grey;
+   
+        
+}
+
+.bgNav{
+    background:darkslateblue;
+    padding:0%;
+}
+ul{
+    margin-left:30vw;
+}
+
+.searchForm{
+    max-width: 50vw;
+}
+.btn-bg{
+    background: rgba(255, 255, 255,0);
+    border:none;
+    border-radius: 1vw;
+}
+
+.searchIcon{
+    height:5vw;
+    width:7vw;
+    padding-top:0.3vw;
+    
+}
+
+select{
+   
+    content: inherit;
+    margin-left:2vw;
+    height:3.1vw;
+    font-size:1.89vw;
+    border:none;
+    border-bottom-left-radius: 0.5vw;
+    border-top-left-radius: 0.5vw;
+}
+
+input[type=text]
+{
+     margin-left:-0.3vw;
+     height:3.1vw; 
+     font-size:2vw;
+     width: 25vw;
+     border:none;
+     border-bottom-right-radius: 0.5vw;
+     border-top-right-radius: 0.5vw;
+}
