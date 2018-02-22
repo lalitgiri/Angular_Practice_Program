@@ -9,11 +9,11 @@ label{
 .popUpBox{
     width:35vw;
     height:auto;
-    background:rgba(0,0,0,0.1);                 
+    background:rgba(0,0,0,0.4);                 
     margin-left: 35vw;
     margin-top: 2vw;
     padding:2vw;
-    border:0.1vw solid rgba(48, 63, 159,0.6) ;
+    border:0.14vw solid rgba(0, 0, 0,0.5) ;
     border-top-left-radius: 2vw;
     border-bottom-right-radius: 2vw;
     position: relative;

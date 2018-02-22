@@ -62,3 +62,18 @@ input[type=text]
      border:none;
     
 }
+.disable-selection{
+    user-select: none;
+}
+
+.menu{
+    margin-left:2vw;
+}
+
+.menu-div{
+    height:auto;
+    width:100vw;
+    z-index:1;
+    position: fixed;
+    background: rgba(0,0,0,0.5);
+}

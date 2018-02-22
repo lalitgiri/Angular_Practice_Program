@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
   constructor(private http:Http) { }
   httpData;
   itemData;
+ 
+
+
   ngOnInit() {
     this.http.get("../../assets/test-files/category.json").
     map(response=>response.json()).
