@@ -1,0 +1,34 @@
+
+    
+    .divParentBlock{
+        height:25vw;
+        background: white;
+        border:0.1vw solid aliceblue;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        padding:0.5vw;
+        overflow: hidden;
+
+        
+    }
+    .displayParent{
+        display: table;
+    }
+    h1{
+        text-align: center;
+    }
+    .divBlock{
+        width:20vw;
+        height:23vw;
+        border: 0.1vw solid navy;
+        margin:0.2vw;
+        border-radius:0.5vw;
+        overflow:hidden; 
+        display: table-cell;
+        
+
+    }
+    .carousel-inner img {
+        width: 100%;
+        height: 5%;
+    }

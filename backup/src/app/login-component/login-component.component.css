@@ -1,0 +1,40 @@
+*{
+    font-size: 1.5vw;
+    color:whitesmoke;
+}
+
+.popUpBox{
+    width:35vw;
+    height:auto;
+    background:rgba(0,0,0,0.1);                 
+    margin-left: 35vw;
+    margin-top: 2vw;
+    padding:2vw;
+    border:0.1vw solid rgba(48, 63, 159,0.6) ;
+    border-top-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    position: relative;
+}
+
+.padding{
+    margin-top:1.5vw;
+}
+
+.textField{
+    
+    border-radius:0.3vw;
+    width:26.5vw;
+    height:3vw;
+    padding-left:0.5vw;
+    
+}
+.selectField{
+    color:black;
+    border-radius: 0.3vw;
+    height:3vw;
+    width:4.5vw;
+    border:0.1vw solid gainsboro ;
+}
+.signUp{
+    font-size: 3vw;
+}
