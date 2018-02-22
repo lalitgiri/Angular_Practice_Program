@@ -19,6 +19,25 @@ label{
     position: relative;
 }
 
-.Login{
+.signUp{
     font-size: 3vw;
+}
+
+.selectField{
+    color:black;
+    border-radius: 0.3vw;
+    height:3vw;
+    width:4.5vw;
+    border:0.1vw solid gainsboro ;
+}
+
+.textField{
+    border:none;
+    color:black;
+    border: 0.3vw solid whitesmoke;
+    border-radius:0.3vw;
+    width:26.5vw;
+    height:3vw;
+    padding-left:0.5vw;
+    
 }

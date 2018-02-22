@@ -10,48 +10,53 @@
         
 }
 
+.float-property
+{
+    margin-left: 20vw;    
+}
 .bgNav{
     background:darkslateblue;
     padding:0%;
 }
-ul{
-    margin-left:30vw;
-}
+
 
 .searchForm{
-    max-width: 50vw;
+    max-width: 60vw;
 }
 .btn-bg{
-    background: rgba(255, 255, 255,0);
+    background: white;
     border:none;
-    border-radius: 1vw;
+    height:3.1vw;
+    border-top-right-radius: 0.6vw;
+    border-bottom-right-radius: 0.6vw;
 }
 
 .searchIcon{
-    height:5vw;
-    width:7vw;
-    padding-top:0.3vw;
+    height:2.5vw;
+    width:3vw;
+    
     
 }
 
 select{
    
-    content: inherit;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
     margin-left:2vw;
     height:3.1vw;
-    font-size:1.89vw;
+    font-size:1.3vw;
     border:none;
-    border-bottom-left-radius: 0.5vw;
-    border-top-left-radius: 0.5vw;
+    border-bottom-left-radius: 0.6vw;
+    border-top-left-radius: 0.6vw;
 }
 
 input[type=text]
 {
+    padding-left: 1vw;
      margin-left:-0.3vw;
      height:3.1vw; 
-     font-size:2vw;
+     font-size:1.3vw;
      width: 25vw;
      border:none;
-     border-bottom-right-radius: 0.5vw;
-     border-top-right-radius: 0.5vw;
+    
 }
