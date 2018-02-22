@@ -1,5 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<br/><br/>
+
+<div  (mouseleave)="hide(event)"><!--This div is create to use the functionality of 
+                                      mouse enter and mouse leave property for menu!!!.--><br/><br/>
 <nav class="navbar navbar-expand-md bg-nav navbar-dark fixed-top">
     <!-- Brand -->
     <a class="navbar-brand webSiteName" href="#">eShopping</a>
@@ -19,7 +20,7 @@
       </form>
         
     </div>
-    <span class="menu" (click)="clicked(event)">Menu
+    <span class="menu" (mouseenter)="clicked(event)">Menu
         
     </span>   
       <!-- Toggler/collapsibe Button -->
@@ -32,7 +33,7 @@
       
       <ul class="navbar-nav disable-selection">
           <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/login']">Login</a>
+              <a class="nav-link" [routerLink]="['/login']" >Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/signUp']">Sign Up</a>
@@ -57,5 +58,6 @@
   
 
 <div class="menu-div" *ngIf='status'> <h1 >{{this.message}}</h1><br/></div>
+</div>
 <br/><br/>
 <router-outlet></router-outlet>

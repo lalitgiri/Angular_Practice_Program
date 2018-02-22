@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,8 @@ export class AppComponent {
           this.status=false;
         else
           this.status=true;  
+  }
+  hide(event){
+    this.status=false;
   }
 }
