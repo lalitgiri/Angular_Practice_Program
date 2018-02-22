@@ -14,8 +14,10 @@
 {
     margin-left: 20vw;    
 }
-.bgNav{
-    background:darkslateblue;
+.bg-nav{
+    background:cornflowerblue;
+    border:none;
+    border-bottom: 0.1vw solid black;
     padding:0%;
 }
 

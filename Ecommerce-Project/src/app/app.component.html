@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<nav class="navbar navbar-expand-md bgNav navbar-dark fixed-top">
+<br/>
+<nav class="navbar navbar-expand-md bg-nav navbar-dark fixed-top">
     <!-- Brand -->
     <a class="navbar-brand webSiteName" href="#">eShopping</a>
     <div class="searchForm">    
@@ -14,7 +14,7 @@
         </select>
         <input type="text"/>
         <button class="btn-bg">
-            <img src="../assets/icon/search icon.png" class="searchIcon"/>
+            <img src="../assets/icon/search icon.png" class="searchIcon image-fluid"/>
           </button>
       </form>
     </div>
@@ -36,9 +36,18 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/signUp']">Sign Up</a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link"   data-toggle="dropdown">24x7 Support</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"><b>Call :</b> +91 9555104600</a>
+                <a class="dropdown-item" href="#"><b>Mail Id :</b> lalitgiri1711@gmail.com</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#"><b>Address :</b>Dadri,Uttar Pradesh,<br/>India,Zip :203207</a>
+              </div>
+          </li>
       </ul>
     </div> 
   </nav>
 <br/><br/><br/>
-<router-outlet></router-outlet>>
+
+<router-outlet></router-outlet>

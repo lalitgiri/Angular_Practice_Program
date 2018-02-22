@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpModule, Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private http:Http) { }
+  httpData;
+  itemData;
   ngOnInit() {
-  }
+    this.http.get("../../assets/test-files/category.json").
+    map(response=>response.json()).
+    subscribe(data => this.httpData=data);
 
+    this.http.get("../../assets/test-files/navData.json").
+    map(response=>response.json()).
+    subscribe(data => this.itemData=data);
+  }
 }
