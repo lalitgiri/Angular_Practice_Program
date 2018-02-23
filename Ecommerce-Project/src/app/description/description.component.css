@@ -32,3 +32,6 @@ img{
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
+.text{
+    font-size: 1vw;
+}
