@@ -8,9 +8,11 @@ import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
 
 import { HttpModule} from '@angular/http';
+import { DescriptionComponent } from './description/description.component';
 
 const appRoutes: Routes = [
   
+  {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signUp',component:SignupComponent},
   { path: '**', component: HomeComponent }
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),HttpModule

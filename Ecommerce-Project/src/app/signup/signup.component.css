@@ -26,16 +26,15 @@ label{
     color:black;
     border-radius: 0.3vw;
     height:3vw;
-    width:4.5vw;
-    border:0.1vw solid gainsboro ;
+    width:auto;
+   
 }
 
 .textField{
     border:none;
     color:black;
-    border: 0.3vw solid whitesmoke;
     border-radius:0.3vw;
-    width:26.5vw;
+    width:100vw;
     height:3vw;
     padding-left:0.5vw;
     

@@ -20,7 +20,7 @@
       </form>
         
     </div>
-    <span class="menu" (mouseenter)="clicked(event)">Menu
+    <span class="menu text-muted" (mouseenter)="clicked(event)">Menu
         
     </span>   
       <!-- Toggler/collapsibe Button -->
@@ -39,16 +39,16 @@
               <a class="nav-link" data-toggle="modal" data-target="#mySignUp">Sign Up</a>
             </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <a class="nav-link" [routerLink]="['/description']">Cart</a>
         </li> 
         
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle"   data-toggle="dropdown">24x7 Support</a>
             <div class="dropdown-menu dropdown-menu-right ">
-                <a class="dropdown-item" href="#"><b>Call :</b> +91 9555104600</a>
-                <a class="dropdown-item" href="#"><b>Mail Id :</b> lalitgiri1711@gmail.com</a>
+                <div class="dropdown-item"><b>Call :</b> +91 9555104600</div>
+                <div class="dropdown-item"><b>Mail Id :</b> lalitgiri1711@gmail.com</div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><b>Address :</b>Dadri,Uttar Pradesh,<br/>India,Zip :203207</a>
+                <div class="dropdown-item"><b>Address :</b>Dadri,Uttar Pradesh,<br/>India,Zip :203207</div>
               </div>
           </li>
       </ul>
