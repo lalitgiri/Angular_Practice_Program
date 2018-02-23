@@ -10,20 +10,33 @@
     margin-bottom: 5vw; 
     width:100vw; 
     background:black;
-    display: table;
+    
+  
 }
 
 .sub-div-list{
-    height:25vw;
+    height:22vw;
     width:10vw;
-    margin:5vw;
+        
     padding: 5vw;
     border:0.2vw solid white;
     display: table-cell;
     background:gray;
 }
 
+.scroll{
+    overflow: scroll;
+    padding:1vw;
+    overflow-y: hidden;
+}
+::-webkit-scrollbar {
+    width: 0.4vw;;
+    background: rosybrown; /* make scrollbar transparent */
+}
 .sub-div{
+
   width:20vw;
+  height:25vw;
+  background: red;
 }
 

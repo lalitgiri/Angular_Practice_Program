@@ -1,0 +1,34 @@
+.img-btn-div
+{
+    padding:2vw;
+    background: thistle;
+    height:auto;
+    display:inline-block;
+}
+
+.img-div
+{
+    height:30vw;
+    width:30vw;
+    
+    margin-bottom: 2vw;
+    background:floralwhite;
+}
+img{
+    height:30vw;
+    width:30vw;
+}
+
+.description
+{
+    padding:2vw;
+    height:38.6vw;
+    width:40vw;
+    overflow:scroll;    
+    overflow-wrap: break-word;
+    background: thistle;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}

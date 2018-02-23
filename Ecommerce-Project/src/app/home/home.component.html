@@ -33,10 +33,24 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
-
+<!--
 <div  *ngFor = "let data of httpData" class="div-list">
     <div class="sub-div"></div>
 
     <div  *ngFor = "let data of itemData" class="sub-div-list">Sub {{data.name}}</div>
   
-  </div>
+  </div>-->
+
+
+      <div class="row  div-list" *ngFor = "let data of httpData" >
+        <div class="col-sm-4 sub-div">
+          <h3>Column 1</h3>
+          <p>Lorem ipsum dolor..</p>
+          <p>Ut enim ad..</p>
+        </div>
+        <div class="col-sm-8 scroll">
+            <div  *ngFor = "let data of itemData" class="sub-div-list">Sub {{data.name}}</div>
+        </div>
+       
+      </div>
+   
