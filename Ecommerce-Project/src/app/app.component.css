@@ -9,6 +9,16 @@
    
         
 }
+.sub-div-list{
+    height:5vw;
+    width:5vw;
+    border-radius: 1vw;
+    margin: 1vw;
+    text-align: center;
+    border:0.2vw solid white;
+    display: inline-block;
+    background:gray;
+}
 
 .float-property
 {

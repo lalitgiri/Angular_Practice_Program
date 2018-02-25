@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signUp',component:SignupComponent},
+  {path:'viewAll',component:ViewAllComponent},
   { path: '**', component: HomeComponent }
 ];
 
