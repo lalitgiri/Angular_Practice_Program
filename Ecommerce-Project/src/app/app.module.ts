@@ -10,9 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { HttpModule} from '@angular/http';
 import { DescriptionComponent } from './description/description.component';
 import { ViewAllComponent } from './view-all/view-all.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
-  
+  {path:'admin ',component:AdminComponent},
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     SignupComponent,
     HomeComponent,
     DescriptionComponent,
-    ViewAllComponent
+    ViewAllComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),HttpModule
