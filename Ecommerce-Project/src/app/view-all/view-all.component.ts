@@ -11,8 +11,6 @@ export class ViewAllComponent implements OnInit {
   httpData;
   itemData;
  
-
-
   ngOnInit() {
     this.http.get("../../assets/test-files/category.json").
     map(response=>response.json()).
