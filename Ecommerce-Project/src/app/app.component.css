@@ -9,6 +9,16 @@
    
         
 }
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    
+} 
 .sub-div-list{
     height:5vw;
     width:5vw;
@@ -27,7 +37,7 @@
 .bg-nav{
     background:cornflowerblue;
     border:none;
-    border-bottom: 0.1vw solid black;
+    
     padding:0%;
 }
 
