@@ -13,7 +13,7 @@ import { ViewAllComponent } from './view-all/view-all.component';
 import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
-  {path:'admin ',component:AdminComponent},
+  {path:'admin',component:AdminComponent},
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
