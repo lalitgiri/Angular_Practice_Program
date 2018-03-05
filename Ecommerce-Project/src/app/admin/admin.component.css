@@ -2,18 +2,21 @@
     background:tan;
     border-right:0.2vw solid white;
     color:white;
-    text-align: right;
+    text-align: center;
 }
 
 .height{
     height:91.5vh;
 }
 ul{
-    text-align:end;
+    text-align:center;
 }
 a{
     color:white;
 }
 a:hover{
     color:black;
+}
+.disable-selection{
+    user-select: none;
 }
