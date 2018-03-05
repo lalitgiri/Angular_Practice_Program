@@ -16,18 +16,17 @@ hr {
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
-    border-width: 1px;
+    border-width: 0.07vw;
     
 } 
 .sub-div-list{
-    height:5vw;
-    width:5vw;
-    border-radius: 1vw;
-    margin: 1vw;
+    padding:0.5vw;
+    border-radius: 0.2vw;
+    margin: 0.5vw;
     text-align: center;
     border:0.2vw solid white;
     display: inline-block;
-    background:gray;
+    background:tan;
 }
 
 .float-property
@@ -35,7 +34,7 @@ hr {
     margin-left: 20vw;    
 }
 .bg-nav{
-    background:cornflowerblue;
+    background:tan;
     border:none;
     
     padding:0%;
@@ -94,9 +93,10 @@ input[type=text]
     color:rgba(255,255,255,0.7);
 }
 .menu-div{
+    margin-top: 1vw;
     height:auto;
     width:100vw;
     z-index:1;
     position: fixed;
-    background: rgba(0,0,0,0.5);
+    background: rgba(210, 180, 140,0.7);
 }

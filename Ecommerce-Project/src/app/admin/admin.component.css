@@ -1,3 +1,13 @@
-*{
-    
+.adminNav{
+    background:tan;
+    border-right:0.2vw solid white;
+    color:white;
+    text-align: center;
+}
+
+.height{
+    height:91.5vh;
+}
+ul{
+    text-align: center;
 }

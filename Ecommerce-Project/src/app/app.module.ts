@@ -11,6 +11,9 @@ import { HttpModule} from '@angular/http';
 import { DescriptionComponent } from './description/description.component';
 import { ViewAllComponent } from './view-all/view-all.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent},
@@ -29,7 +32,10 @@ const appRoutes: Routes = [
     HomeComponent,
     DescriptionComponent,
     ViewAllComponent,
-    AdminComponent
+    AdminComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),HttpModule
