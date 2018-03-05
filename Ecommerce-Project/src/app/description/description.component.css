@@ -1,33 +1,7 @@
-/*.img-btn-div
-{   
-    background: thistle;
-    height:auto;
-    display:inline-block;
-}
 
-.img-div
-{
-    background:floralwhite;
-}
-
-.description
-{
-    padding:2vw;
-    
-    overflow:scroll;    
-    overflow-wrap: break-word;
-    background: thistle;
-}
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent 
-}
-.text{
-    font-size: 1vw;
-}*/
 
 
 .bg-color{
     padding: 4vw;
-    background: azure;
+    background: rgba(210, 180, 140,0.5);
 }

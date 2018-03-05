@@ -2,14 +2,14 @@
     background:tan;
     border-right:0.2vw solid white;
     color:white;
-    text-align: center;
+    text-align: right;
 }
 
 .height{
     height:91.5vh;
 }
 ul{
-    text-align: center;
+    text-align:end;
 }
 a{
     color:white;

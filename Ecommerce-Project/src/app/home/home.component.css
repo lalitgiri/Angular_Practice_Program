@@ -2,14 +2,14 @@
 .carousel-div-list{
    height:25vw ; 
    width:auto; 
-   background:red;
+   background:tan;
 }
 .div-list{
     height:25vw ;
     margin-top:5vw;
     margin-bottom: 5vw; 
     width:100vw; 
-    background:black;
+    background:rgba(210, 180, 140,0.7);
     
   
 }
@@ -18,7 +18,7 @@
 
    
     height:25vw;
-    background: red;
+    background: tan;
   }
   
 .sub-div-list{
@@ -29,11 +29,11 @@
     text-align: center;
     border:0.2vw solid white;
     display: inline-block;
-    background:gray;
+    background:rgba(210, 180, 140,0.5);
 }
 .sub-div-list:hover{
     
-    border:0.2vw solid red;
+    border:0.2vw solid tan;
     
     
     width:22vw;
