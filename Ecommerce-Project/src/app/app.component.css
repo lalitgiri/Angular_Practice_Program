@@ -28,7 +28,9 @@ hr {
     display: inline-block;
     background:tan;
 }
-
+a{
+    color:white;
+}
 .float-property
 {
     margin-left: 20vw;    
@@ -36,7 +38,7 @@ hr {
 .bg-nav{
     background:tan;
     border:none;
-    
+    color:white;
     padding:0%;
 }
 

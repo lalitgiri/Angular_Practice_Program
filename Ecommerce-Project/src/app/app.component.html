@@ -1,7 +1,7 @@
 
 <div  (mouseleave)="hide(event)"><!--This div is create to use the functionality of 
                                       mouse enter and mouse leave property for menu!!!.--><br/><br/>
-<nav class="navbar navbar-expand-md bg-nav navbar-dark fixed-top">
+<nav class="navbar navbar-expand-md bg-nav fixed-top">
     <!-- Brand -->
     <a class="navbar-brand webSiteName" href="#">eShopping</a>
     <div class="searchForm">    
@@ -20,7 +20,7 @@
       </form>
         
     </div>
-    <span class="menu"  [routerLink]="['']" (mouseenter)="clicked(event)" (click)="clicked(event)" >Menu
+    <span class="menu"  (mouseenter)="clicked(event)" (click)="clicked(event)" >Menu
         
     </span>   
       <!-- Toggler/collapsibe Button -->
@@ -33,13 +33,13 @@
       
       <ul class="navbar-nav disable-selection">
           <li class="nav-item">
-              <a class="nav-link"  [routerLink]="['']" data-toggle="modal" data-target="#myLogin">Login</a>
+              <a href="" class="nav-link"  data-toggle="modal" data-target="#myLogin">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['']"data-toggle="modal" data-target="#mySignUp">Sign Up</a>
+              <a href="" class="nav-link" data-toggle="modal" data-target="#mySignUp">Sign Up</a>
             </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/description']">Cart</a>
+          <a class="nav-link" [routerLink]="['/description']" >Cart</a>
         </li> 
         
         <li class="nav-item dropdown">
