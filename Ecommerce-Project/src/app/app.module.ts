@@ -17,6 +17,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DeleteComponent } from './delete/delete.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { AddVendorComponent } from './add-vendor/add-vendor.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent},
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     UpdateProductComponent,
     WelcomeComponent,
     DeleteComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    AddVendorComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(appRoutes),HttpModule

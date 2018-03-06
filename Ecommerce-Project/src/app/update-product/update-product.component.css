@@ -1,16 +1,22 @@
-*{
-    text-align: center;
-}
 
 .defaultPropertyRemove{
     padding-left:0%;
+    margin-right: 1.3vw;
+}
+h3{
+    text-align: center;
 }
 
+label{
+    padding-left: 3vw;
+}
 .bottom-margin{
     margin-bottom: 1vw;
     
 }
-
+input{
+    text-align: center;
+}
 .tableDimension{
     height: 20vw;
     overflow-y: scroll;
@@ -21,4 +27,9 @@ tr:hover{
 }
 thead{
     background: tan; 
+}
+
+.button-div{
+    margin-top:3vw;
+    padding-left: 3.5vw;    
 }

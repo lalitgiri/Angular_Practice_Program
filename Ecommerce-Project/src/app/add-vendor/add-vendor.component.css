@@ -1,24 +1,24 @@
 input{
     text-align: center;
 }
-
+h3{
+    text-align: center;
+}
 .defaultPropertyRemove{
     padding-left:0%;
 }
 
 .margin{
     margin:0.5vw;
+    
 }
-h3{
-    text-align: center;
+.button-div{
+    margin-top:3vw;
+    padding-left: 15vw;  
 }
+
 
 label{
     padding-left: 5vw;
     text-align: left;
-}
-
-.button-div{
-    margin-top:3vw;
-    padding-left: 15vw;  
 }
