@@ -1,7 +1,5 @@
 *{
     text-align: center;
-   
-  
 }
 
 .defaultPropertyRemove{
@@ -11,4 +9,16 @@
 .bottom-margin{
     margin-bottom: 1vw;
     
+}
+
+.tableDimension{
+    height: 20vw;
+    overflow-y: scroll;
+}
+
+tr:hover{
+    background: rgba(210, 180, 140,0.5);
+}
+thead{
+    background: tan; 
 }
