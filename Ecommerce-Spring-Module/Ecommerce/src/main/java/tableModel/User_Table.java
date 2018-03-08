@@ -21,11 +21,7 @@ public class User_Table {
 	private String password;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinTable(
-			name="USER_CART",
-			joinColumns= {@JoinColumn(name="UserID")},
-			inverseJoinColumns = {@JoinColumn(name="phoneNumber")}
-		)
+	@JoinColumn(name = "UserID")
 	public Cart_Detail getCart() {
 		return cart;
 	}

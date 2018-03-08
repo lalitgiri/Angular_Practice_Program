@@ -25,7 +25,7 @@ public class EcommerceApplication {
 		obj.setEmailId("ab@gmail.com");
 		obj.setName("Lalit ");
 		obj.setPassword("Lali12345");
-		obj.setPhoneNumber(8576);
+		obj.setPhoneNumber(8532176);
 		obj.setCart(cart);
 		
 		Session session;
