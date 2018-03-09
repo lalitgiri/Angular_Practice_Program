@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Cart_Detail {
+public class CartDetail {
 	
 
 	private int userId;		//primaryKey

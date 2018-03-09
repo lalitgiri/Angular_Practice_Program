@@ -7,25 +7,33 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
-public class User_Table {
+
+public class UserTable {
 	
 	private long  phoneNumber;	//primaryKey
 	
 	//private int userId;	//foreginKey
 	private String name;
+	
+	
 	private String emailId; 		//uniqueKey
-	private Cart_Detail cart;
+	private CartDetail cart;
 	private String password;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID")
-	public Cart_Detail getCart() {
+	public CartDetail getCart() {
 		return cart;
 	}
-	public void setCart(Cart_Detail cart) {
+	public void setCart(CartDetail cart) {
 		this.cart = cart;
 	}
 	
@@ -40,6 +48,9 @@ public class User_Table {
 	public String getEmailId() {
 		return emailId;
 	}
+	@Temporal(TemporalType.DATE)
+	
+	@Lob
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}

@@ -7,8 +7,8 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import tableModel.Cart_Detail;
-import tableModel.User_Table;
+import tableModel.CartDetail;
+import tableModel.UserTable;
 
 
 @SpringBootApplication
@@ -17,30 +17,37 @@ public class EcommerceApplication {
 	public static void main(String[] args) {
 		
 		
-		User_Table obj=new User_Table();
-		Cart_Detail cart=new Cart_Detail();
+		UserTable obj=new UserTable();
+		CartDetail cart=new CartDetail();
 		
 		
 	
-		obj.setEmailId("ab@gmail.com");
-		obj.setName("Lalit ");
+		obj.setEmailId("abdwss@gmail.com");
+		obj.setName("Rohit");
 		obj.setPassword("Lali12345");
-		obj.setPhoneNumber(8532176);
+		obj.setPhoneNumber(853);
 		obj.setCart(cart);
 		
 		Session session;
-		try {
-			SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
-
+		SessionFactory sessionFactory;
+	
+			sessionFactory=new Configuration().configure().buildSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(obj);
 			session.getTransaction().commit();
-		} catch (HibernateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
+			session.close();
+			
+			
+			//open new session to fetch data from database
+			obj=null;
+
+			
+			session = sessionFactory.openSession();  // this is used to start the new session
+			session.beginTransaction();				//here we start the new transaction with new session
+			obj=(UserTable) session.get(UserTable.class,(long)853);		//this is use to get data from the data base
+			
+			System.out.println("User name Retrieved  " + obj.getEmailId());
+					
 	}
 }

@@ -1,14 +1,17 @@
 package tableModel;
 
+import java.sql.Blob;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Product_Table {
+public class ProductTable {
 
 
 	private int productId;    		//primaryKey
@@ -16,9 +19,9 @@ public class Product_Table {
 	private String productCategory;
 	private int productQuantity;
 	private String productPrice;
-	private byte[] description;
+	private Blob description;
 	private String imageUrl;
-	private Employee_Detail employeeId; 			//foreginKey
+	private EmployeeDetail employeeId; 			//foreginKey
 	
 	@Id
 	@GeneratedValue
@@ -52,10 +55,11 @@ public class Product_Table {
 	public void setProductPrice(String productPrice) {
 		this.productPrice = productPrice;
 	}
-	public byte[] getDescription() {
+	
+	public Blob getDescription() {
 		return description;
 	}
-	public void setDescription(byte[] description) {
+	public void setDescription(Blob description) {
 		this.description = description;
 	}
 	public String getImageUrl() {
@@ -67,10 +71,10 @@ public class Product_Table {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID")
-	public Employee_Detail getEmployeeId() {
+	public EmployeeDetail getEmployeeId() {
 		return employeeId;
 	}
-	public void setEmployeeId(Employee_Detail employeeId) {
+	public void setEmployeeId(EmployeeDetail employeeId) {
 		this.employeeId = employeeId;
 	}
 	

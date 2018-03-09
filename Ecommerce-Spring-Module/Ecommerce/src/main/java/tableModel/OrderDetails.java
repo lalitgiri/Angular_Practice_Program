@@ -2,9 +2,10 @@ package tableModel;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
-public class Order_Details {
+public class OrderDetails {
 
 	@Id
 	private int orderId;  //primaryKey
@@ -25,6 +26,7 @@ public class Order_Details {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
 	public String getAddress() {
 		return address;
 	}
