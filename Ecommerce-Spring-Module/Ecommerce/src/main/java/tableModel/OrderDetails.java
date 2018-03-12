@@ -2,6 +2,7 @@ package tableModel;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
@@ -9,10 +10,11 @@ public class OrderDetails {
 
 	@Id
 	private int orderId;  //primaryKey
-	private int userId;   //foreginKey
+	
 	private String  address;
 	private byte[] itemDetail;
-	
+	@ManyToOne
+	private UserTable userId;
 	
 	public int getOrderId() {
 		return orderId;
@@ -20,10 +22,10 @@ public class OrderDetails {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public int getUserId() {
+	public UserTable getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(UserTable userId) {
 		this.userId = userId;
 	}
 	

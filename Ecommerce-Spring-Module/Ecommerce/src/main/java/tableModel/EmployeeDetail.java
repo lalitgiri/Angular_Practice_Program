@@ -1,14 +1,20 @@
 package tableModel;
 
 import java.sql.Date;
+import java.util.Collection;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class EmployeeDetail {
 	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int employeeId;		//primary Key
 	private String employeeName;
 	private String employeeRole;
@@ -16,8 +22,16 @@ public class EmployeeDetail {
 	private String address;
 	private boolean status;
 	private Date joiningDate,resigningDate;
-			
-	@Id
+	
+	@OneToMany(mappedBy="employeeId")
+	private Collection <ProductTable> productId;
+	
+	public Collection<ProductTable> getProductId() {
+		return productId;
+	}
+	public void setProductId(Collection<ProductTable> productId) {
+		this.productId = productId;
+	}
 	public int getEmployeeId() {
 		return employeeId;
 	}

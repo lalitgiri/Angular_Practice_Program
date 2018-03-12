@@ -5,15 +5,21 @@ import java.sql.Blob;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 @Entity
 public class ProductTable {
 
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int productId;    		//primaryKey
 	private String productName;
 	private String productCategory;
@@ -21,10 +27,11 @@ public class ProductTable {
 	private String productPrice;
 	private Blob description;
 	private String imageUrl;
+	@ManyToOne
+	@JoinColumn(name = "EmployeeID")
 	private EmployeeDetail employeeId; 			//foreginKey
 	
-	@Id
-	@GeneratedValue
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -69,8 +76,7 @@ public class ProductTable {
 		this.imageUrl = imageUrl;
 	}
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserID")
+	
 	public EmployeeDetail getEmployeeId() {
 		return employeeId;
 	}

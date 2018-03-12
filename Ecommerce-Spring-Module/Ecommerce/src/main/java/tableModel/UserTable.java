@@ -1,5 +1,7 @@
 package tableModel;
 
+import java.util.Collection;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -18,18 +21,25 @@ import javax.persistence.Transient;
 
 public class UserTable {
 	
-	private long  phoneNumber;	//primaryKey
-	
-	//private int userId;	//foreginKey
-	private String name;
-	
-	
-	private String emailId; 		//uniqueKey
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "UserID") //uniqueKey
 	private CartDetail cart;
+	@Id
+	private long  phoneNumber;	//primaryKey
+	private String name;
+	private String emailId; 
+	
 	private String password;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "UserID")
+	@OneToMany(mappedBy="userId")
+	private Collection<OrderDetails> orderId;
+	
+	public Collection<OrderDetails> getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(Collection<OrderDetails> orderId) {
+		this.orderId = orderId;
+	}
 	public CartDetail getCart() {
 		return cart;
 	}
@@ -48,14 +58,12 @@ public class UserTable {
 	public String getEmailId() {
 		return emailId;
 	}
-	@Temporal(TemporalType.DATE)
 	
-	@Lob
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
 	
-	@Id
+	
 	public long getPhoneNumber() {
 		return phoneNumber;
 	}
