@@ -1,6 +1,7 @@
 package tableModel;
 
 import java.sql.Blob;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,9 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
@@ -32,6 +35,15 @@ public class ProductTable {
 	private EmployeeDetail employeeId; 			//foreginKey
 	
 	
+	@ManyToMany
+	private List<CartDetail> cartId;
+	
+	public List<CartDetail> getCartId() {
+		return cartId;
+	}
+	public void setCartId(List<CartDetail> cartId) {
+		this.cartId = cartId;
+	}
 	public int getProductId() {
 		return productId;
 	}

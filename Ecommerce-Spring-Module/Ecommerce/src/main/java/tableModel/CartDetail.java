@@ -1,12 +1,15 @@
 package tableModel;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,8 +19,8 @@ public class CartDetail {
 	@Column(name = "UserID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int userId;		//primaryKey
-	
-	private int productId;	//foreginKey
+	@ManyToMany(mappedBy="cartId")
+	private List<ProductTable> productId;	//foreginKey
 	
 	private String deliveryAddress;
 	
@@ -37,10 +40,10 @@ public class CartDetail {
 	}
 
 	
-	public int getProductId() {
+	public List<ProductTable> getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(List<ProductTable> productId) {
 		this.productId = productId;
 	}
 	
