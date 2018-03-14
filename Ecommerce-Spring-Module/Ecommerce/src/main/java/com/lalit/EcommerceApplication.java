@@ -3,6 +3,7 @@ package com.lalit;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import tableModel.CartDetail;
@@ -14,6 +15,7 @@ public class EcommerceApplication {
 
 	public static void main(String[] args) {
 		
+	//	SpringApplication.run(EcommerceApplication.class, args);
 		
 		UserTable obj=new UserTable();
 		CartDetail cart=new CartDetail();
@@ -83,6 +85,5 @@ public class EcommerceApplication {
 			obj=(UserTable) session.get(UserTable.class,(long)853);		//this is use to get data from the data base
 			
 			System.out.println("User name Retrieved  " + obj.getEmailId());
-					
 	}
 }
