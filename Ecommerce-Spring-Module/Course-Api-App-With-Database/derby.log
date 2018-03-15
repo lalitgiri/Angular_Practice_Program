@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Mar 15 12:42:48 IST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0162-2881-0b7f-00000db00cb8 
+on database directory memory:D:\WorkSpace\Angular_Practice_Program\Ecommerce-Spring-Module\Course-Api-App-With-Database\testdb with class loader sun.misc.Launcher$AppClassLoader@6d06d69c 
+Loaded from file:/D:/Profiles/lgiri/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_161-b12
+user.dir=D:\WorkSpace\Angular_Practice_Program\Ecommerce-Spring-Module\Course-Api-App-With-Database
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

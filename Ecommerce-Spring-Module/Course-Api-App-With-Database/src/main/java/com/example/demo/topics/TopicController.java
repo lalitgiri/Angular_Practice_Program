@@ -2,6 +2,7 @@ package com.example.demo.topics;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.omg.CORBA.PRIVATE_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,19 +25,20 @@ public class TopicController {
 			
 			return topicService.getAllTopics();
 		}
+	
 		@RequestMapping("/topics/{foo}")							//	@RequestMapping("/topics/{id}")
-		public Topic getTopic(@PathVariable("foo") String id) throws NotFoundException {		//public Topic getTopic(@PathVariable String id)
-			Topic a= topicService.getTopic(id);
+		public Optional<Topic> getTopic(@PathVariable("foo") String id) throws NotFoundException {		//public Topic getTopic(@PathVariable String id)
+			Optional<Topic> a= topicService.getTopic(id);
 			if(a == null) 
 				throw new NotFoundException("book not found");
 				else 
 			return topicService.getTopic(id);
 		}
 		
-		@RequestMapping("/topics/name/{name}")							
+		/*@RequestMapping("/topics/name/{name}")							
 		public List<Topic> searchTopicByName(@PathVariable String name) {		
 			return topicService.searchTopicByName(name);
-		}
+		}*/
 		@RequestMapping(method=RequestMethod.POST,value="/topics")
 		public void addTopic(@RequestBody Topic topic) {
 			topicService.addTopic(topic);
@@ -50,7 +52,7 @@ public class TopicController {
 			
 		}
 		
-		@RequestMapping(method= RequestMethod.DELETE,value ="/topics/{id")
+		@RequestMapping(method= RequestMethod.DELETE,value ="/topics/{id}")
 		public void deleteTopic(@PathVariable String id) {
 			topicService.deleteTopic(id);
 			
