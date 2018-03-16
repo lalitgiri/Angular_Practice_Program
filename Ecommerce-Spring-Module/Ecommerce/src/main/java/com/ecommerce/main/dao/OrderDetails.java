@@ -1,4 +1,4 @@
-package tableModel;
+package com.ecommerce.main.dao;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,7 +14,7 @@ public class OrderDetails {
 	private String  address;
 	private byte[] itemDetail;
 	@ManyToOne
-	private UserTable userId;
+	private UserDetails userId;
 	
 	public int getOrderId() {
 		return orderId;
@@ -22,10 +22,10 @@ public class OrderDetails {
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public UserTable getUserId() {
+	public UserDetails getUserId() {
 		return userId;
 	}
-	public void setUserId(UserTable userId) {
+	public void setUserId(UserDetails userId) {
 		this.userId = userId;
 	}
 	

@@ -1,4 +1,4 @@
-package tableModel;
+package com.ecommerce.main.dao;
 
 import java.util.Collection;
 
@@ -19,11 +19,11 @@ import javax.persistence.Transient;
 
 @Entity
 
-public class UserTable {
+public class UserDetails {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID") //uniqueKey
-	private CartDetail cart;
+	private CartDetails cart;
 	@Id
 	private long  phoneNumber;	//primaryKey
 	private String name;
@@ -40,10 +40,10 @@ public class UserTable {
 	public void setOrderId(Collection<OrderDetails> orderId) {
 		this.orderId = orderId;
 	}
-	public CartDetail getCart() {
+	public CartDetails getCart() {
 		return cart;
 	}
-	public void setCart(CartDetail cart) {
+	public void setCart(CartDetails cart) {
 		this.cart = cart;
 	}
 	

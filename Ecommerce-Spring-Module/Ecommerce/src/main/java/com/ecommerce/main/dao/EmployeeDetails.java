@@ -1,4 +1,4 @@
-package tableModel;
+package com.ecommerce.main.dao;
 
 import java.sql.Date;
 import java.util.Collection;
@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
-public class EmployeeDetail {
+public class EmployeeDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)

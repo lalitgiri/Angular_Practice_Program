@@ -1,4 +1,5 @@
-package tableModel;
+
+package com.ecommerce.main.dao;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,13 +14,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class CartDetail {
+public class CartDetails {
 	
 	@Id
 	@Column(name = "UserID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int userId;		//primaryKey
-	@ManyToMany(mappedBy="cartId")
+	@ManyToMany
 	private List<ProductTable> productId;	//foreginKey
 	
 	private String deliveryAddress;

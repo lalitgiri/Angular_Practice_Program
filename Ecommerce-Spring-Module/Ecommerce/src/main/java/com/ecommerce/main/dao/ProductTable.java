@@ -1,4 +1,4 @@
-package tableModel;
+package com.ecommerce.main.dao;
 
 import java.sql.Blob;
 import java.util.List;
@@ -32,16 +32,15 @@ public class ProductTable {
 	private String imageUrl;
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
-	private EmployeeDetail employeeId; 			//foreginKey
-	
+	private EmployeeDetails employeeId; 			//foreginKey
 	
 	@ManyToMany
-	private List<CartDetail> cartId;
+	private List<CartDetails> cartId;
 	
-	public List<CartDetail> getCartId() {
+	public List<CartDetails> getCartId() {
 		return cartId;
 	}
-	public void setCartId(List<CartDetail> cartId) {
+	public void setCartId(List<CartDetails> cartId) {
 		this.cartId = cartId;
 	}
 	public int getProductId() {
@@ -89,10 +88,10 @@ public class ProductTable {
 	}
 	
 	
-	public EmployeeDetail getEmployeeId() {
+	public EmployeeDetails getEmployeeId() {
 		return employeeId;
 	}
-	public void setEmployeeId(EmployeeDetail employeeId) {
+	public void setEmployeeId(EmployeeDetails employeeId) {
 		this.employeeId = employeeId;
 	}
 	
