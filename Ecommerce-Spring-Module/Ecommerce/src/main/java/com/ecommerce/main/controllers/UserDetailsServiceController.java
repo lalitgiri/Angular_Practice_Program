@@ -29,7 +29,7 @@ public class UserDetailsServiceController {
 		return userDetailsService.deleteUserDetails(id);
 	}
 	
-	@RequestMapping("/getUser/{id}")
+	@RequestMapping("/getuser/{id}")
 	public Optional<UserDetails> getUserDetails(@PathVariable long id) {
 		return userDetailsService.getUserDetails(id);
 	}

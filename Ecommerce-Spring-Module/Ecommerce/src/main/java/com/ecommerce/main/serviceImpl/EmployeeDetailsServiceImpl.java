@@ -18,7 +18,7 @@ public class EmployeeDetailsServiceImpl implements EmployeeDetailsService{
 	private EmployeeDetailReposiotory employeeDetailsReposiotory;
 	
 
-	public String addUserDetails(EmployeeDetails employee) throws Exception {
+	public String addEmployeeDetails(EmployeeDetails employee) throws Exception {
 		employeeDetailsReposiotory.save(employee);
 		return "Sucessfully Added";
 	}
