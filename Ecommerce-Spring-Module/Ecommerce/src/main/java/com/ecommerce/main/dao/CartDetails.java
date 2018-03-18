@@ -20,7 +20,7 @@ public class CartDetails {
 	@Column(name = "UserID")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int userId;		//primaryKey
-	@ManyToMany
+	@ManyToMany(mappedBy="cartId")
 	private List<ProductTable> productId;	//foreginKey
 	
 	private String deliveryAddress;

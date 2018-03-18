@@ -44,7 +44,8 @@ public class ProductTableServiceImpl implements ProductTableService {
 		List <ProductTable> productList = new ArrayList<>();
 		productTableRepository.findAll().
 		forEach(productList::add);
-		
+		if(productList==null)
+			return null;
 		return productList;
 	}
 	

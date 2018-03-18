@@ -55,9 +55,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		forEach(userList::add);
 				
 		
-		if(userList== null) {
-			return  new ArrayList<UserDetails>();
-		}
+		if(userList== null) 
+			return  null;
 		return userList;
 	}
 	

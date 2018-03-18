@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.EmployeeDetails;
+import com.ecommerce.main.dao.UserDetails;
 import com.ecommerce.main.reposiotory.EmployeeDetailReposiotory;
 import com.ecommerce.main.service.EmployeeDetailsService;
 
@@ -25,13 +26,16 @@ public class EmployeeDetailsServiceImpl implements EmployeeDetailsService{
 	
 	
 	public String deleteEmployeeDetails(int id){
-		employeeDetailsReposiotory.deleteById(id);
-		return "SucessFully Deleted";
+		if(employeeDetailsReposiotory.existsById(id)){
+			employeeDetailsReposiotory.deleteById(id);
+			return "SucessFully Deleted";
+		}
+		return "Employee NotFound";
 	}
 	
 	public Optional<EmployeeDetails> getEmployeeDetails(int id) {
-		
-		return employeeDetailsReposiotory.findById(id);
+
+		return employeeDetailsReposiotory.findById(id);		 
 	}
 	
 	public String updateEmployeeDetails(EmployeeDetails employee,int id) {
@@ -50,6 +54,9 @@ public class EmployeeDetailsServiceImpl implements EmployeeDetailsService{
 		employeeDetailsReposiotory.findAll().
 		forEach(employeeList::add);
 		
+		if(employeeList== null)
+			return  null;
+	
 		return employeeList;
 	}
 	

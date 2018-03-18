@@ -27,7 +27,9 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
 	public List<OrderDetails> getAllOrder() {
 			List <OrderDetails> orderList = new ArrayList<OrderDetails>();
 			orderDetailsReposiotory.findAll().forEach(orderList::add);
-		return orderList;
+			if(orderList==null)
+				return null;
+			return orderList;
 	}
 
 	@Override

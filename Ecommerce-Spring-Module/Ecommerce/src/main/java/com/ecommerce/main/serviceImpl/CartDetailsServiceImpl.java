@@ -20,7 +20,6 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 	
 	
 	public Optional<CartDetails> getCartDetails(int id) {
-		
 		return cartDetailsReposiotory.findById(id);
 	}
 	

@@ -27,13 +27,15 @@ public class EmployeeDetailsServiceController {
 	public String deleteEmployeeDetails(@PathVariable int id) {
 		return employeeDetailsService.deleteEmployeeDetails(id);
 	}
-	@RequestMapping
+	@RequestMapping("getemployeedetail/{id}")
 	public Optional<EmployeeDetails> getEmployeeDetails(int id){
 		return employeeDetailsService.getEmployeeDetails(id);
 	}
-	public String updateEmployeeDetails(EmployeeDetails employee,int id) {
+	@RequestMapping(method=RequestMethod.POST,value="/updateemployee/{id}")
+	public String updateEmployeeDetails(@RequestBody EmployeeDetails employee,int id) {
 		return employeeDetailsService.updateEmployeeDetails(employee, id);
 	}
+	@RequestMapping("/getallemployee")
 	public List<EmployeeDetails> getAllEmployeeDetails(){
 		return employeeDetailsService.getAllEmployeeDetails();
 	}
