@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+
 @Entity
 public class EmployeeDetails {
 	

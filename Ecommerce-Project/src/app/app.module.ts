@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { HttpModule} from '@angular/http';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
     AddVendorComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(appRoutes),HttpModule
+    BrowserModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(appRoutes),HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

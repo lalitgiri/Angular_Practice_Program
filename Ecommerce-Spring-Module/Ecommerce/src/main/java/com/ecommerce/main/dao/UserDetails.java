@@ -29,6 +29,7 @@ public class UserDetails {
 	private String name;
 	private String emailId; 
 	
+	
 	private String password;
 
 	@OneToMany(mappedBy="userId")
