@@ -1,20 +1,23 @@
-/*package com.ecommerce.main;
+package com.ecommerce.main;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-	@Configuration
-	public class CORSConfiguration implements WebMvcConfigurer {
+@Configuration
+public class CORSConfiguration {
 
+ @Bean
+ public WebMvcConfigurer corsConfigurer() {
+   return new WebMvcConfigurerAdapter() {
+     @Override
+     public void addCorsMappings(final CorsRegistry registry) {
+       registry.addMapping("/**").allowedMethods("*");
+     }
+   };
+ }
 
-		@Bean
-		CorsConfiguration cors() {
-		        config.addAllowedOrigin("http://domain1.com");
-		        config.addAllowedHeader("header1");
-		}
-	}
-
-
-*/
+}

@@ -20,8 +20,8 @@ public class ProductTable {
 	private String productName;
 	private String productCategory;
 	private int productQuantity;
-	private String productPrice;
-	private Blob description;
+	private int productPrice;
+	private String description;
 	private String imageUrl;
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
@@ -60,17 +60,17 @@ public class ProductTable {
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	public String getProductPrice() {
+	public int getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(String productPrice) {
+	public void setProductPrice(int productPrice) {
 		this.productPrice = productPrice;
 	}
 	
-	public Blob getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public void setDescription(Blob description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	public String getImageUrl() {
