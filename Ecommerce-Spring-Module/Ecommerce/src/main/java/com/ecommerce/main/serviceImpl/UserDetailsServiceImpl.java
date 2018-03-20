@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,8 +52,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		List <UserDetails> userList = new ArrayList<>();
 		userDetailsReposiotory.findAll().
 		forEach(userList::add);
-				
-		
+					
 		if(userList== null) 
 			return  null;
 		return userList;

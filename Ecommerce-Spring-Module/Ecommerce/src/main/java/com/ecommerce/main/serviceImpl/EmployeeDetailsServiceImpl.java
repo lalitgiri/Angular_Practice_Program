@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.EmployeeDetails;
-import com.ecommerce.main.dao.UserDetails;
 import com.ecommerce.main.reposiotory.EmployeeDetailReposiotory;
 import com.ecommerce.main.service.EmployeeDetailsService;
 

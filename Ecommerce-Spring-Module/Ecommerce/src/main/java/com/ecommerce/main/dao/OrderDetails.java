@@ -3,7 +3,6 @@ package com.ecommerce.main.dao;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
 
 @Entity
 public class OrderDetails {
