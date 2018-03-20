@@ -40,23 +40,23 @@ export class AddVendorComponent implements OnInit {
     }];
     */
     this.data = 
-      [{ "employeeName": employee.employeeName,
+      { "employeeName": employee.employeeName,
         "employeeRole": employee.employeeRole,
         "contactNumber": employee.contactNumber,
         "address": employee.address,
         "status": "true",
         "joiningDate": employee.joiningDate,
         "resigningDate": "null"
-      }];
-    const body = JSON.stringify(employee);
-    const  headers = new Headers({ 'Content-Type': 'application/json' });
+      };
+    const body = JSON.stringify(this.data);
+    console.log(body);
+    const  headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });    //x-www-form-urlencoded
     //  headers.append('Access-Control-Allow-Origin','*');
     let options = new RequestOptions({
       headers: headers,
     });
 
-    console.log(this.body);
-    this.http.post('http://localhost:8080/addemployee',this.data,headers).subscribe((response: Response) => { console.log(response) });
+    this.http.post('http://localhost:8080/addemployee',body, options).subscribe((response: Response) => { console.log(response) });
   }
 }
 
