@@ -21,7 +21,15 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
 
 const appRoutes: Routes = [
-  {path:'admin',component:AdminComponent},
+  {path:'admin',component:AdminComponent,
+      children: [
+    { path: 'addUser',component:AddVendorComponent, outlet:'admin'},
+    { path: 'modifyProduct',component:UpdateProductComponent, outlet:'admin'},
+    { path: 'delete',component:DeleteComponent, outlet:'admin'},
+    { path: 'order',component:OrderDetailComponent, outlet:'admin'},
+    { path: 'addProduct',component:AddProductComponent, outlet:'admin'}
+  ]
+},
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
