@@ -48,7 +48,7 @@ export class AddVendorComponent implements OnInit {
         "joiningDate": employee.joiningDate,
         "resigningDate": "null"
       }];
-    const body = JSON.stringify(this.data);
+    const body = JSON.stringify(employee);
     const  headers = new Headers({ 'Content-Type': 'application/json' });
     //  headers.append('Access-Control-Allow-Origin','*');
     let options = new RequestOptions({
