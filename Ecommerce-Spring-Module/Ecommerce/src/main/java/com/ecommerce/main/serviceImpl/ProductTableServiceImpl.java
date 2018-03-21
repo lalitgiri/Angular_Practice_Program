@@ -24,8 +24,12 @@ public class ProductTableServiceImpl implements ProductTableService {
 	
 	
 	public String deleteProduct(int id){
-		productTableRepository.deleteById(id);
-		return "SucessFully Deleted";
+		if(productTableRepository.existsById(id)){
+			productTableRepository.deleteById(id);
+			return "SucessFully Deleted";
+		}
+		return "Product NotFound";
+		
 	}
 	
 	public Optional<ProductTable> getProductDetails(int id) {
