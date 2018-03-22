@@ -10,6 +10,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private router:Router) { }
   status:String="Welcome";
+
   ngOnInit() {
   }
   operation(link) {
