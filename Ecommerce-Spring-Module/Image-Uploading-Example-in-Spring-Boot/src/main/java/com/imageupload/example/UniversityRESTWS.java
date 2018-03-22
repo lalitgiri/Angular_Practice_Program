@@ -16,14 +16,20 @@ import org.springframework.web.multipart.MultipartFile;
 public class UniversityRESTWS {
 
 	@RequestMapping(value="/upload",method=RequestMethod.POST)
-	public ResponseEntity<Object> uploadFile(@RequestParam("file") MultipartFile file) throws IOException{
+	public String uploadFile(@RequestParam("file") MultipartFile file) {
 		File convertFile=new File(URLPaths.IMG_PATH+file.getOriginalFilename());
 		System.out.println(URLPaths.IMG_PATH+file.getOriginalFilename());
 		convertFile.getParentFile().mkdirs();
-		convertFile.createNewFile();
-		FileOutputStream fout =new FileOutputStream(convertFile);
-		fout.write(file.getBytes());
-		fout.close();
-		return new ResponseEntity<>("File Is Uploaded Sucessfully", HttpStatus.OK);
+		try {
+			convertFile.createNewFile();
+			FileOutputStream fout =new FileOutputStream(convertFile);
+			fout.write(file.getBytes());
+			fout.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			return "IO Error";
+		}
+		
+		return "File Is Uploaded Sucessfully";
 	}
 }
