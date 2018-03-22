@@ -14,8 +14,8 @@ export class AppComponent {
   constructor(private http :HttpClient ){}
   onFileSelected(event){
     console.log(event);
-    
     this.selectedFile= [];
+    
     this.selectedFile[0]=<File>event.target.files[0];
     this.selectedFile[1]=<File>event.target.files[1];
   }
@@ -23,8 +23,7 @@ export class AppComponent {
     if(this.flag==true)
     {
       for(this.i=0;this.i<2;this.i++){
-        
-        let fd = new FormData();
+      let fd = new FormData();
       fd.append('file',this.selectedFile[this.i],this.selectedFile[this.i].name);
       debugger;
       this.http.post('http://localhost:8080/upload',fd, {responseType: 'text'}).subscribe((res)=>console.log(res));
