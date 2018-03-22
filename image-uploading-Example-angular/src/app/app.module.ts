@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { HelloComponent } from './test/hello/hello.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
