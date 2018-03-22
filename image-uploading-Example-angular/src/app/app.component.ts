@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http';
 
+import { Button } from 'protractor';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -39,6 +41,7 @@ export class AppComponent {
       console.log(fd);
       this.http.post('http://localhost:8080/upload',fd, {responseType: 'text'}).subscribe((res)=>console.log(res));
           console.log("hello"+this.count+"  ");
+        
        }   }
   }
 }
