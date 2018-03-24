@@ -1,6 +1,5 @@
 package com.ecommerce.main.dao;
 
-import java.sql.Blob;
 import java.util.List;
 
 import javax.persistence.Entity;
