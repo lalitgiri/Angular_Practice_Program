@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.main.dao.EmployeeDetails;
@@ -20,7 +21,7 @@ public class EmployeeDetailsServiceController {
 	private EmployeeDetailsService employeeDetailsService;
 	
 	@RequestMapping(method=RequestMethod.POST,value="/addemployee")
-	public String addEmployeeDetails(@RequestBody EmployeeDetails employee) throws Exception{
+	public @ResponseBody String addEmployeeDetails(@RequestBody EmployeeDetails employee) throws Exception{
 		return employeeDetailsService.addEmployeeDetails(employee);
 	}
 	@RequestMapping("/deleteemployee/{id}")

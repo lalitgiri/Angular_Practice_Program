@@ -21,7 +21,7 @@ public class UniversityRESTWS {
 		if(pic!=null)
 		{
 			System.out.println("Inside pic uploading block .");
-			File convertFile=new File(URLPaths.IMG_PATH+pic.getOriginalFilename());
+			File convertFile=new File(URLPaths.IMG_PATH+"/hello/"+pic.getOriginalFilename());
 			System.out.println(URLPaths.IMG_PATH+pic.getOriginalFilename());
 			convertFile.getParentFile().mkdirs();
 			
@@ -33,29 +33,13 @@ public class UniversityRESTWS {
 		}
 		return "not";
 	}
-	public String upload()  throws IOException {
-	/*	System.out.println("Inside pic uploading block .");
-		File convertFile=new File(URLPaths.IMG_PATH+pic.getOriginalFilename());
-		System.out.println(URLPaths.IMG_PATH+pic.getOriginalFilename());
-		convertFile.getParentFile().mkdirs();
-		
-		convertFile.createNewFile();
-		FileOutputStream fout1 =new FileOutputStream(convertFile);
-		fout1.write(pic.getBytes());
-		fout1.close();*/
-		return "Image Is store Sucessfully";
-		
-	}
-	
 	@RequestMapping(value="/uploaddata",method=RequestMethod.POST)
 	public String uploadData(@RequestBody byte[] abc ) throws IOException {
 		
 			FileOutputStream fout = new FileOutputStream("datafile.txt");
 			fout.write(abc);
 			fout.close();
-				
-			String s=upload();
 			
-		return "File Is Uploaded Sucessfully"+s;
+		return "File Is Uploaded Sucessfully";
 	}
 }

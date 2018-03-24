@@ -6,18 +6,27 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.ecommerce.main.controllers.URLPaths;
 
 @Controller
 public class FileUploadController {
 
-    @RequestMapping(value="/upload",method=RequestMethod.POST)
-	public String uploadFile(@RequestParam("file") MultipartFile file) {
-		File convertFile=new File(URLPaths.IMG_PATH+file.getOriginalFilename());
-		System.out.println(URLPaths.IMG_PATH+file.getOriginalFilename());
+    @RequestMapping(value="/upload/{subdir}",method=RequestMethod.POST)
+	public @ResponseBody String uploadFile(@RequestParam("file") MultipartFile file,@PathVariable String subdir) {
+	
+    	//path of the directory..
+    	String url= URLPaths.IMG_PATH+subdir+"/"+file.getOriginalFilename();
+    
+    	File convertFile=new File(url);
+		System.out.println(url);
 		convertFile.getParentFile().mkdirs();
 		try {
 			convertFile.createNewFile();
@@ -29,7 +38,8 @@ public class FileUploadController {
 			return "IO Error";
 		}
 		
-		return "File Is Uploaded Sucessfully";
+		return url;
+		
 	}
-
+    
 }

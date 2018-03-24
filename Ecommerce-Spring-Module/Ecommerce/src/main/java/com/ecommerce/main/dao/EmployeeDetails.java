@@ -19,6 +19,9 @@ public class EmployeeDetails {
 	private String employeeRole;
 	private long contactNumber;
 	private String address;
+	private Date dob;
+	private String password;
+	private String empImageUrl;
 	private boolean status;
 	private Date joiningDate,resigningDate;
 	
@@ -81,4 +84,24 @@ public class EmployeeDetails {
 		this.status = status;
 	}
 	
+	public String getEmpImageUrl() {
+		return empImageUrl;
+	}
+	public void setEmpImageUrl(String empImageUrl) {
+		this.empImageUrl = empImageUrl;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }
+
