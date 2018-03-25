@@ -1,51 +1,50 @@
-product_id,product_name,product_category,product_quantity,product_price,description,image_url
-1,Wine - Fino Tio Pepe Gonzalez,grocery,39,1075,,
-2,Bread - French Stick,grocery,12,1906,,
-3,Table Cloth 91x91 Colour,grocery,12,73,,
-4,Glass Clear 8 Oz,grocery,96,1202,,
-5,Onions - Red Pearl,grocery,7,1807,,
-6,Ham - Cooked,grocery,21,782,,
-7,Bread - Multigrain Oval,grocery,20,622,,
-8,"Chicken - Diced, Cooked",grocery,89,921,,
-9,Roe - Flying Fish,grocery,9,1330,,
-10,Gatorade - Lemon Lime,grocery,60,131,,
-11,Pork - Bacon Cooked Slcd,grocery,39,1437,,
-12,Carbonated Water - Lemon Lime,grocery,4,72,,
-13,Bread - Sour Sticks With Onion,grocery,22,1555,,
-14,"Brownies - Two Bite, Chocolate",grocery,42,501,,
-15,Taro Leaves,grocery,18,1339,,
-16,Flower - Leather Leaf Fern,grocery,99,468,,
-17,"Beef - Chuck, Boneless",grocery,46,1703,,
-18,Pie Filling - Apple,grocery,41,1441,,
-19,Lid Tray - 12in Dome,grocery,61,841,,
-20,Bread Base - Italian,grocery,20,1282,,
-21,Flour - Teff,grocery,4,1609,,
-22,French Kiss Vanilla,grocery,85,738,,
-23,Beef - Flank Steak,grocery,53,1476,,
-24,Table Cloth 62x120 White,grocery,46,186,,
-25,"Wine - Red, Wolf Blass, Yellow",grocery,87,349,,
-26,Long Island Ice Tea,grocery,5,1739,,
-27,Pumpkin,grocery,7,1542,,
-28,Apricots Fresh,grocery,77,1992,,
-29,Sage - Fresh,grocery,7,1668,,
-30,Tandoori Curry Paste,grocery,66,858,,
-31,Wooden Mop Handle,grocery,63,1001,,
-32,"Soup - Campbells, Classic Chix",grocery,45,680,,
-33,Garlic - Elephant,grocery,82,457,,
-34,"Lamb - Whole Head Off,nz",grocery,28,1829,,
-35,Arizona - Green Tea,grocery,100,1645,,
-36,Magnotta - Bel Paese White,grocery,49,488,,
-37,Plaintain,grocery,63,805,,
-38,Salmon - Sockeye Raw,grocery,82,905,,
-39,Pate Pans Yellow,grocery,76,1484,,
-40,Sobe - Orange Carrot,grocery,33,1683,,
-41,"Cup - 6oz, Foam",grocery,81,1946,,
-42,Brandy Cherry - Mcguinness,grocery,43,1665,,
-43,Tea Peppermint,grocery,48,1675,,
-44,"Ecolab - Orange Frc, Cleaner",grocery,52,161,,
-45,Sage - Fresh,grocery,13,1109,,
-46,Veal - Provimi Inside,grocery,99,1170,,
-47,Grapes - Green,grocery,46,249,,
-48,"Glass - Wine, Plastic, Clear 5 Oz",grocery,55,1697,,
-49,Cocoa Powder - Natural,grocery,63,1326,,
-50,"Veal - Shank, Pieces",grocery,92,385,,
+56,,,grocery,Wine - Fino Tio Pepe Gonzalez,1075,39,6
+57,,,grocery,Bread - French Stick,1906,12,6
+58,,,grocery,Table Cloth 91x91 Colour,73,12,6
+59,,,grocery,Glass Clear 8 Oz,1202,96,6
+60,,,grocery,Onions - Red Pearl,1807,7,6
+61,,,grocery,Ham - Cooked,782,21,6
+62,,,grocery,Bread - Multigrain Oval,622,20,6
+63,,,grocery,"Chicken - Diced, Cooked",921,89,6
+64,,,grocery,Roe - Flying Fish,1330,9,6
+65,,,grocery,Gatorade - Lemon Lime,131,60,6
+66,,,grocery,Pork - Bacon Cooked Slcd,1437,39,6
+67,,,grocery,Carbonated Water - Lemon Lime,72,4,6
+68,,,grocery,Bread - Sour Sticks With Onion,1555,22,6
+69,,,grocery,"Brownies - Two Bite, Chocolate",501,42,6
+70,,,grocery,Taro Leaves,1339,18,6
+71,,,grocery,Flower - Leather Leaf Fern,468,99,6
+72,,,grocery,"Beef - Chuck, Boneless",1703,46,6
+73,,,grocery,Pie Filling - Apple,1441,41,6
+74,,,grocery,Lid Tray - 12in Dome,841,61,6
+75,,,grocery,Bread Base - Italian,1282,20,6
+76,,,grocery,Flour - Teff,1609,4,6
+77,,,grocery,French Kiss Vanilla,738,85,6
+78,,,grocery,Beef - Flank Steak,1476,53,6
+79,,,grocery,Table Cloth 62x120 White,186,46,6
+80,,,grocery,"Wine - Red, Wolf Blass, Yellow",349,87,6
+81,,,grocery,Long Island Ice Tea,1739,5,6
+82,,,grocery,Pumpkin,1542,7,6
+83,,,grocery,Apricots Fresh,1992,77,6
+84,,,grocery,Sage - Fresh,1668,7,6
+85,,,grocery,Tandoori Curry Paste,858,66,6
+86,,,grocery,Wooden Mop Handle,1001,63,6
+87,,,grocery,"Soup - Campbells, Classic Chix",680,45,6
+88,,,grocery,Garlic - Elephant,457,82,6
+89,,,grocery,"Lamb - Whole Head Off,nz",1829,28,6
+90,,,grocery,Arizona - Green Tea,1645,100,6
+91,,,grocery,Magnotta - Bel Paese White,488,49,6
+92,,,grocery,Plaintain,805,63,6
+93,,,grocery,Salmon - Sockeye Raw,905,82,6
+94,,,grocery,Pate Pans Yellow,1484,76,6
+95,,,grocery,Sobe - Orange Carrot,1683,33,6
+96,,,grocery,"Cup - 6oz, Foam",1946,81,6
+97,,,grocery,Brandy Cherry - Mcguinness,1665,43,6
+98,,,grocery,Tea Peppermint,1675,48,6
+99,,,grocery,"Ecolab - Orange Frc, Cleaner",161,52,6
+100,,,grocery,Sage - Fresh,1109,13,6
+101,,,grocery,Veal - Provimi Inside,1170,99,6
+102,,,grocery,Grapes - Green,249,46,6
+103,,,grocery,"Glass - Wine, Plastic, Clear 5 Oz",1697,55,6
+104,,,grocery,Cocoa Powder - Natural,1326,63,6
+105,,,grocery,"Veal - Shank, Pieces",385,92,6

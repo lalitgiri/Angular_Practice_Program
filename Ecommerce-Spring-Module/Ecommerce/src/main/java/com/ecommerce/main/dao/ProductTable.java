@@ -18,8 +18,8 @@ public class ProductTable {
 	private int productId;    		//primaryKey
 	private String productName;
 	private String productCategory;
-	private int productQuantity;
-	private int productPrice;
+	private long productQuantity;
+	private long productPrice;
 	private String description;
 	private String imageUrl;
 	@ManyToOne
@@ -53,16 +53,16 @@ public class ProductTable {
 	public void setProductCategory(String productCategory) {
 		this.productCategory = productCategory;
 	}
-	public int getProductQuantity() {
+	public long getProductQuantity() {
 		return productQuantity;
 	}
-	public void setProductQuantity(int productQuantity) {
+	public void setProductQuantity(long productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	public int getProductPrice() {
+	public long getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(int productPrice) {
+	public void setProductPrice(long productPrice) {
 		this.productPrice = productPrice;
 	}
 	

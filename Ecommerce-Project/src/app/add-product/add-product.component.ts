@@ -50,7 +50,7 @@ export class AddProductComponent implements OnInit {
               "productCategory": product.productCategory,
               "productQuantity": product.productQuantity,
               "productPrice": product.productPrice,
-              "productDescription":product.description,
+              "description":product.description,
               "imageUrl":this.imgUrl,
               "cartId":null
             };

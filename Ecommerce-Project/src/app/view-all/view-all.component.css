@@ -15,6 +15,10 @@
 .sub-div-list:hover{
     
     border:0.2vw solid red;
-    
-    
+   
+}
+
+.imageAlign{
+    height: 100%;
+    width:100%;
 }

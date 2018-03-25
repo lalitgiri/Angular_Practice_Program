@@ -20,6 +20,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { DeleteComponent } from './delete/delete.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
+import { ExportDataBaseComponent } from './export-data-base/export-data-base.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -28,7 +29,9 @@ const appRoutes: Routes = [
     { path: 'modifyProduct',component:UpdateProductComponent, outlet:'admin'},
     { path: 'delete',component:DeleteComponent, outlet:'admin'},
     { path: 'order',component:OrderDetailComponent, outlet:'admin'},
-    { path: 'addProduct',component:AddProductComponent, outlet:'admin'}
+    { path: 'addProduct',component:AddProductComponent, outlet:'admin'},
+    { path: 'exportdatabase',component:ExportDataBaseComponent, outlet:'admin'}
+
   ]},
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
@@ -51,7 +54,8 @@ const appRoutes: Routes = [
     WelcomeComponent,
     DeleteComponent,
     OrderDetailComponent,
-    AddVendorComponent
+    AddVendorComponent,
+    ExportDataBaseComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(appRoutes),HttpModule,HttpClientModule

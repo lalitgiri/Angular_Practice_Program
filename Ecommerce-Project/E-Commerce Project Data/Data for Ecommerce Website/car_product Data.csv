@@ -1,51 +1,51 @@
-product_id,product_name,product_category,product_quantity,product_price,description,image_url
-1,Nissan,cars,21,921050,Sentra,
-2,BMW,cars,99,990036,M3,
-3,Honda,cars,59,1998677,CR-V,
-4,Mazda,cars,86,1787996,MX-6,
-5,Dodge,cars,57,1832837,Ram 3500,
-6,Hyundai,cars,23,918305,Azera,
-7,Plymouth,cars,73,1302598,Prowler,
-8,Ford,cars,76,1512429,E-Series,
-9,Honda,cars,86,1232462,Passport,
-10,Mitsubishi,cars,30,1695227,Mirage,
-11,Audi,cars,91,676035,S4,
-12,Mazda,cars,92,1279428,626,
-13,Saab,cars,7,1506694,5-Sep,
-14,Mercury,cars,33,1510173,Tracer,
-15,Plymouth,cars,70,1870433,Grand Voyager,
-16,BMW,cars,81,1596960,3 Series,
-17,Volvo,cars,21,947825,XC90,
-18,Chevrolet,cars,60,1915817,Caprice Classic,
-19,Chevrolet,cars,1,1232808,Silverado 1500,
-20,Mitsubishi,cars,40,1507115,GTO,
-21,Dodge,cars,36,1688893,Viper,
-22,Acura,cars,38,1177161,MDX,
-23,GMC,cars,66,1703823,2500,
-24,Honda,cars,91,1451849,CR-V,
-25,Dodge,cars,79,1298285,Ram 1500,
-26,Cadillac,cars,97,1287830,SRX,
-27,Lexus,cars,42,1539381,LS,
-28,Nissan,cars,17,982374,Versa,
-29,Dodge,cars,97,852578,Dakota Club,
-30,Acura,cars,36,1015410,NSX,
-31,Bentley,cars,71,1187989,Arnage,
-32,BMW,cars,100,1018760,M5,
-33,Mercedes-Benz,cars,9,1198613,M-Class,
-34,BMW,cars,44,1945695,3 Series,
-35,Volkswagen,cars,40,1235987,Eos,
-36,Mercedes-Benz,cars,94,1200726,W201,
-37,Infiniti,cars,87,1869319,M,
-38,Aston Martin,cars,2,621909,DB9,
-39,Mitsubishi,cars,36,646206,Mirage,
-40,Alfa Romeo,cars,40,1666849,164,
-41,Kia,cars,2,663624,Sportage,
-42,Mazda,cars,57,1046659,CX-9,
-43,Chrysler,cars,96,518280,Concorde,
-44,Chevrolet,cars,5,1123584,Tahoe,
-45,Audi,cars,81,1218894,A4,
-46,Mazda,cars,6,1729217,626,
-47,Lincoln,cars,36,1530539,Town Car,
-48,Mercedes-Benz,cars,59,1547056,M-Class,
-49,Dodge,cars,65,1376138,D250 Club,
-50,Dodge,cars,16,1119549,Charger,
+product_id,description,image_url,product_category,product_name,product_price,product_quantity,employeeid
+1,Sentra,[null],cars,Nissan,921050,21,6
+2,M3,[null],cars,BMW,990036,99,6
+3,CR-V,[null],cars,Honda,1998677,59,6
+4,MX-6,[null],cars,Mazda,1787996,86,6
+5,Ram 3500,[null],cars,Dodge,1832837,57,6
+6,Azera,[null],cars,Hyundai,918305,23,6
+7,Prowler,[null],cars,Plymouth,1302598,73,6
+8,E-Series,[null],cars,Ford,1512429,76,6
+9,Passport,[null],cars,Honda,1232462,86,6
+10,Mirage,[null],cars,Mitsubishi,1695227,30,6
+11,S4,[null],cars,Audi,676035,91,6
+12,626,[null],cars,Mazda,1279428,92,6
+13,5-Sep,[null],cars,Saab,1506694,7,6
+14,Tracer,[null],cars,Mercury,1510173,33,6
+15,Grand Voyager,[null],cars,Plymouth,1870433,70,6
+16,3 Series,[null],cars,BMW,1596960,81,6
+17,XC90,[null],cars,Volvo,947825,21,6
+18,Caprice Classic,[null],cars,Chevrolet,1915817,60,6
+19,Silverado 1500,[null],cars,Chevrolet,1232808,1,6
+20,GTO,[null],cars,Mitsubishi,1507115,40,6
+21,Viper,[null],cars,Dodge,1688893,36,6
+22,MDX,[null],cars,Acura,1177161,38,6
+23,2500,[null],cars,GMC,1703823,66,6
+24,CR-V,[null],cars,Honda,1451849,91,6
+25,Ram 1500,[null],cars,Dodge,1298285,79,6
+26,SRX,[null],cars,Cadillac,1287830,97,6
+27,LS,[null],cars,Lexus,1539381,42,6
+28,Versa,[null],cars,Nissan,982374,17,6
+29,Dakota Club,[null],cars,Dodge,852578,97,6
+30,NSX,[null],cars,Acura,1015410,36,6
+31,Arnage,[null],cars,Bentley,1187989,71,6
+32,M5,[null],cars,BMW,1018760,100,6
+33,M-Class,[null],cars,Mercedes-Benz,1198613,9,6
+34,3 Series,[null],cars,BMW,1945695,44,6
+35,Eos,[null],cars,Volkswagen,1235987,40,6
+36,W201,[null],cars,Mercedes-Benz,1200726,94,6
+37,M,[null],cars,Infiniti,1869319,87,6
+38,DB9,[null],cars,Aston Martin,621909,2,6
+39,Mirage,[null],cars,Mitsubishi,646206,36,6
+40,164,[null],cars,Alfa Romeo,1666849,40,6
+41,Sportage,[null],cars,Kia,663624,2,6
+42,CX-9,[null],cars,Mazda,1046659,57,6
+43,Concorde,[null],cars,Chrysler,518280,96,6
+44,Tahoe,[null],cars,Chevrolet,1123584,5,6
+45,A4,[null],cars,Audi,1218894,81,6
+46,626,[null],cars,Mazda,1729217,6,6
+47,Town Car,[null],cars,Lincoln,1530539,36,6
+48,M-Class,[null],cars,Mercedes-Benz,1547056,59,6
+49,D250 Club,[null],cars,Dodge,1376138,65,6
+50,Charger,[null],cars,Dodge,1119549,16,6
