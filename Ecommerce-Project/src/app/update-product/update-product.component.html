@@ -1,5 +1,5 @@
-
-<h3 class="font-size">Modify Product Details</h3>
+<h3 class="font-size">
+  Modify Product Details</h3>
 <br/>
 
 
@@ -7,7 +7,7 @@
   <div class="table-responsive">
     <table class="table">
       <thead>
-        <tr >
+        <tr>
           <th>Product Id</th>
           <th>Product Name</th>
           <th>Product Category</th>
@@ -19,138 +19,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>2</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
+        <tr *ngFor="let data of itemData">
+          <td>{{data.productId}}</td>
+          <td>{{data.productName}}</td>
+          <td>{{data.productCategory}}</td>
+          <td>{{data.productQuantity}}</td>
+          <td>Rs. {{data.productPrice}}</td>
+          <td>null</td>
+          <td>{{data.description}}</td>
+          <td>{{data.imageUrl}}</td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>Samsung</td>
-          <td>Mobile</td>
-          <td>10</td>
-          <td>20000</td>
-          <td>10000</td>
-          <td>Good</td>
-          <td>Image url</td>
-        </tr>
-
       </tbody>
     </table>
   </div>
@@ -160,7 +38,7 @@
 <br/>
 <h3>Update details</h3>
 <br/>
-<form  class="row container">
+<form class="row container">
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productName " class="col">Product Name : </label>
@@ -202,9 +80,9 @@
     <textarea rows="4" cols="50" class="col"></textarea>
   </div>
 
-  
-  
-  <div  class="col-sm-6 row bottom-margin button-div">
+
+
+  <div class="col-sm-6 row bottom-margin button-div">
     <span class="  col-sm-6 ">
       <input type="submit" value=" Update " class="btn" />
     </span>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  itemData:any;
+  constructor(private http:Http) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+    this.http.get("http://localhost:8080/getallproduct").
+  map(response=>response.json()).
+  subscribe(data => this.itemData=data);
   }
 
 }

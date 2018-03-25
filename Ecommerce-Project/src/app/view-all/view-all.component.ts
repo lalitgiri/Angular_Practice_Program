@@ -12,10 +12,6 @@ export class ViewAllComponent implements OnInit {
   itemData;
  
   ngOnInit() {
-    this.http.get("../../assets/test-files/category.json").
-    map(response=>response.json()).
-    subscribe(data => this.httpData=data);
-
     this.http.get("http://localhost:8080/getallproduct").
     map(response=>response.json()).
     subscribe(data => this.itemData=data);
