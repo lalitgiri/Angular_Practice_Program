@@ -21,6 +21,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
 import { ExportDataBaseComponent } from './export-data-base/export-data-base.component';
+import { HomeChildComponent } from './home-child/home-child.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -55,7 +56,8 @@ const appRoutes: Routes = [
     DeleteComponent,
     OrderDetailComponent,
     AddVendorComponent,
-    ExportDataBaseComponent
+    ExportDataBaseComponent,
+    HomeChildComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(appRoutes),HttpModule,HttpClientModule

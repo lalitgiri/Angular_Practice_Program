@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   httpData=[];
   itemData;
   url=environment.serverUrl;
-  
+  i=0;
   id=0;
   
   ngOnInit() {
@@ -22,15 +22,14 @@ export class HomeComponent implements OnInit {
     subscribe(data => {
       this.httpData=data
     });
-  }
-  getData(category)
-  {
-    this.http.get(environment.serverUrl+"getproductbycategory/"+category).
-    // this.http.get(environment.serverUrl+"getallproduct").
-     map(response=>response.json()).
-     subscribe(data => {this.itemData=data
-     console.log(category); 
-     
-     } );
+
+    this.http.get(environment.serverUrl+"getproductbycategory/"+this.httpData[this.i]).
+    //this.http.get(environment.serverUrl+"getallproduct").
+    map(response=>response.json()).
+    subscribe(data => {this.itemData=data
+      this.i++;
+      console.log(this.httpData[this.i]);
+  } ); 
+
   }
 }

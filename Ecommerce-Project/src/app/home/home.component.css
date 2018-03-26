@@ -13,19 +13,21 @@
     
   
 }
-
-.imageAlign{
-    border-radius: 0.5vw;
-    height: auto;
-    width:100%;
-}
 .sub-div{   
     height:25vw;
     background: tan;
   }
-  .ccdiv{
-    padding:1vw;
+.scroll{
+    overflow: scroll;
+    padding:2vw;
+   
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 1vw;
+    background: rosybrown; /* make scrollbar transparent */
+}
+
 .sub-div-list{
     height:20vw;
     width:20vw;
@@ -44,13 +46,14 @@
     width:22vw;
     
 }
-.scroll{
-    overflow: scroll;
-    padding:2vw;
-   
-    overflow-x: hidden;
+
+.ccdiv{
+    padding:1vw;
 }
-::-webkit-scrollbar {
-    width: 1vw;
-    background: rosybrown; /* make scrollbar transparent */
+
+
+.imageAlign{
+    border-radius: 0.5vw;
+    height: auto;
+    width:100%;
 }
