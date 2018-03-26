@@ -43,10 +43,10 @@
     </div>
   </div>
    
-  <div class="col-sm-9 row scroll"  (mouseenter)="getData(category)">
+  <div class="col-sm-9 row scroll">
     <div *ngFor="let data of itemData" class="sub-div-list">
       <img src="{{url}}images/{{data.imageUrl}}" class="imageAlign" >
-      <div class="ccdiv">
+      <div class="ccdiv" (change)="getData(category)">
           <h4>{{data.productName}}</h4>
           <h6>Rs. {{data.productPrice}}</h6>
         </div>
