@@ -36,14 +36,14 @@
 
 
 <div class="row  div-list" *ngFor="let category of httpData" >
-  <div class="col-sm-3 sub-div"  (mouseenter)="getData(category)">
+  <div class="col-sm-3 sub-div" >
     <div>
       <!--<button class="btn btn-info" [routerLink]="['/viewAll/{{data.name}}']" id="{{data.name}}" style="margin:4vw;">{{data.name}}</button>-->
       <button class="btn btn-info" [routerLink]="['/viewAll',category]" style="margin:4vw;">{{category}}</button>
     </div>
   </div>
    
-  <div class="col-sm-9 row scroll">
+  <div class="col-sm-9 row scroll"  (mouseenter)="getData(category)">
     <div *ngFor="let data of itemData" class="sub-div-list">
       <img src="{{url}}images/{{data.imageUrl}}" class="imageAlign" >
       <div class="ccdiv">
