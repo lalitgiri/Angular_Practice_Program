@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {  Response } from "@angular/http";
 import { HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/catch';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-add-vendor',
   templateUrl: './add-vendor.component.html',
@@ -14,6 +15,7 @@ export class AddVendorComponent implements OnInit {
   selectedFile: any;
   imgUrl:string=null;
   flag:boolean=false;
+  url=environment.serverUrl;
   ngOnInit() {
   }
 
@@ -23,7 +25,7 @@ export class AddVendorComponent implements OnInit {
     this.selectedFile = <File>event.target.files[0];
     let fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
-     this.http.post('http://localhost:8080/upload/employee_images', fd, { responseType: 'text' })
+     this.http.post(environment.serverUrl+'upload/employee_images', fd, { responseType: 'text' })
       .subscribe((res) => {
         this.imgUrl=res
               console.log(res+" $$  "+ this.imgUrl)
@@ -56,7 +58,8 @@ onSubmit = function (employee) {
     // headers.append('Access-Control-Allow-Origin','*');
     // let options = new RequestOptions({ headers: headers });
     // this.http.post('http://localhost:8080/addemployee',this.data,headers).subscribe((response: Response) => { console.log(response) });
-  this.http.post('http://localhost:8080/addemployee', this.data, { responseType: 'text' }).subscribe((response: Response) => { console.log(response) });
+  this.http.post(environment.serverUrl+'addemployee', this.data, { responseType: 'text' })
+  .subscribe((response: Response) => { alert(response); });
   }
 }
 }

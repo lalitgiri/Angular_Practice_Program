@@ -9,6 +9,14 @@
     height:91vh;
     
 }
+.menu_links {
+     cursor: pointer;
+}
+
+.menu_links:hover{
+   color:black;
+}
+
 ul{
     text-align:center;
 }

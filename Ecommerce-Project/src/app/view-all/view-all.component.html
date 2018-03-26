@@ -1,7 +1,11 @@
 
-<div class="jumbotron cdiv">
+<div class="cdiv">
 <div  *ngFor = "let data of itemData" class="sub-div-list"  id="{{data.name}}">
   
-  <img src="http://localhost:8080/images/{{data.imageUrl}}" class="imageAlign"/>
-  {{data.productName}}</div>
+  <img src="{{url}}images/{{data.imageUrl}}" class="imageAlign"/>
+  <div class="ccdiv">
+    <h4>{{data.productName}}</h4>
+    <h6>Rs. {{data.productPrice}}</h6>
+  </div>
+</div>
 </div>

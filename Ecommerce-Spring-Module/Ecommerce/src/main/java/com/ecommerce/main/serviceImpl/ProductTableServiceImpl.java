@@ -53,4 +53,22 @@ public class ProductTableServiceImpl implements ProductTableService {
 		return productList;
 	}
 	
+	public List<String> getAllProductCategory(){
+	  /*List<ProductTable> productList = (List<ProductTable>) productTableRepository.findAll();
+	  List<String> categories = new ArrayList<>();
+	  productList.forEach(p -> {
+		  	if(!categories.contains(p.getProductCategory())) {
+		  		categories.add(p.getProductCategory());
+		  	}
+	  });
+	  return categories;*/
+		return productTableRepository.findCategory();
+	}
+
+
+	@Override
+	public List<ProductTable> getProductByCategory(String category) {
+		return productTableRepository.findByproductCategory(category);
+	}
+	
 }

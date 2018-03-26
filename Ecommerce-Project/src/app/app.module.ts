@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   {path:'description',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'viewAll',component:ViewAllComponent},
+  {path:'viewAll/:id',component:ViewAllComponent},
   { path: '**', component: HomeComponent }
 ];
 

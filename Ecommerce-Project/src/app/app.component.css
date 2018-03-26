@@ -89,6 +89,8 @@ input[type=text]
     user-select: none;
 }
 
+.menu_links {
+    cursor: pointer; }
 .menu{
     margin-left:2vw;
     color:white;

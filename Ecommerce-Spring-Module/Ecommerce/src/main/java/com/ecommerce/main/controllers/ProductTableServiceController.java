@@ -47,4 +47,14 @@ public class ProductTableServiceController {
 		return productTableService.getAllProducts();
 	}
 	
+	@RequestMapping("/getallproductCategory")
+	public List<String> getAllProductCategory(){
+		return productTableService.getAllProductCategory();
+	}
+	
+	@RequestMapping("/getproductbycategory/{category}")
+	public List<ProductTable> getProductByCategory(@PathVariable String category)
+	{
+		return productTableService.getProductByCategory(category);
+	}
 }

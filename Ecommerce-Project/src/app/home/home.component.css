@@ -15,16 +15,17 @@
 }
 
 .imageAlign{
-    height: 100%;
+    border-radius: 0.5vw;
+    height: auto;
     width:100%;
 }
-.sub-div{
-
-   
+.sub-div{   
     height:25vw;
     background: tan;
   }
-  
+  .ccdiv{
+    padding:1vw;
+}
 .sub-div-list{
     height:20vw;
     width:20vw;
@@ -33,7 +34,7 @@
     text-align: center;
     border:0.2vw solid white;
     display: inline-block;
-    background:rgba(210, 180, 140,0.5);
+    background:whitesmoke;
 }
 .sub-div-list:hover{
     

@@ -14,4 +14,7 @@ public interface ProductTableService {
 	public Optional<ProductTable> getProductDetails(int id);
 	public String updateProductDetails(ProductTable product,long id) ;
 	public List<ProductTable> getAllProducts();
+	public List<String> getAllProductCategory();
+
+	public List<ProductTable> getProductByCategory(String category);
 }

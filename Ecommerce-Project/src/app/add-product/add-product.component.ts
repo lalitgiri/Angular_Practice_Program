@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-add-product',
@@ -16,6 +17,7 @@ export class AddProductComponent implements OnInit {
   pCategory:String;
   fileInput:boolean=false;
   fileInputDummy:boolean=true;
+  url=environment.serverUrl;
   constructor(private http:HttpClient ) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class AddProductComponent implements OnInit {
     this.selectedFile = <File>event.target.files[0];
     let fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
-     this.http.post('http://localhost:8080/upload/'+this.pCategory, fd, { responseType: 'text' })
+     this.http.post(environment.serverUrl+'upload/'+this.pCategory, fd, { responseType: 'text' })
       .subscribe((res) => {
         this.imgUrl=res
               console.log(res+" $$  "+ this.imgUrl)
@@ -55,7 +57,7 @@ export class AddProductComponent implements OnInit {
               "cartId":null
             };
             console.log(this.data);
-          this.http.post('http://localhost:8080/addproduct',this.data,{ responseType: 'text' })
+          this.http.post(environment.serverUrl+'addproduct',this.data,{ responseType: 'text' })
           .subscribe((response: Response) => { console.log(response) });
         }
   }

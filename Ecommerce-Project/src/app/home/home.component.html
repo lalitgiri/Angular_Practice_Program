@@ -35,16 +35,21 @@
 
 
 
-<div class="row  div-list" *ngFor="let data of httpData">
-  <div class="col-sm-3 sub-div">
+<div class="row  div-list" *ngFor="let category of httpData" >
+  <div class="col-sm-3 sub-div"  (mouseenter)="getData(category)">
     <div>
-      <button class="btn btn-info" [routerLink]="['/viewAll']" id="{{data.name}}" style="margin:4vw;">{{data.name}}</button>
+      <!--<button class="btn btn-info" [routerLink]="['/viewAll/{{data.name}}']" id="{{data.name}}" style="margin:4vw;">{{data.name}}</button>-->
+      <button class="btn btn-info" [routerLink]="['/viewAll',category]" style="margin:4vw;">{{category}}</button>
     </div>
   </div>
+   
   <div class="col-sm-9 row scroll">
     <div *ngFor="let data of itemData" class="sub-div-list">
-      <img src="http://localhost:8080/images/{{data.imageUrl}}" class="imageAlign" >
-    {{data.productName}}
+      <img src="{{url}}images/{{data.imageUrl}}" class="imageAlign" >
+      <div class="ccdiv">
+          <h4>{{data.productName}}</h4>
+          <h6>Rs. {{data.productPrice}}</h6>
+        </div>
   </div>
   </div>
 

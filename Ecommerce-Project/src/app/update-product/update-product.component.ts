@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-update-product',
@@ -13,7 +14,7 @@ export class UpdateProductComponent implements OnInit {
 
   ngOnInit() {
     
-    this.http.get("http://localhost:8080/getallproduct").
+    this.http.get(environment.serverUrl+"getallproduct").
   map(response=>response.json()).
   subscribe(data => this.itemData=data);
   }
