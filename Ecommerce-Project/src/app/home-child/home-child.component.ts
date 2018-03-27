@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Http } from '@angular/http';
 
+import { ProductCategoryService } from '../services/product-category.service';
 @Component({
   selector: 'app-home-child',
   templateUrl: './home-child.component.html',
@@ -11,20 +12,25 @@ import { Http } from '@angular/http';
 export class HomeChildComponent implements OnInit {
 
   @Input() category: String;
-  constructor(private http:Http) { }
+  constructor(private http:Http,private cdRef:ChangeDetectorRef) { }
   itemData;
+ 
+  static i=0;
   url=environment.serverUrl;
+  dateNow:Date;
   ngOnInit() {
-
+  
   }
   ngOnChanges(changes: SimpleChanges) {
     
-  this.http.get(environment.serverUrl+"getproductbycategory/"+this.category).
-  //this.http.get(environment.serverUrl+"getallproduct").
-  map(response=>response.json()).
-  subscribe(data => {this.itemData=data
-  console.log(this.category);
-} ); 
+     {    this.http.get(environment.serverUrl+"getproductbycategory/"+this.category).
+           //this.http.get(environment.serverUrl+"getallproduct").
+             map(response=>response.json()).
+               subscribe(data => {this.itemData=data
+         
+            } ); 
+      }
 }
+
 
 }

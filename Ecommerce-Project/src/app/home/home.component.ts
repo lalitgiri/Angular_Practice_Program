@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { environment } from '../../environments/environment';
@@ -9,27 +9,21 @@ import { environment } from '../../environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http:Http) { }
+  constructor(private http:Http,private cdRef:ChangeDetectorRef) { }
   httpData=[];
   itemData;
   url=environment.serverUrl;
-  i=0;
-  id=0;
-  
+  dateNow:Date;
   ngOnInit() {
     this.http.get(environment.serverUrl+"getallproductCategory").
     map(response=>response.json()).
     subscribe(data => {
       this.httpData=data
     });
-
-    this.http.get(environment.serverUrl+"getproductbycategory/"+this.httpData[this.i]).
-    //this.http.get(environment.serverUrl+"getallproduct").
-    map(response=>response.json()).
-    subscribe(data => {this.itemData=data
-      this.i++;
-      console.log(this.httpData[this.i]);
-  } ); 
-
-  }
+}
+  ngAfterViewChecked()
+{
+  
+  this.cdRef.detectChanges();
+}
 }
