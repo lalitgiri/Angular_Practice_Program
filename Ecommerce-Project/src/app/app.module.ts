@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     { path: 'exportdatabase',component:ExportDataBaseComponent, outlet:'admin'}
 
   ]},
-  {path:'description',component:DescriptionComponent},
+  {path:'description/:id',component:DescriptionComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'viewAll/:id',component:ViewAllComponent},

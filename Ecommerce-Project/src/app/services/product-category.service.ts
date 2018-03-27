@@ -19,9 +19,8 @@ export class ProductCategoryService {
     map(response=>response.json()).
     subscribe(data => {
       ProductCategoryService.httpData=data;
-      
     });
-    return ProductCategoryService.httpData; 
+    return  ProductCategoryService.httpData; 
     
   }
 

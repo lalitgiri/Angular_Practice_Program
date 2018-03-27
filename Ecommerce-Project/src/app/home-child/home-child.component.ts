@@ -12,24 +12,26 @@ import { ProductCategoryService } from '../services/product-category.service';
 export class HomeChildComponent implements OnInit {
 
   @Input() category: String;
-  constructor(private http:Http,private cdRef:ChangeDetectorRef) { }
+  constructor(private http:Http) { }
   itemData;
  
   static i=0;
   url=environment.serverUrl;
   dateNow:Date;
   ngOnInit() {
-  
+    /*const abc=this.productCategoryService.getCategory();
+    console.log(abc);
+    debugger;*/
   }
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     
-     {    this.http.get(environment.serverUrl+"getproductbycategory/"+this.category).
+        this.http.get(environment.serverUrl+"getproductbycategory/"+this.category).
            //this.http.get(environment.serverUrl+"getallproduct").
              map(response=>response.json()).
                subscribe(data => {this.itemData=data
          
             } ); 
-      }
+      
 }
 
 
