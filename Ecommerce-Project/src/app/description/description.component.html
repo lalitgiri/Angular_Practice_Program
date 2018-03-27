@@ -1,9 +1,9 @@
 <div class="container bg-color">
   <div  class="row ">
       
-      <div class=" col-sm-6"> 
+      <div class=" col-sm-6">
           <div class="img-div row" id="img-div">
-              <img src="{{url}}images/{{itemData.imageUrl}}"  class="col-sm-12" id="img">
+                <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'>
           </div><br/>
           <div>
                 <button class="btn btn-primary text " id="add-cart">&nbsp;Add To Cart&nbsp;</button>
@@ -12,10 +12,10 @@
         </div><br/>
 
           <div class="description  col-sm-6" id="description">
-           <h1>Product Name : {{itemData.productName}}</h1>
-            <h2>Product Price :  {{itemData.productPrice}}</h2>
-            <h3>Product Category : {{itemData.productCategory}}</h3>
-            <h4>Product Description : {{itemData.description}}</h4>
+           <h1>Product Name : {{pname}}</h1>
+            <h2>Product Price :  {{pprice}}</h2>
+            <h3>Product Category : {{pcategory}}</h3>
+            <h4>Product Description : {{pdescription}}</h4>
 
           </div> 
 

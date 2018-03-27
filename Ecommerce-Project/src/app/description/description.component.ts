@@ -13,17 +13,31 @@ export class DescriptionComponent implements OnInit {
   constructor(private http:Http,private route:ActivatedRoute) { }
     itemData;
     url=environment.serverUrl;
+    flag=false;
+    imgUrl:string;
+    pname:string;
+    pprice:number;
+    pdescription:string;
+    pcategory:string;
   ngOnInit() {
-    
-    const id = this.route.snapshot.paramMap.get('id');
+     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
+    this.imgUrl=this.url+"images/";
     this.http.get(environment.serverUrl+"getproduct/"+id).
    // this.http.get(environment.serverUrl+"getallproduct").
     map(response=>response.json()).
     subscribe(
       data => {this.itemData=data;
-        console.log(this.itemData);
+         this.pname= this.itemData.productName;
+        this.pprice=this.itemData.productPrice;
+        this.pcategory=this.itemData.productCategory;
+        this.pdescription=this.itemData.description;
+        this.imgUrl = this.imgUrl+this.itemData.imageUrl;
+        this.flag=true;
       });
   }
 
+  
+
+ 
 }
