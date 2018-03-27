@@ -23,7 +23,7 @@ export class HomeChildComponent implements OnInit {
     console.log(abc);
     debugger;*/
   }
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
     
         this.http.get(environment.serverUrl+"getproductbycategory/"+this.category).
            //this.http.get(environment.serverUrl+"getallproduct").
@@ -31,8 +31,8 @@ export class HomeChildComponent implements OnInit {
                subscribe(data => {this.itemData=data
          
             } ); 
-      
+      }
 }
 
 
-}
+

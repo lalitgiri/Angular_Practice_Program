@@ -37,13 +37,14 @@
 
 <div class="row  div-list" *ngFor="let category of httpData" >
   <div class="col-sm-3 sub-div" >
-    <div>
-      <button class="btn btn-info" #btn [routerLink]="['/viewAll',category]" style="margin:4vw;">{{category}}</button>
+    <div class="parent-div">
+        <h1>{{category}}</h1>
+        <br>
+      <button class="btn btn-info" #btn [routerLink]="['/viewAll',category]" >View All</button>
       <input type="hidden" #id value="{{category}}"/>
     </div>
   </div>
-   
-  <div class="col-sm-9 row scroll">
+   <div class="col-sm-9 row scroll">
 
           <app-home-child  [category]="id.value"></app-home-child>
         
