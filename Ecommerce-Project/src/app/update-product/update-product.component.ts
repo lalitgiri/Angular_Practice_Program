@@ -13,15 +13,14 @@ export class UpdateProductComponent implements OnInit {
 
   data: any = [];
   constructor(private http: Http) { }
-
+  imgUrl=environment.serverUrl;
   ngOnInit() {
     this.setTable();
   }
 
   onSelect(data) {
     this.data = data;
-    console.log(data);
-  }
+   }
   setTable() {
 
     this.http.get(environment.serverUrl + "getallproduct").
