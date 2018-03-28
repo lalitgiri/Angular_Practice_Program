@@ -41,4 +41,7 @@ export class ViewAllComponent implements OnInit {
   ngOnInit() {
 
   }
+  ngOnDestroy(){
+    console.log("exit");
+  }
 }
