@@ -32,7 +32,6 @@ export class HomeChildComponent implements OnInit {
       }
     getData(ctype:string){
       this.http.get(environment.serverUrl+"getproductbycategory/"+ctype).
-           //this.http.get(environment.serverUrl+"getallproduct").
              map(response=>response.json()).
                subscribe(data => {this.itemData=data
                 

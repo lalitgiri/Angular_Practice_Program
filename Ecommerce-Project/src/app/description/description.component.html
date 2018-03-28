@@ -3,7 +3,7 @@
       
       <div class=" col-sm-6">
           <div class="img-div row" id="img-div">
-                <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'>
+              <a [href]="imgUrl" > <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'> </a>
           </div><br/>
           <div>
                 <button class="btn btn-primary text " id="add-cart">&nbsp;Add To Cart&nbsp;</button>
