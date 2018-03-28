@@ -19,17 +19,18 @@ export class UpdateProductComponent implements OnInit {
   }
 
   onSelect(data) {
+    this.data=[];
     this.data = data;
    }
   setTable() {
-
     this.http.get(environment.serverUrl + "getallproduct").
       map(response => response.json()).
       subscribe(data => this.itemData = data);
   }
-  onUpdate(){
-    this.http.get(environment.serverUrl + "getallproduct").
+  onUpdate(data){
+    console.log(data);
+   /* this.http.get(environment.serverUrl + "getallproduct").
     map(response => response.json()).
-    subscribe(data => this.itemData = data);
+    subscribe(data => this.itemData = data);*/
   }
 }

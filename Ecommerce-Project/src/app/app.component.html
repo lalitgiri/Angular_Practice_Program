@@ -16,12 +16,13 @@
       </form>
         
     </div>
-    <span class="menu menu_links"  (mouseenter)="clicked(event)" (click)="clicked(event)" >Menu
-        
-    </span>   
+    <!--<span class="menu menu_links"  (mouseenter)="clicked(event)" (click)="clicked(event)" >-->
+    <span class="menu menu_links"   (click)="clicked(event)" >Menu</span>   
+    
       <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+      <span class="icon" >=</span>
+      
     </button>
   
     <!-- Navbar links -->
@@ -40,7 +41,7 @@
         
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle menu_links"   data-toggle="dropdown">24x7 Support</a>
-            <div class="dropdown-menu dropdown-menu-right ">
+            <div class="dropdown-menu dropdown-menu-right " >
                 <div class="dropdown-item"><b>Call :</b> +91 9555104600</div>
                 <div class="dropdown-item"><b>Mail Id :</b> lalitgiri1711@gmail.com</div>
                 <div class="dropdown-divider"></div>
@@ -53,7 +54,8 @@
   </nav>
   
     <!-- Menu Code start-->
-      <div class="menu-div" *ngIf='status'>        
+      <div class="menu-div" *ngIf='status'>     <br/>   
+        <span  *ngFor = "let data of itemData"  class="sub-div-list" id="{{data}}" (click)="navigate(data) ">{{data}}</span>
                 <span  *ngFor = "let data of itemData"  class="sub-div-list" id="{{data}}" (click)="navigate(data) ">{{data}}</span>
         <br/></div>
   <!-- Menu Code end-->
