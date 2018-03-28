@@ -22,7 +22,6 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { AddVendorComponent } from './add-vendor/add-vendor.component';
 import { ExportDataBaseComponent } from './export-data-base/export-data-base.component';
 import { HomeChildComponent } from './home-child/home-child.component';
-import { ProductCategoryService } from './services/product-category.service';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -63,7 +62,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule,RouterModule.forRoot(appRoutes),HttpModule,HttpClientModule
   ],
-  providers: [ProductCategoryService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

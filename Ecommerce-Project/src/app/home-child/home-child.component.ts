@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, SimpleChanges, ChangeDetectorRef } fr
 import { environment } from '../../environments/environment';
 import { Http } from '@angular/http';
 
-import { ProductCategoryService } from '../services/product-category.service';
 @Component({
   selector: 'app-home-child',
   templateUrl: './home-child.component.html',
