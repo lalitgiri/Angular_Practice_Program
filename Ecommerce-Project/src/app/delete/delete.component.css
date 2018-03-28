@@ -1,15 +1,28 @@
 
 .tableDimension{
     height: 80vh;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 tr:hover{
     background: rgba(210, 180, 140,0.5);
 }
-thead{
+.rightBorderRadius{
+    border-top-right-radius: 1vw;
+}
+
+.leftBorderRadius{
+    border-top-left-radius: 1vw;
+}
+th{
+    padding: 0.5vw;
     background: tan; 
 }
 *{
     text-align: center;
+}
+
+.overflow{
+    height: 75vh;
+    overflow: scroll;
 }

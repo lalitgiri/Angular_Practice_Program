@@ -24,8 +24,9 @@ export class UpdateProductComponent implements OnInit {
   description;
   viewImage;
   imgUrl;
-  constructor(private httpClient: HttpClient, private http: Http) { }
   url = environment.serverUrl;
+  constructor(private httpClient: HttpClient, private http: Http) { }
+  
   ngOnInit() {
     this.setTable();
     this.updateProductForm = new FormGroup({
