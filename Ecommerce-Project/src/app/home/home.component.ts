@@ -9,21 +9,19 @@ import { environment } from '../../environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http:Http,private cdRef:ChangeDetectorRef) { }
-  httpData=[];
+  constructor(private http: Http, private cdRef: ChangeDetectorRef) { }
+  httpData = [];
   itemData;
-  url=environment.serverUrl;
-  dateNow:Date;
+  url = environment.serverUrl;
+  dateNow: Date;
   ngOnInit() {
-    this.http.get(environment.serverUrl+"getallproductCategory").
-    map(response=>response.json()).
-    subscribe(data => {
-      this.httpData=data
-    });
-}
-  ngAfterViewChecked()
-{
-  
-  this.cdRef.detectChanges();
-}
+    this.http.get(environment.serverUrl + "getallproductCategory").
+      map(response => response.json()).
+      subscribe(data => {
+        this.httpData = data
+      });
+  }
+  ngAfterViewChecked() {
+    this.cdRef.detectChanges();
+  }
 }

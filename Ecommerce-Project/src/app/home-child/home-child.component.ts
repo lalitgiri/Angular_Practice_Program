@@ -33,8 +33,7 @@ export class HomeChildComponent implements OnInit {
     getData(ctype:string){
       this.http.get(environment.serverUrl+"getproductbycategory/"+ctype).
              map(response=>response.json()).
-               subscribe(data => {this.itemData=data
-                
+               subscribe(data => {this.itemData=data               
             } );
     }
 }
