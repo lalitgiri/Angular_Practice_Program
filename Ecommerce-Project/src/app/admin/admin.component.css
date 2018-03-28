@@ -6,9 +6,12 @@
 }
 
 .height{
-    height:91vh;
-    
+    position: relative;
+    min-height: 90.5vh;;
+    width: 100%
 }
+
+
 .menu_links {
      cursor: pointer;
 }
