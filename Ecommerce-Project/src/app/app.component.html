@@ -7,11 +7,7 @@
     <div class="searchForm">    
     <form class="form-inline">
         <select class="option">
-          <option>opt1</option>
-          <option>opt1</option>
-          <option>opt1</option>
-          <option>opt1</option>
-          <option>opt1</option>
+          <option  *ngFor = "let data of itemData">{{data}}</option>
         </select>
         <input type="text"/>
         <button class="btn-bg">
@@ -57,9 +53,8 @@
   </nav>
   
     <!-- Menu Code start-->
-      <div class="menu-div" *ngIf='status'> 
-       
-                <span  *ngFor = "let data of itemData" class="sub-div-list" id="{{data.name}}">Sub {{data.name}}</span>
+      <div class="menu-div" *ngIf='status'>        
+                <span  *ngFor = "let data of itemData"  class="sub-div-list" id="{{data}}" (click)="navigate(data) ">{{data}}</span>
         <br/></div>
   <!-- Menu Code end-->
     </div>

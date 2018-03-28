@@ -100,7 +100,7 @@ input[type=text]
 }
 .menu-div{
     margin-top: 1vw;
-    height:auto;
+    min-height:10vw;
     width:100vw;
     z-index:1;
     position: fixed;

@@ -1,6 +1,6 @@
 
 <div class="cdiv">
-<div  *ngFor = "let data of itemData" class="sub-div-list"  id="{{data.name}}">
+<div  *ngFor = "let data of itemData" class="sub-div-list" [routerLink]="['/description',data.productId]" id="{{data.name}}">
   
   <img src="{{url}}images/{{data.imageUrl}}" class="imageAlign"/>
   <div class="ccdiv">
