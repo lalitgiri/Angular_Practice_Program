@@ -19,4 +19,7 @@ export class UpdateProductComponent implements OnInit {
   subscribe(data => this.itemData=data);
   }
 
+  onSelect(data){
+    console.log(data);
+  }
 }

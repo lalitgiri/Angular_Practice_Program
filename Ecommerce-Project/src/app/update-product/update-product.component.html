@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let data of itemData">
+        <tr *ngFor="let data of itemData" (click)="onSelect(data)">
           <td>{{data.productId}}</td>
           <td>{{data.productName}}</td>
           <td>{{data.productCategory}}</td>
