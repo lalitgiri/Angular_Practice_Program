@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 export class UpdateProductComponent implements OnInit {
 
   itemData:any;
+  pname="";
   constructor(private http:Http) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class UpdateProductComponent implements OnInit {
   }
 
   onSelect(data){
+    this.pname=data.productName;
     console.log(data);
   }
 }
