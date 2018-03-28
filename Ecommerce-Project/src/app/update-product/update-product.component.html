@@ -2,10 +2,9 @@
   Modify Product Details</h3>
 <br/>
 
-
 <div class="container tableDimension">
-  <div class="table-responsive">
-    <table class="table">
+  <div class="table-responsive ">
+    <table class="table ">
       <thead>
         <tr>
           <th>Product Id</th>
@@ -18,6 +17,7 @@
           <th>Product image</th>
         </tr>
       </thead>
+     
       <tbody>
         <tr *ngFor="let data of itemData" (click)="onSelect(data)">
           <td>{{data.productId}}</td>
@@ -41,50 +41,49 @@
 <form class="row container">
 
   <div class="col-sm-6 row bottom-margin">
+    <label for="productId" class="col">Product Id : </label>
+    <input type="text" id="productid" disabled value={{data.productId}} class="col" />
+  </div>
+
+  <div class="col-sm-6 row bottom-margin">
     <label for="productName " class="col">Product Name : </label>
-    <input type="text" id="UproductName" value={{pname}} class="col " />
+    <input type="text" id="UproductName" value={{data.productName}} class="col " />
   </div>
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productCategory" class="col ">Product Category : </label>
-    <input type="text" id="UproductCategory" class="col" />
+    <input type="text" id="UproductCategory" value={{data.productCategory}} class="col" />
   </div>
 
   <div class="col-sm-6 row bottom-margin">
 
     <label for="productQuantity" class="col">Product Quantity : </label>
-    <input type="text" id="UproductQuantity" class="col" />
+    <input type="text" id="UproductQuantity" value={{data.productQuantity}} class="col" />
   </div>
 
   <div class="col-sm-6 row bottom-margin">
 
     <label for="productPrice" class="col">Product Price : </label>
-    <input type="text" id="UproductPrice" class="col" />
+    <input type="text" id="UproductPrice" value={{data.productPrice}} class="col" />
   </div>
 
   <div class="col-sm-6 row bottom-margin">
-
-    <label for="offerPrice" class="col">Product Offer Price : </label>
-    <input type="text" id="UofferPrice" disabled class="col" />
-  </div>
-
-  <div class="col-sm-6 row bottom-margin">
-
     <label for="productImage" class="col ">Product Image : </label>
     <input type="file" id="UproductImage" class="  col defaultPropertyRemove" />
+    
   </div>
-
+  
   <div class="col-sm-6 row bottom-margin">
 
     <label for="description" class="col">Product Description : </label>
-    <textarea rows="4" cols="50" class="col"></textarea>
+    <textarea rows="4" cols="50" class="col" value={{data.description}}></textarea>
   </div>
 
 
 
   <div class="col-sm-6 row bottom-margin button-div">
     <span class="  col-sm-6 ">
-      <input type="submit" value=" Update " class="btn" />
+      <input type="submit" value=" Update " (click)="onUpdate()" class="btn" />
     </span>
     <span class=" col-sm-6 ">
       <input type="Reset" class="btn" />

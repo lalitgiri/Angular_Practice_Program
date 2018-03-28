@@ -9,19 +9,28 @@ import { environment } from '../../environments/environment';
 })
 export class UpdateProductComponent implements OnInit {
 
-  itemData:any;
-  pname="";
-  constructor(private http:Http) { }
+  itemData: any;
+
+  data: any = [];
+  constructor(private http: Http) { }
 
   ngOnInit() {
-    
-    this.http.get(environment.serverUrl+"getallproduct").
-  map(response=>response.json()).
-  subscribe(data => this.itemData=data);
+    this.setTable();
   }
 
-  onSelect(data){
-    this.pname=data.productName;
+  onSelect(data) {
+    this.data = data;
     console.log(data);
+  }
+  setTable() {
+
+    this.http.get(environment.serverUrl + "getallproduct").
+      map(response => response.json()).
+      subscribe(data => this.itemData = data);
+  }
+  onUpdate(){
+    this.http.get(environment.serverUrl + "getallproduct").
+    map(response => response.json()).
+    subscribe(data => this.itemData = data);
   }
 }
