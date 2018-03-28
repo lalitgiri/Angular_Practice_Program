@@ -23,7 +23,7 @@
           <td>{{data.productCategory}}</td>
           <td>{{data.productQuantity}}</td>
           <td>Rs. {{data.productPrice}}</td>
-          <td><a href="{{imgUrl}}images/{{data.imageUrl}}" target="_blank">View Image</a></td>
+          <td><a href="{{url}}images/{{data.imageUrl}}" target="_blank">View Image</a></td>
         </tr>
       </tbody>
     </table>
@@ -48,7 +48,7 @@
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productCategory" class="col ">Product Category : </label>
-    <input type="text" name="UproductCategory" value={{UproductCategory}} [(ngModel)]="UproductCategory"  class="col" formControlName="UproductCategory"/>
+    <input type="text" name="UproductCategory" value={{UproductCategory}} [(ngModel)]="UproductCategory"  class="col" required formControlName="UproductCategory"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
@@ -65,7 +65,7 @@
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productImage" class="col ">Product Image : </label>
-    <input type="file" name="UproductImage" class="  col defaultPropertyRemove"  />
+    <input type="file" name="UproductImage" (change)="onImageSelected($event)"class="  col defaultPropertyRemove"  />
     
   </div>
   
