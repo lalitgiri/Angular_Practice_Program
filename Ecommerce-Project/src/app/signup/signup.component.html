@@ -14,10 +14,7 @@
       
           <span class="btn-group form-control">
           <select class="selectField">
-              <option>Opt 1</option>
-              <option>Opt 2</option>
-              <option>Opt 3</option>
-              <option>Opt 4</option>
+             <option *ngFor="let code of isd_code">{{code.id}}</option>
           </select>
           <input type="text" class="textField" id="number">
          

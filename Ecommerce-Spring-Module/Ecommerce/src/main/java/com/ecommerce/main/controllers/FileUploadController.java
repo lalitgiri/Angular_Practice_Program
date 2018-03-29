@@ -21,7 +21,12 @@ public class FileUploadController {
 
     @RequestMapping(value="/upload/{subdir}",method=RequestMethod.POST)
 	public @ResponseBody String uploadFile(@RequestParam("file") MultipartFile file,@PathVariable String subdir) {
-	
+	/*
+    	String str= file.getOriginalFilename();
+    	String []parts = str.split("\\.");
+    	System.out.println("Str : "+str+"  parts"+parts);
+    	String url= URLPaths.IMG_PATH+subdir+"/"+"hello"+parts[1];*/
+    	
     	//path of the directory..
     	String url= URLPaths.IMG_PATH+subdir+"/"+file.getOriginalFilename();
     

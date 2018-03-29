@@ -23,7 +23,7 @@
       </thead>
       <tbody>
         <tr  *ngFor = "let data of itemData">
-           
+        
           <td class="leftBorderRadius"><input type="checkbox" #{{data.productId}} (change)="toggleEditable($event,data.productId)"></td>
           <td>{{data.productId}}</td>
           <td>{{data.productName}}</td>
