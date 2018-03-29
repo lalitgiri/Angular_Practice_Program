@@ -1,27 +1,27 @@
 
-  <form action=#>
+  <form [formGroup]="SignUpForm"  (ngSubmit)="onUpdate(SignUpForm.value)" >
     <div class="popUpBox">
-      <label class="signUp ">SignUp</label>
+      <label class="signUp">SignUp</label>
       <br/>
         <label for="name" >Name:  </label>  
-        <input type="text" class="form-control" id="name"/><p></p>
+        <input type="text" class="form-control" id="name" formControlName="name"/><p></p>
     
         <label for="emailId">Email Id  </label>  
-        <input type="text" class="form-control" id="emailId"/><p></p>
+        <input type="text" class="form-control" id="emailId" formControlName="emailId"/><p></p>
     
         
         <label for="number">Phone Number:  </label><br/>  
       
           <span class="btn-group form-control">
-          <select class="selectField">
+          <select class="selectField" formControlName="countryCode">
              <option *ngFor="let code of isd_code">{{code.id}}</option>
           </select>
-          <input type="text" class="textField" id="number">
+          <input type="text" class="textField" formControlName="contactNumber" id="number">
          
         </span><br/><br/>
         
         <label for="password">Password:  </label>  
-        <input type="password" class="form-control" id="password">
+        <input type="password" class="form-control" id="password" formControlName="password">
         <br/>
         <input type="submit" class="btn btn-primary float-right" >
         <input type="Reset" class="btn btn-info" >    
