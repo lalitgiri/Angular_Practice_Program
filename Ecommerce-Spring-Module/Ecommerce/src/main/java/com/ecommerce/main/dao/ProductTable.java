@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 public class ProductTable {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productId;    		//primaryKey
 	private String productName;
 	private String productCategory;

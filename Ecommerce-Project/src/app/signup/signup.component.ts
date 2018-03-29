@@ -1,7 +1,9 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { HttpClient } from 'selenium-webdriver/http';
 import { FormGroup, FormControl } from '@angular/forms';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private http:Http) { }
+  constructor(private http:Http,private httpClient:HttpClient) { }
   
   SignUpForm;
   isd_code
@@ -23,19 +25,22 @@ export class SignupComponent implements OnInit {
         "name":new FormControl(""),
         "emailId": new FormControl(""),
         "countryCode":new FormControl(""),
-        "contactNumber": new FormControl(""),
-        "password":new FormControl("")
+        "phoneNumber": new FormControl(""),
+        "password":new FormControl(""),
+
       })
   
     }
+    
 
-    @HostListener('window:beforeunload', ['$event'])
-    beforeunloadHandler(event) {
-     
-    }
     onUpdate(data){
       console.log(data);
-      this.SignUpForm.reset();
+      this.httpClient.post(environment.serverUrl + 'adduser',data,{ responseType: 'text' })
+      .subscribe(response => {alert(response) 
+        console.log(response)
+        this.SignUpForm.reset();
+      });
+     
     }
 
 
