@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-delete',
@@ -10,14 +11,18 @@ import { environment } from '../../environments/environment';
 export class DeleteComponent implements OnInit {
 
   itemData: any;
-  idArray = [];
+  idArray=[]
   index = 0;
   url = environment.serverUrl;
-  imgFlag=false;
+  imgFlag = false;
   viewImage;
-  constructor(private http: Http) { }
+
+  constructor(private http: Http,private httpClient:HttpClient) { }
 
   ngOnInit() {
+    this.setTable();
+  }
+  setTable() {
     this.http.get(environment.serverUrl + "getallproduct").
       map(response => response.json()).
       subscribe(data => this.itemData = data);
@@ -25,7 +30,6 @@ export class DeleteComponent implements OnInit {
 
   add(id) {
     this.idArray[this.index] = id
-    console.log("this.idArray : " + this.idArray + "  id : " + id)
     this.index++;
   }
   toggleEditable(event, id) {
@@ -39,13 +43,25 @@ export class DeleteComponent implements OnInit {
     const index: number = this.idArray.indexOf(id);
     if (index !== -1) {
       this.idArray.splice(index, 1);
-      console.log("this.idArray : " + this.idArray + "  id : " + id)
+      
     }
   }
+  imageViewFunction(path) {
+    this.viewImage = this.url + 'images/' + path;
+    this.imgFlag = true;
+  }
 
-  
-  imageViewFunction(path){
-    this.viewImage=this.url+'images/'+path;
-    this.imgFlag=true;
+  cancel(){
+    this.setTable();
+    this.idArray=[]
+    this.index = 0
+  }
+
+  deleteItems(){
+    this.httpClient.post(environment.serverUrl + 'deleteproduct', this.idArray, { responseType: 'text' })
+    .subscribe((response) => {
+                                alert(response)
+                                this.setTable()
+                              });
   }
 }

@@ -2,37 +2,36 @@
 <h3 class="font-size">Remove Product Details</h3>
 
 
-<button class="btn float-right btn-primary"> Delete </button>&nbsp;&nbsp;
+<button class="btn float-right btn-primary" (click)="deleteItems()"> Delete </button>&nbsp;&nbsp;
 <button disabled class="btn float-right btn-light "></button>
-<button class="btn float-right btn-danger"> Cancel </button><br/><br/>
+<button class="btn float-right btn-danger" (click)="cancel()"> Cancel </button><br/><br/>
 <div class="container tableDimension">
   <div class="table-responsive">
     <table>
       <thead>
         <tr>
-          <th>Select</th>
+          <th class="leftBorderRadius">Select</th>
           <th>Product Id</th>
           <th>Product Name</th>
           <th>Product Category</th>
           <th>Quantity</th>
           <th>Product Price (Rs)</th>
-          <th>Offer Price (Rs)</th>
           <th>Product Description</th>
-          <th>Product image</th>
+          <th class="rightBorderRadius">Product image</th>
           
         </tr>
       </thead>
       <tbody>
         <tr  *ngFor = "let data of itemData">
-          <td><input type="checkbox" #{{data.productId}} (change)="toggleEditable($event,data.productId)" name="Select"></td>
+           
+          <td class="leftBorderRadius"><input type="checkbox" #{{data.productId}} (change)="toggleEditable($event,data.productId)"></td>
           <td>{{data.productId}}</td>
           <td>{{data.productName}}</td>
           <td>{{data.productCategory}}</td>
           <td>{{data.productQuantity}}</td>
           <td>Rs. {{data.productPrice}}</td>
-          <td>null</td>
-          <td>{{data.description}}</td>
-          <td><a href="" class="nav-link" data-toggle="modal" (click)="imageViewFunction(data.imageUrl)" data-target="#imageView">View Image</a></td>
+          <td >{{data.description}}</td>
+          <td  class="rightBorderRadius"><a href="" class="nav-link" data-toggle="modal" (click)="imageViewFunction(data.imageUrl)" data-target="#imageView">View Image</a></td>
         </tr>
        </tbody>
     </table>

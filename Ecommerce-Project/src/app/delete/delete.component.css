@@ -7,12 +7,20 @@
 tr:hover{
     background: rgba(210, 180, 140,0.5);
 }
-.rightBorderRadius{
+th.rightBorderRadius{
     border-top-right-radius: 1vw;
 }
+td.rightBorderRadius{
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
 
-.leftBorderRadius{
+th.leftBorderRadius{
     border-top-left-radius: 1vw;
+}
+td.leftBorderRadius{
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
 }
 th{
     padding: 0.5vw;

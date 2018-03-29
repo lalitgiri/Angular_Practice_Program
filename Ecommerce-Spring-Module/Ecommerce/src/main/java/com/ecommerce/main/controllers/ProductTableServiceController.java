@@ -24,8 +24,8 @@ public class ProductTableServiceController {
 			return productTableService.addProduct(product);
 	}
 	
-	@RequestMapping("/deleteproduct/{id}")
-	public String deleteProduct(@PathVariable int id){
+	@RequestMapping(method=RequestMethod.POST,value="/deleteproduct")
+	public String deleteProduct(@RequestBody int id[]){
 		return productTableService.deleteProduct(id);
 	}
 	
@@ -57,4 +57,5 @@ public class ProductTableServiceController {
 	{
 		return productTableService.getProductByCategory(category);
 	}
+	
 }

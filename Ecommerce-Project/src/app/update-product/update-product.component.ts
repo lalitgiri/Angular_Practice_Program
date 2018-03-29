@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 import { environment } from '../../environments/environment';
@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms'
   templateUrl: './update-product.component.html',
   styleUrls: ['./update-product.component.css']
 })
-export class UpdateProductComponent implements OnInit {
+export class UpdateProductComponent implements OnInit  {
 
   updateProductForm;
   selectedFile: any;
@@ -83,10 +83,14 @@ export class UpdateProductComponent implements OnInit {
         "cartId": null
       };
 
-    this.httpClient.post(environment.serverUrl + '/updateproduct/' + this.productid, this.data, { responseType: 'text' })
+      
+  this.httpClient.post(environment.serverUrl + '/updateproduct/' + this.productid, this.data, { responseType: 'text' })
       .subscribe(res => {
-        alert(res)
-        this.setTable()
+        alert(res);
+        this.setTable();
+        this.updateProductForm.reset();
       });
+
   }
+
 }

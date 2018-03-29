@@ -38,29 +38,29 @@
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productId" class="col">Product Id : </label>
-    <input type="text" name="productid" value={{productid}} [(ngModel)]="productid" class="col" formControlName="productid"/>
+    <input type="text" name="productid"  [(ngModel)]="productid" class="col" formControlName="productid"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productName " class="col">Product Name : </label>
-    <input type="text" name="UproductName" value={{UproductName}} [(ngModel)]="UproductName"  class="col " formControlName="UproductName"/>
+    <input type="text" name="UproductName"  required [(ngModel)]="UproductName"  class="col " formControlName="UproductName"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
     <label for="productCategory" class="col ">Product Category : </label>
-    <input type="text" name="UproductCategory" value={{UproductCategory}} [(ngModel)]="UproductCategory"  class="col" required formControlName="UproductCategory"/>
+    <input type="text" name="UproductCategory"  [(ngModel)]="UproductCategory"  class="col" required formControlName="UproductCategory"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
 
     <label for="productQuantity" class="col">Product Quantity : </label>
-    <input type="text" name="UproductQuantity" value={{UproductQuantity}}  [(ngModel)]="UproductQuantity" class="col" formControlName="UproductQuantity"/>
+    <input type="text" name="UproductQuantity"  [(ngModel)]="UproductQuantity" class="col" formControlName="UproductQuantity"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
 
     <label for="productPrice" class="col">Product Price : </label>
-    <input type="text" name="UproductPrice" value={{UproductPrice}}  [(ngModel)]="UproductPrice" class="col" formControlName="UproductPrice"/>
+    <input type="text" name="UproductPrice" [(ngModel)]="UproductPrice" class="col" formControlName="UproductPrice"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
@@ -72,14 +72,14 @@
   <div class="col-sm-6 row bottom-margin">
 
     <label for="description" class="col">Product Description : </label>
-    <textarea rows="4" cols="50" class="col" name="description" value={{description}}  [(ngModel)]="description" formControlName="description"></textarea>
+    <textarea rows="4" cols="50" class="col" name="description"  [(ngModel)]="description" formControlName="description"></textarea>
   </div>
 
 
 
   <div class="col-sm-6 row bottom-margin button-div">
     <span class="  col-sm-6 ">
-      <input type="submit" value=" Update "  class="btn" />
+      <input type="submit" value=" Update " class="btn" />
     </span>
     <span class=" col-sm-6 ">
       <input type="Reset" class="btn" />
