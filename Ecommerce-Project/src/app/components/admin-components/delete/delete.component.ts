@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -25,7 +25,8 @@ export class DeleteComponent implements OnInit {
   setTable() {
     this.http.get(environment.serverUrl + "getallproduct").
       map(response => response.json()).
-      subscribe(data => this.itemData = data);
+      subscribe(data => {this.itemData = data},
+        (error:Error)=>{ alert(error.message)});
   }
 
   add(id) {
@@ -59,9 +60,7 @@ export class DeleteComponent implements OnInit {
 
   deleteItems(){
     this.httpClient.post(environment.serverUrl + 'deleteproduct', this.idArray, { responseType: 'text' })
-    .subscribe((response) => {
-                                alert(response)
-                                this.setTable()
-                              });
+    .subscribe((response) => {alert(response),this.setTable()},
+              (error:Error)=>{ alert(error.message)});
   }
 }

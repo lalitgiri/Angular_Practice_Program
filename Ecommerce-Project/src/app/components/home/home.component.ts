@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
       map(response => response.json()).
       subscribe(data => {
         this.httpData = data
-      });
+      },
+      (error:Error)=>{ alert(error.message)});
   }
   ngAfterViewChecked() {
     this.cdRef.detectChanges();

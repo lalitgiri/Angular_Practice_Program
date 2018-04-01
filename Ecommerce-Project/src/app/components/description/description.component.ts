@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-description',
@@ -33,7 +33,8 @@ export class DescriptionComponent implements OnInit {
           this.pdescription = this.itemData.description;
           this.imgUrl = this.imgUrl + this.itemData.imageUrl;
           this.flag = true;
-        });
+        },
+        (error:Error)=>{ alert(error.message)});
   }
 
 

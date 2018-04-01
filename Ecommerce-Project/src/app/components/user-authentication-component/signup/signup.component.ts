@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { FormGroup, FormControl } from '@angular/forms';
-import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
+import { PatternValidator } from '@angular/forms';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-signup',
@@ -39,7 +40,8 @@ export class SignupComponent implements OnInit {
       .subscribe(response => {alert(response) 
         console.log(response)
         this.SignUpForm.reset();
-      });
+      },
+      (error:Error)=>alert(error.message));
      
     }
 

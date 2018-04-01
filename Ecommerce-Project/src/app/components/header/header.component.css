@@ -1,0 +1,127 @@
+
+.webSiteName
+{
+        margin-left: 2vw;
+        font-size: 2.5vw;
+        font-style: oblique;
+        color:cornsilk;
+        text-shadow:0.2vw 0.3vw  grey;
+}
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.07vw;
+    
+} 
+.sub-div-list{
+    padding:0.3vw;
+    min-width:8vw;
+    border-radius: 0.2vw;
+    margin: 0.5vw;
+    color:white;
+    text-align: center;
+    border:0.1vw solid white;
+    display: inline-block;
+    background:tan;
+}
+.sub-div-list:hover{
+    color: black;
+    border:0.1vw solid black;
+}
+a{
+    color:white;
+    cursor: pointer;
+}
+a:hover{
+    color:black;
+    
+}
+.float-property
+{
+    margin-left: 20vw;    
+}
+.bg-nav{
+    background:tan;
+    border:none;
+    color:white;
+    padding:0%;
+}
+.icon{
+    color: white; 
+}
+.icon:hover{
+    color:black;
+}
+
+
+.searchForm{
+    max-width: 60vw;
+}
+.btn-bg{
+    background: white;
+    border:none;
+    height:3.1vw;
+    border-top-right-radius: 0.6vw;
+    border-bottom-right-radius: 0.6vw;
+}
+
+.searchIcon{
+    height:2.5vw;
+    width:3vw;
+    
+    
+}
+
+select{
+   
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    margin-left:2vw;
+    height:3.1vw;
+    font-size:1.3vw;
+    border:none;
+    border-bottom-left-radius: 0.6vw;
+    border-top-left-radius: 0.6vw;
+}
+
+input[type=text]
+{
+     padding-left: 1vw;
+     margin-left:-0.3vw;
+     height:3.1vw; 
+     font-size:1.3vw;
+     width: 25vw;
+     border:none;
+    
+}
+.disable-selection{
+    user-select: none;
+}
+
+.menu_links {
+    cursor: pointer;
+}
+.menu{
+    margin-left:2vw;
+    color:white;
+    padding:0.3vw;
+    border:0.1vw solid transparent;
+    border-radius: 0.5vw;
+}
+.menu:hover{
+    color:black;    
+    border:0.1vw solid black;
+}
+.menu-div{
+    margin-top: 1vw;
+    min-height:10vw;
+    width:100vw;
+    z-index:1;
+    text-align: center;
+    position: fixed;
+    background: rgba(210, 180, 140,1);
+}

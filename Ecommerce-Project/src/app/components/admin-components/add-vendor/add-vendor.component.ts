@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from "@angular/http";
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/catch';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-add-vendor',
   templateUrl: './add-vendor.component.html',
@@ -29,7 +29,8 @@ export class AddVendorComponent implements OnInit {
       .subscribe((res) => {
         this.imgUrl = res
         this.flag = true;
-      });
+      },
+      (error:Error)=>{ alert(error.message)});
 
   }
 
@@ -56,7 +57,8 @@ export class AddVendorComponent implements OnInit {
       // let options = new RequestOptions({ headers: headers });
       // this.http.post('http://localhost:8080/addemployee',this.data,headers).subscribe((response: Response) => { console.log(response) });
       this.http.post(environment.serverUrl + 'addemployee', this.data, { responseType: 'text' })
-        .subscribe((response: Response) => { alert(response); });
+        .subscribe((response: Response) => { alert(response) },
+        (error:Error)=>{ alert(error.message)});
     }
   }
 }

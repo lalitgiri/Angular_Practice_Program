@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Http, Response } from '@angular/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { FormGroup, FormControl } from '@angular/forms'
 @Component({
   selector: 'app-update-product',
@@ -52,7 +52,8 @@ export class UpdateProductComponent implements OnInit  {
   setTable() {
     this.http.get(environment.serverUrl + "getallproduct").
       map(response => response.json()).
-      subscribe(data => this.itemData = data);
+      subscribe(data => this.itemData = data,
+        (error:Error)=>{ alert(error.message)});
   }
 
   onImageSelected(event) {
@@ -61,10 +62,8 @@ export class UpdateProductComponent implements OnInit  {
     let fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
     this.httpClient.post(environment.serverUrl + 'upload/' + this.UproductCategory,
-     fd, { responseType: 'text' }).subscribe((res) => {
-        this.imgUrl = res;
-
-      });
+     fd, { responseType: 'text' }).subscribe((res) =>this.imgUrl = res,
+                                             (error:Error)=>{ alert(error.message)});
   }
   imageViewFunction(path){
     this.viewImage=this.url+'images/'+path;

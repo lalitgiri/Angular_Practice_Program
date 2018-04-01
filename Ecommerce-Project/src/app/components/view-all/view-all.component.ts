@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-view-all',
   templateUrl: './view-all.component.html',
@@ -32,7 +32,8 @@ export class ViewAllComponent implements OnInit {
       const id = this.route.snapshot.paramMap.get('id');
       this.http.get(environment.serverUrl + "getproductbycategory/" + id).
         map(response => response.json()).
-        subscribe(data => this.itemData = data);
+        subscribe(data => this.itemData = data,
+          (error:Error)=>{ alert(error.message)});
     });
 
   }

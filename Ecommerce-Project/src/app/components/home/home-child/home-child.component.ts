@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, SimpleChanges, ChangeDetectorRef } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { Http } from '@angular/http';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-home-child',
@@ -33,8 +33,8 @@ export class HomeChildComponent implements OnInit {
     getData(ctype:string){
       this.http.get(environment.serverUrl+"getproductbycategory/"+ctype).
              map(response=>response.json()).
-               subscribe(data => {this.itemData=data               
-            } );
+               subscribe(data => this.itemData=data,
+            (error:Error)=>{ alert(error.message)} );
     }
 }
 

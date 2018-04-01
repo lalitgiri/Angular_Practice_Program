@@ -15,7 +15,6 @@ public class CartDetails {
 	
 	@Id
 	@Column(name = "UserID")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int userId;		//primaryKey
 	@ManyToMany(mappedBy="cartId")
 	private List<ProductTable> productId;	//foreginKey

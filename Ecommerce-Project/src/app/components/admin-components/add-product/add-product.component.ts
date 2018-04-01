@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-add-product',
@@ -36,7 +36,8 @@ export class AddProductComponent implements OnInit {
       .subscribe((res) => {
         this.imgUrl = res;
         this.flag = true;
-      });
+      },
+      (error:Error)=>{ alert(error.message)});
   }
 
   onSubmit = function (product) {
@@ -55,7 +56,8 @@ export class AddProductComponent implements OnInit {
         };
      
       this.http.post(environment.serverUrl + 'addproduct', this.data, { responseType: 'text' })
-        .subscribe((response: Response) => {alert(response) });
+        .subscribe((response: Response) => {alert(response) },
+        (error:Error)=>{ alert(error.message)});
     }
   }
 }
