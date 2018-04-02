@@ -1,4 +1,4 @@
-package com.ecommerce.main;
+package com.ecommerce.main.serverConfigurations;
 
 import java.io.File;
 
