@@ -13,4 +13,5 @@ public interface UserDetailsService {
 	public Optional<UserDetails> getUserDetails(long id);
 	public String updateUserDetails(UserDetails user,long id);
 	public List<UserDetails> getAllUserDetails();
+	public String userAuthentication(String emailId,String password);
 }

@@ -1,15 +1,15 @@
 
 
-  <form action="">
+  <form [formGroup]="LoginForm"  (ngSubmit)="onLogin(LoginForm.value)" #form='ngForm'>
     <div class="popUpBox">
       <label class="Login ">Login</label>
       <br/>
         <label for="lname" >UserName / Email Id :  </label>  
-        <input type="text" class="form-control" id="lname"/>
+        <input type="text" class="form-control" id="lname" formControlName="Username"/>
     
         
         <label for="lpassword">Password :  </label>  
-        <input type="password" class="form-control" id="lpassword">
+        <input type="password" class="form-control" id="lpassword"  formControlName="lpassword">
          
         <br/>
         

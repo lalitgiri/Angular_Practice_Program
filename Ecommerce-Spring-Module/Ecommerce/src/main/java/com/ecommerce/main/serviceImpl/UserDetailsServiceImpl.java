@@ -57,5 +57,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			return  null;
 		return userList;
 	}
+
+
+	
+	public String userAuthentication(String emailId,String password) {
+		
+		UserDetails user=userDetailsReposiotory.findByemailIdAndPassword(emailId,password);
+		System.out.println(user+"  "+emailId+"  "+ password);
+		if(user!=null)
+		return "Sucessfully Login";
+		
+		return "Invalid Credentials";
+	}
 	
 }

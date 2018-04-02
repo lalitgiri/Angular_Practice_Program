@@ -46,12 +46,22 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 -->
+			
+		<!--this dependency added for to maintain session 
+	
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
+-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security.oauth/spring-security-oauth2 
+				this dependency is added for spring security
+		
 		<dependency>
 		    <groupId>org.springframework.security.oauth</groupId>
 		    <artifactId>spring-security-oauth2</artifactId>
 		    <version>2.0.2.RELEASE</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 
 	<build>

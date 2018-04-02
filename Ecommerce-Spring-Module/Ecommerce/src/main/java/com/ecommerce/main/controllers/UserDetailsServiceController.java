@@ -1,6 +1,7 @@
 package com.ecommerce.main.controllers;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,14 @@ public class UserDetailsServiceController {
 	@RequestMapping("/getalluser")
 	public List<UserDetails> getAllUserDetails(){
 		return userDetailsService.getAllUserDetails();
+	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/getAuthentication")
+	public String userAuthentication(@RequestBody  Map<String, String> user) {
+				 
+		String emailId=user.get("Username");
+		String password=user.get("lpassword");
+		return userDetailsService.userAuthentication(emailId,password);
 	}
 	
 	

@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   constructor(private http:Http,private httpClient:HttpClient) { }
   
   SignUpForm;
-  isd_code
+  isd_code;
   ngOnInit() {
     this.http.get("../../assets/products/isd_code.json").
       map(response => response.json()).
