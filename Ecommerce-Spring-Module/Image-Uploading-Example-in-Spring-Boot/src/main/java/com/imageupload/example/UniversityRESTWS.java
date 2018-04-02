@@ -42,4 +42,10 @@ public class UniversityRESTWS {
 			
 		return "File Is Uploaded Sucessfully";
 	}
+	
+	@RequestMapping(value="/hello", method=RequestMethod.GET)
+	public String uploadData(){
+			
+		return "File Is Uploaded Sucessfullyd ssadsadsa";
+	}
 }
