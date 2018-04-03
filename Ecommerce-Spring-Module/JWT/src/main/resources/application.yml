@@ -2,10 +2,11 @@
 
 management:
   security:
-    enabled:true
+    enabled: true
 
 spring:
-   chain:
-     enabled:true
+  resources:
+    chain:
+      enabled: true
           
           
