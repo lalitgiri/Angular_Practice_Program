@@ -6,7 +6,6 @@ import org.springframework.security.authentication.dao.AbstractUserDetailsAuthen
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-import org.springframework.validation.Validator;
 
 import com.example.springbootJWT.Model.JwtAuthenticationToken;
 import com.example.springbootJWT.Model.JwtUser;
@@ -19,13 +18,14 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
 	@Override
 	protected void additionalAuthenticationChecks(UserDetails arg0, UsernamePasswordAuthenticationToken arg1)
 			throws AuthenticationException {
-		// TODO Auto-generated method stub
+		System.out.println("retrieveUser1");
 		
 	}
 
 	@Override
 	protected UserDetails retrieveUser(String arg0, UsernamePasswordAuthenticationToken arg1)
 			throws AuthenticationException {
+		System.out.println("retrieveUser");
 	JwtAuthenticationToken jwtAuthenticationToken=(JwtAuthenticationToken)arg1;
 	String token=jwtAuthenticationToken.getToken();
 	JwtUser jwtUser=validator.validate(token);
