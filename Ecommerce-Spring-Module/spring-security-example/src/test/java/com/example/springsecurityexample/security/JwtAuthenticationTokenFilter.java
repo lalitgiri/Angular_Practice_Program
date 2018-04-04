@@ -1,4 +1,4 @@
-package com.example.springbootJWT.Security;
+package com.example.springsecurityexample.security;
 
 import java.io.IOException;
 
@@ -11,37 +11,31 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 
-import com.example.springbootJWT.Model.JwtAuthenticationToken;
+import com.example.springsecurityexample.model.JwtAuthenticationToken;
 
-public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter{
+public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter {
 
 	public JwtAuthenticationTokenFilter() {
-		//super("/rest/**");
 		super("rest/**");
-		
+	
 	}
 
-	
 	@Override
-	public Authentication attemptAuthentication(HttpServletRequest arg0, HttpServletResponse arg1)
+	public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
 			throws AuthenticationException, IOException, ServletException {
 		
-		System.out.println("Hello");
-		String header=arg0.getHeader("Authorization");
-		if(header==null ||!header.startsWith("Token ")) {
+		String header=httpServletRequest.getHeader("Authorization");
+		
+		if(header==null || header.startsWith("Token ")) {
 			throw new RuntimeException("Jwt Token Is Missing");
 		}
 		
-		String authenticationToken = header.substring(6);
+		String authenticationToken=header.substring(6);
 		
-		//return new JwtAuthenticationToken(authenticationToken);
-
 		JwtAuthenticationToken token=new JwtAuthenticationToken(authenticationToken);
 		return getAuthenticationManager().authenticate(token);
-		
-		
 	}
-
+	
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {

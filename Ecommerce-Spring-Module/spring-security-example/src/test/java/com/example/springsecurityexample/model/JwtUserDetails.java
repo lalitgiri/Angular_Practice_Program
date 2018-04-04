@@ -1,35 +1,35 @@
-package com.example.springbootJWT.Model;
+package com.example.springsecurityexample.model;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class JwtUserDetails implements UserDetails {
-
 	
-	private String userName;
-	private String token;
-	private long id;
-	private Collection<? extends GrantedAuthority> authority;
 
-	public JwtUserDetails(String userName, String token, long id, Collection<? extends GrantedAuthority> authority) {
-		
-		this.userName = userName;
-		this.token = token;
-		this.id = id;
-		this.authority = authority;
+	private String userName;
+	private long id;
+	private String token;
+	private Collection<? extends GrantedAuthority> grantedAuthorities;
+	
+	public JwtUserDetails(String userName, long id,String token, List<GrantedAuthority> grantedAuthorities) {
+		this.userName=userName;
+		this.id=id;
+		this.token=token;
+		this.grantedAuthorities=grantedAuthorities;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		
-		return authority;
+	
+		return grantedAuthorities;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
@@ -41,12 +41,13 @@ public class JwtUserDetails implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		
+	
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
+	
 		return true;
 	}
 
@@ -59,24 +60,20 @@ public class JwtUserDetails implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		
-		
 		return true;
 	}
 
 	public String getUserName() {
 		return userName;
 	}
-	public String Token() {
-		return token;
-	}
-	
-	public long  getId() {
+	public long getId() {
 		return id;
 	}
-
-	public Collection<? extends GrantedAuthority> getAuthority() {
-		return authority;
+	public String getToken() {
+		return token;
 	}
-
-
+	public Collection<? extends GrantedAuthority> getGrantedAuthorities() {
+		return grantedAuthorities;
+	}
+	
 }

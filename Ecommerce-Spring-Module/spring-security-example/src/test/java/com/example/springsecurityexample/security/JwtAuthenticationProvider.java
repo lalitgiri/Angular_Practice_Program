@@ -1,4 +1,4 @@
-package com.example.springbootJWT.Security;
+package com.example.springsecurityexample.security;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.example.springbootJWT.Model.JwtAuthenticationToken;
-import com.example.springbootJWT.Model.JwtUser;
-import com.example.springbootJWT.Model.JwtUserDetails;
+import com.example.springsecurityexample.model.JwtAuthenticationToken;
+import com.example.springsecurityexample.model.JwtUser;
+import com.example.springsecurityexample.model.JwtUserDetails;
 
 @Component
 public class JwtAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
@@ -26,6 +26,7 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
 		
 		return JwtAuthenticationToken.class.isAssignableFrom(aClass);
 	}
+
 	@Override
 	protected void additionalAuthenticationChecks(UserDetails arg0, UsernamePasswordAuthenticationToken arg1)
 			throws AuthenticationException {
@@ -34,20 +35,24 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
 	}
 
 	@Override
-	protected UserDetails retrieveUser(String arg0, UsernamePasswordAuthenticationToken arg1)
+	protected UserDetails retrieveUser(String userName, UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken)
 			throws AuthenticationException {
+		JwtAuthenticationToken jwtAuthenticationToken=(JwtAuthenticationToken) usernamePasswordAuthenticationToken;
 		
-	JwtAuthenticationToken jwtAuthenticationToken=(JwtAuthenticationToken)arg1;
-	String token=jwtAuthenticationToken.getToken();
-	JwtUser jwtUser=validator.validate(token);
-	if(jwtUser==null) {
-		throw new RuntimeException("JWT TOKEN IS INCORRECT");
+		String token=jwtAuthenticationToken.getToken();
+	
+		JwtUser jwtUser=validator.validate(token);
+		
+		if(jwtUser==null) {
+			throw new RuntimeException("JWT Token Is Incorrect");
+		}
+		
+		List<GrantedAuthority> grantedAuthorities = AuthorityUtils
+													.commaSeparatedStringToAuthorityList(jwtUser.getRole());
+		
+		return new JwtUserDetails(jwtUser.getUserName(),jwtUser.getId(),token,grantedAuthorities);
+		
+		
 	}
-	List<GrantedAuthority> grantedAuthorities = AuthorityUtils
-			.commaSeparatedStringToAuthorityList(jwtUser.getRole());
 
-	return new JwtUserDetails(jwtUser.getUserName(), token, jwtUser.getId(), grantedAuthorities);
-	}
-	
-	
 }

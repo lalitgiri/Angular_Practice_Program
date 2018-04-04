@@ -1,4 +1,4 @@
-package com.example.springbootJWT.Security;
+package com.example.springsecurityexample.security;
 
 import java.io.IOException;
 
@@ -11,13 +11,15 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint{
+public class JwtAuthenticationEntryPoint  implements AuthenticationEntryPoint{
 
 	@Override
 	public void commence(HttpServletRequest arg0, HttpServletResponse arg1, AuthenticationException arg2)
 			throws IOException, ServletException {
-	
-		arg1.sendError(arg1.SC_UNAUTHORIZED,"UNAUTHORIZED");
+		//for error message
+		
+		arg1.sendError(HttpServletResponse.SC_UNAUTHORIZED,"UnAuthorize");
+		
 	}
 
 }

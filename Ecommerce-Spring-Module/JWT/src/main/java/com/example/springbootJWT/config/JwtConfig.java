@@ -40,13 +40,16 @@ public class JwtConfig  extends WebSecurityConfigurerAdapter{
 		
 		JwtAuthenticationTokenFilter filter=new JwtAuthenticationTokenFilter();
 		filter.setAuthenticationManager(authenticationManager());
-		filter.setAuthenticationSucessHandler(new JwtSucessHandler());
+		filter.setAuthenticationSuccessHandler(new JwtSucessHandler());
 		
 		return filter;
 	}
-	
+	@Override
 	protected void  configure(HttpSecurity http) throws Exception{
-	 http.csrf().disable().authorizeRequests().antMatchers("/rest/**").authenticated().and().exceptionHandling().authenticationEntryPoint(entryPoint).and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+	 http.csrf().disable().authorizeRequests().antMatchers("/rest/**").authenticated()
+	 .and().exceptionHandling().authenticationEntryPoint(entryPoint)
+	 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+	 
 	 http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	 http.headers().cacheControl();
 		

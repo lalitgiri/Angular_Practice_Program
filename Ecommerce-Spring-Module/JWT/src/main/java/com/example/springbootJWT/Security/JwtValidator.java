@@ -11,7 +11,7 @@ import io.jsonwebtoken.Jwts;
 @Component
 public class JwtValidator {
 
-private String secret="lalit";
+private final String secret="lalit";
 	
 
 	public JwtUser validate(String token) {
