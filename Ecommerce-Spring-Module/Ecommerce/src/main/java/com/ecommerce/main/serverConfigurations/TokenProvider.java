@@ -1,5 +1,6 @@
-package com.ecommerce.main.serverConfigurations;
+/*package com.ecommerce.main.serverConfigurations;
 
 public class TokenProvider {
 
 }
+*/

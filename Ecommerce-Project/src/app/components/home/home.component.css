@@ -4,21 +4,7 @@
    width:auto; 
    background:tan;
 }
-.div-list{
-    height:25vw ;
-    margin-top:5vw;
-    margin-bottom: 5vw; 
-    width:100vw; 
-    background:rgba(210, 180, 140,0.7);
-    
-  
-}
-.parent-div{
-    margin:5vw auto;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    align-items:center;
-}
+
 h1{
     overflow-wrap: break-word;
     margin-left: 2vw;
@@ -28,8 +14,22 @@ h1{
     margin-left: 3vw;
     margin-right: 3vw;
 }
-.sub-div{   
-    height:25vw;
+
+.div-list{
+    height:25vw ;
+    margin-top:5vw;
+    margin-bottom: 5vw; 
+    width:auto; 
+    background:rgba(210, 180, 140,0.7);
+    
+  
+}
+
+.parent-div{
+    margin:5vw auto;
+    text-align: center;
+}
+.sub-div{
     background: tan;
   }
 .scroll{

@@ -1,4 +1,4 @@
-package com.ecommerce.main.serverConfigurations;
+/*package com.ecommerce.main.serverConfigurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -48,4 +48,4 @@ public class MultiHttpSecurityConfig {
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         }
     }
-}
+}*/
