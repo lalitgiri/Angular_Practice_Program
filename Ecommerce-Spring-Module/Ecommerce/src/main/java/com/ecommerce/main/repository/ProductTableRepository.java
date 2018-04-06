@@ -1,4 +1,4 @@
-package com.ecommerce.main.reposiotory;
+package com.ecommerce.main.repository;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.ecommerce.main.dao.ProductTable;
 
-public interface ProductTableReposiotory extends CrudRepository<ProductTable,Integer>{
+public interface ProductTableRepository extends CrudRepository<ProductTable,Integer>{
 
 	public static final String FIND_CATEGORY = "SELECT DISTINCT product_category FROM product_table";
 											

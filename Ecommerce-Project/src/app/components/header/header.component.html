@@ -5,14 +5,15 @@
   <br/>
   <nav class="navbar row navbar-expand-md bg-nav fixed-top">
     <!-- Brand -->
-    <a class="navbar-brand webSiteName col-sm-2" href="#">eShopping</a>
-    <div class="searchForm col-sm-4">
+    <a class="navbar-brand webSiteName col-sm-2  col-xs-2" href="#">eShopping</a>
+  
+    <div class="searchForm col-sm-3  col-xs-4">
       <form class="form-inline row">
-        <select class="option col-sm-2">
+        <select class="option col-sm-4 col-xs-4">
           <option *ngFor="let data of itemData">{{data}}</option>
         </select>
-        <input type="text" class="col-sm-8"/>
-        <button class="btn-bg col-sm-2" >
+        <input type="text" class="col-sm-6 col-xs-6"/>
+        <button class="btn-bg col-sm-2 col-xs-2" >
           <img src="../assets/icon/search icon.png" class="searchIcon image-fluid" />
           
         </button>
@@ -20,32 +21,32 @@
 
     </div>
     <!--<span class="menu menu_links"  (mouseenter)="clicked(event)" (click)="clicked(event)" >-->
-    <span class="col-sm-2">
+    <span class="col-sm-2  col-xs-1">
       <span class="menu menu_links" (click)="clicked(event)">Menu</span>
     </span>
     <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler col-sm-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button class="navbar-toggler col-sm-0  col-xs-1" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="icon">=</span>
 
     </button>
 
     <!-- Navbar links -->
-    <div class="collapse row col-sm-4  navbar-collapse" id="collapsibleNavbar">
+    <div class="collapse row col-sm-5  navbar-collapse" id="collapsibleNavbar">
 
       <ul class="navbar-nav row col-sm-12 disable-selection">
-        <li class="nav-item col-sm-0">
+        <li class="col-sm-2">
           <a href="" class="nav-link" *ngIf="false" >Welcome User</a>
-        </li>  <li class="nav-item col-sm-3">
+        </li>  <li class="col-sm-1">
           <a href="" class="nav-link" data-toggle="modal" *ngIf="true" data-target="#myLogin">Login</a>
         </li>
-        <li class="nav-item col-sm-3">
+        <li class="col-sm-3">
           <a href="" class="nav-link" data-toggle="modal" *ngIf="true" data-target="#mySignUp">Sign Up</a>
         </li>
        
-        <li class="nav-item col-sm-2">
+        <li class="col-sm-2">
           <a class="nav-link" [routerLink]="['/cart']">Cart</a>
         </li>
-        <li class="nav-item dropdown col-sm-4">
+        <li class="dropdown col-sm-4">
           <a class="nav-link dropdown-toggle menu_links" data-toggle="dropdown">24x7 Support</a>
           <div class="dropdown-menu dropdown-menu-right ">
             <div class="dropdown-item">

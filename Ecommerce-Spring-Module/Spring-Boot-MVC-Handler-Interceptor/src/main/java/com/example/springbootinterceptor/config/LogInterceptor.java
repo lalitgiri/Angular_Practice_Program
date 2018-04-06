@@ -19,7 +19,7 @@ public class LogInterceptor implements HandlerInterceptor {
 		  System.out.println("\n-------- LogInterception.preHandle --- ");
 	        System.out.println("Request URL: " + request.getRequestURL());
 	     
-		return true;
+		return false;
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.UserDetails;
-import com.ecommerce.main.reposiotory.UserDetailsReposiotory;
+import com.ecommerce.main.repository.UserDetailsRepository;
 import com.ecommerce.main.service.UserDetailsService;
 
 
@@ -17,31 +17,31 @@ import com.ecommerce.main.service.UserDetailsService;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private UserDetailsReposiotory userDetailsReposiotory;
+	private UserDetailsRepository userDetailsRepository;
 	
 	
 	public String addUserDetails(UserDetails user) throws Exception {
-		userDetailsReposiotory.save(user);
+		userDetailsRepository.save(user);
 		return "Sucessfully Added";
 	}
 	
 	
 	public String deleteUserDetails(long id){
-		if(userDetailsReposiotory.existsById(id)) {
-			userDetailsReposiotory.deleteById(id);
+		if(userDetailsRepository.existsById(id)) {
+			userDetailsRepository.deleteById(id);
 			return "SucessFully Deleted";
 		}
 		return "Illegal Operation";
 	}
 	
 	public Optional<UserDetails> getUserDetails(long id) {
-		return userDetailsReposiotory.findById(id);
+		return userDetailsRepository.findById(id);
 		
 	}
 	
 	public String updateUserDetails(UserDetails user,long id) {
-		if(userDetailsReposiotory.existsById(id)) {
-		userDetailsReposiotory.save(user);
+		if(userDetailsRepository.existsById(id)) {
+		userDetailsRepository.save(user);
 		return "SucessFully Updated";
 		}
 		return "Illegal Operation";
@@ -50,7 +50,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public List<UserDetails> getAllUserDetails(){
 		
 		List <UserDetails> userList = new ArrayList<>();
-		userDetailsReposiotory.findAll().
+		userDetailsRepository.findAll().
 		forEach(userList::add);
 					
 		if(userList== null) 
@@ -62,7 +62,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	public String userAuthentication(String emailId,String password) {
 		
-		UserDetails user=userDetailsReposiotory.findByemailIdAndPassword(emailId,password);
+		UserDetails user=userDetailsRepository.findByemailIdAndPassword(emailId,password);
 		System.out.println(user+"  "+emailId+"  "+ password);
 		if(user!=null)
 		return "Sucessfully Login";

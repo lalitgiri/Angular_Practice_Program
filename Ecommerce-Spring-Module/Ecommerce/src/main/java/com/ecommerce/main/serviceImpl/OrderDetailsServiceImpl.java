@@ -8,25 +8,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.OrderDetails;
-import com.ecommerce.main.reposiotory.OrderDetailsReposiotory;
+import com.ecommerce.main.repository.OrderDetailsRepository;
 import com.ecommerce.main.service.OrderDetailsService;
 
 @Service
 public class OrderDetailsServiceImpl implements OrderDetailsService {
 	
 	@Autowired
-	private OrderDetailsReposiotory orderDetailsReposiotory;
+	private OrderDetailsRepository orderDetailsRepository;
 
 	@Override
 	public String addOrder(OrderDetails order) {
-		orderDetailsReposiotory.save(order);
+		orderDetailsRepository.save(order);
 		return "Order Placed Sucessfully";
 	}
 
 	@Override
 	public List<OrderDetails> getAllOrder() {
 			List <OrderDetails> orderList = new ArrayList<OrderDetails>();
-			orderDetailsReposiotory.findAll().forEach(orderList::add);
+			orderDetailsRepository.findAll().forEach(orderList::add);
 			if(orderList==null)
 				return null;
 			return orderList;
@@ -34,21 +34,21 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
 
 	@Override
 	public String deleteOrder(int id) {
-		orderDetailsReposiotory.deleteById(id);
+		orderDetailsRepository.deleteById(id);
 		return "Sucessfully Deleted";
 	}
 
 	@Override
 	public Optional<OrderDetails> getOrderById(int id) {
-		return orderDetailsReposiotory.findById(id);
+		return orderDetailsRepository.findById(id);
 		
 	}
 
 	@Override
 	public String updateDeliveryAddress(OrderDetails order, int id) {
-		if(orderDetailsReposiotory.existsById(id))
+		if(orderDetailsRepository.existsById(id))
 		{
-			orderDetailsReposiotory.save(order);
+			orderDetailsRepository.save(order);
 			return "SucessFully Updated"; 
 		}
 		

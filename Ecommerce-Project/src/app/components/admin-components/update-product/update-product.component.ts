@@ -83,14 +83,14 @@ export class UpdateProductComponent implements OnInit  {
       };
 
       console.log(formValue)
-     /* 
+      
   this.httpClient.post(environment.serverUrl + '/updateproduct/' + this.productid, this.data, { responseType: 'text' })
       .subscribe(res => {
         alert(res);
         this.setTable();
         this.updateProductForm.reset();
       });
-*/
+
   }
 
 }

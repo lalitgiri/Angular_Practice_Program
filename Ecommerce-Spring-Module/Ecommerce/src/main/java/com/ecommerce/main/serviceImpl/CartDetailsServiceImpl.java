@@ -8,31 +8,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.CartDetails;
-import com.ecommerce.main.reposiotory.CartDetailsReposiotory;
+import com.ecommerce.main.repository.CartDetailsRepository;
 import com.ecommerce.main.service.CartDetailsService;
 
 @Service
 public class CartDetailsServiceImpl implements CartDetailsService {
 
 	@Autowired
-	private CartDetailsReposiotory cartDetailsReposiotory;
+	private CartDetailsRepository cartDetailsRepository;
 	
 	
 	
 	public Optional<CartDetails> getCartDetails(int id) {
-		return cartDetailsReposiotory.findById(id);
+		return cartDetailsRepository.findById(id);
 	}
 	
 	public String updateCartDetails(CartDetails cart,long id) {
 		
-		cartDetailsReposiotory.save(cart);
+		cartDetailsRepository.save(cart);
 		return "SucessFully Updated";
 	}
 	
 	public List<CartDetails> getAllCartDetails(){
 		
 		List <CartDetails> cartList = new ArrayList<>();
-		cartDetailsReposiotory.findAll().
+		cartDetailsRepository.findAll().
 		forEach(cartList::add);
 		
 		return cartList;

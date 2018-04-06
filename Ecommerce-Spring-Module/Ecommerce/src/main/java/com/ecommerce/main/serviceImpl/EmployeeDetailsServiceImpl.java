@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.EmployeeDetails;
-import com.ecommerce.main.reposiotory.EmployeeDetailReposiotory;
+import com.ecommerce.main.repository.EmployeeDetailRepository;
 import com.ecommerce.main.service.EmployeeDetailsService;
 
 @Service
 public class EmployeeDetailsServiceImpl implements EmployeeDetailsService{
 
 	@Autowired
-	private EmployeeDetailReposiotory employeeDetailsReposiotory;
+	private EmployeeDetailRepository employeeDetailsReposiotory;
 	
 
 	public String addEmployeeDetails(EmployeeDetails employee) throws Exception {

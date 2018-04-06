@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.ProductTable;
-import com.ecommerce.main.reposiotory.ProductTableReposiotory;
+import com.ecommerce.main.repository.ProductTableRepository;
 import com.ecommerce.main.service.ProductTableService;
 
 @Service
 public class ProductTableServiceImpl implements ProductTableService {
 
 	@Autowired
-	private ProductTableReposiotory productTableRepository;
+	private ProductTableRepository productTableRepository;
 	
 	public String addProduct(ProductTable product) throws Exception {
 		productTableRepository.save(product);
