@@ -15,4 +15,14 @@ Logger log = LoggerFactory.getLogger(this.getClass());
 		log.info("Welcome to access RequestMapping: /hello!");
 		return "Hello World!";
 	}
+	@RequestMapping(value="/hello1",method=RequestMethod.GET)
+	public String hello1(){
+		log.info("Welcome to access RequestMapping: /hello!");
+		return "Hello World!";
+	}
+	@RequestMapping(value="/hello2",method=RequestMethod.GET)
+	public String hello2(){
+		log.info("Welcome to access RequestMapping: /hello!");
+		return "Hello World! ";
+	}
 }
