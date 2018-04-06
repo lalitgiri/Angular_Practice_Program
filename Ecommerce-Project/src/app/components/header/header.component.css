@@ -1,7 +1,8 @@
 
 .webSiteName
 {
-        margin-left: 2vw;
+        /*margin-left: 2vw;*/
+        text-align: center;
         font-size: 2.5vw;
         font-style: oblique;
         color:cornsilk;
@@ -40,10 +41,6 @@ a:hover{
     color:black;
     
 }
-.float-property
-{
-    margin-left: 20vw;    
-}
 .bg-nav{
     background:tan;
     border:none;
@@ -77,10 +74,10 @@ a:hover{
 }
 
 select{
-   
+  /* 
     padding-left: 0.5vw;
     padding-right: 0.5vw;
-    margin-left:2vw;
+    margin-left:2vw;*/
     height:3.1vw;
     font-size:1.3vw;
     border:none;
@@ -90,11 +87,11 @@ select{
 
 input[type=text]
 {
-     padding-left: 1vw;
-     margin-left:-0.3vw;
+    /* padding-left: 1vw;
+     margin-left:-0.3vw;*/
      height:3.1vw; 
      font-size:1.3vw;
-     width: 25vw;
+     /*width: 25vw;*/
      border:none;
     
 }
@@ -106,11 +103,12 @@ input[type=text]
     cursor: pointer;
 }
 .menu{
-    margin-left:2vw;
+  /*  margin-left:2vw; */
     color:white;
-    padding:0.3vw;
+    padding:0.5vw;
     border:0.1vw solid transparent;
     border-radius: 0.5vw;
+    text-align: center;
 }
 .menu:hover{
     color:black;    
@@ -124,4 +122,8 @@ input[type=text]
     text-align: center;
     position: fixed;
     background: rgba(210, 180, 140,1);
+}
+
+li{
+    text-align: center;
 }
