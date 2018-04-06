@@ -13,6 +13,7 @@ import { SignupComponent } from '../components/user-authentication-component/sig
 import { ViewAllComponent } from '../components/view-all/view-all.component';
 import { HomeComponent } from '../components/home/home.component';
 import { NgModule } from '@angular/core';
+import { CartComponent } from '../components/cart/cart.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
 
   ]},
   {path:'description/:id',component:DescriptionComponent},
+  {path:'cart',component:CartComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'viewAll/:id',component:ViewAllComponent},

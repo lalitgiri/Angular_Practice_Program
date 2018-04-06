@@ -23,6 +23,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HomeChildComponent } from './components/home/home-child/home-child.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from './routing/app-routing.module';
+import { CartComponent } from './components/cart/cart.component';
+
+
 //import { routing } from './routing/app-routing.module';
 
 @NgModule({
@@ -42,7 +45,8 @@ import { AppRoutingModule } from './routing/app-routing.module';
     AddVendorComponent,
     ExportDataBaseComponent,
     HomeChildComponent,
-    HeaderComponent
+    HeaderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule
