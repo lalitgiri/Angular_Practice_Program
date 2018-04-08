@@ -12,7 +12,6 @@ public class InMemoryUserService implements UserService {
         user.setId(1L);
         user.setName("admin");
         user.setEmailAddress("admin@example.com");
-        user.setPassword("password");
         users.add(user);
     }
     
@@ -27,7 +26,7 @@ public class InMemoryUserService implements UserService {
     private static boolean validateUser (User existingUser, User user) {
         return existingUser.getEmailAddress()
                            .equals(user.getEmailAddress())
-                            && existingUser.getPassword()
-                                           .equals(user.getPassword());
+                            && existingUser.getId()
+                                           .equals(user.getId());
     }
 }

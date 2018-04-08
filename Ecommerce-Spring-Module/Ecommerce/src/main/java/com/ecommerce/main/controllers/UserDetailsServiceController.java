@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.main.dao.UserDetails;
+import com.ecommerce.main.interceptors.TokenProvider;
 import com.ecommerce.main.service.UserDetailsService;
 
 @RestController
@@ -50,6 +51,7 @@ public class UserDetailsServiceController {
 		String emailId=user.get("Username");
 		String password=user.get("lpassword");
 		return userDetailsService.userAuthentication(emailId,password);
+	
 	}
 	
 	

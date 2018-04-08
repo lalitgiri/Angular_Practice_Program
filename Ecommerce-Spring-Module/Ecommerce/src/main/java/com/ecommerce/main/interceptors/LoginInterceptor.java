@@ -44,7 +44,17 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		
-				super.postHandle(request, response, handler, modelAndView);
+		/*
+			TokenProvider tokenProvider =new TokenProvider();
+			User userToken = new User();
+			userToken.setEmailAddress(user.getEmailId());
+			userToken.setId(user.getPhoneNumber());
+			userToken.setName(user.getName());
+			userToken.setRole("User");
+	
+			String token = tokenProvider.generate(userToken);
+		
+	*/			super.postHandle(request, response, handler, modelAndView);
 	}
 
 	@Override

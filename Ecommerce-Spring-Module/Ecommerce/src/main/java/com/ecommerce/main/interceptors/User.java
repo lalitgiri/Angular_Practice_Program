@@ -6,7 +6,6 @@ import java.io.Serializable;
 public class User implements Serializable{
     private Long id;
     private String name;
-    private String password;
     private String emailAddress;
     private String  role;
 
@@ -34,14 +33,6 @@ public class User implements Serializable{
         this.name = name;
     }
 
-    public String getPassword () {
-        return password;
-    }
-
-    public void setPassword (String password) {
-        this.password = password;
-    }
-
     public String getEmailAddress () {
         return emailAddress;
     }
@@ -55,7 +46,6 @@ public class User implements Serializable{
         return "User{" +
                             "id=" + id +
                             ", name='" + name + '\'' +
-                            ", password='" + password + '\'' +
                             ", emailAddress='" + emailAddress + '\'' +
                             ", userRole='" + role + '\''+
                             '}';
