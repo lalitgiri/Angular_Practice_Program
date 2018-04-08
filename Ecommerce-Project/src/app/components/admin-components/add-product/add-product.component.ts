@@ -21,7 +21,9 @@ export class AddProductComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+       
   }
+
 
   onChange() {
     this.fileInputDummy = false;

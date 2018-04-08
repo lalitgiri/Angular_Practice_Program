@@ -17,6 +17,7 @@ export class AddVendorComponent implements OnInit {
   flag: boolean = false;
   url = environment.serverUrl;
   ngOnInit() {
+   
   }
 
 
@@ -59,6 +60,7 @@ export class AddVendorComponent implements OnInit {
       this.http.post(environment.serverUrl + 'addemployee', this.data, { responseType: 'text' })
         .subscribe((response: Response) => { alert(response) },
         (error:Error)=>{ alert(error.message)});
+       
     }
   }
 }
