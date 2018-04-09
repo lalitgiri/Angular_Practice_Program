@@ -20,7 +20,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-
+/*
 		RequestMapping rm = ((HandlerMethod) handler).getMethodAnnotation(RequestMapping.class);
 	
 		//System.out.println(rm.value()[0]);
@@ -37,7 +37,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 						else
 							return false;			
 			}
-		return true;
+*/		return true;
 		}
 
 	@Override

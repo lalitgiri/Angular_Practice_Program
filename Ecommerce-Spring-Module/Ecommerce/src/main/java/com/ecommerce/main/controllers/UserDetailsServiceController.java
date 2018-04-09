@@ -79,6 +79,8 @@ public class UserDetailsServiceController {
 				request.getSession(true).setAttribute("user", loggedUser);
 				HttpSession session = request.getSession();
 				return "Session Generated";
+				
+				
 			} else {
 				model.addAttribute("error", "Not a valid user");
 				return "user-login";
