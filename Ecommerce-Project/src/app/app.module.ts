@@ -24,6 +24,7 @@ import { HomeChildComponent } from './components/home/home-child/home-child.comp
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { CartComponent } from './components/cart/cart.component';
+import { TokenDecoderService } from './service/token-decoder.service';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -51,7 +52,7 @@ import { CartComponent } from './components/cart/cart.component';
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule
   ],
-  providers: [],
+  providers: [TokenDecoderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
