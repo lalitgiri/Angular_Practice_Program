@@ -15,7 +15,7 @@ export class TokenDecoderService {
                       throw 'Illegal base64url string!';
                  }
              }
-             return decodeURIComponent(escape(window.atob(output)));
+             return decodeURIComponent(window.atob(output));
          }
       
          public decodeToken(token: string) {

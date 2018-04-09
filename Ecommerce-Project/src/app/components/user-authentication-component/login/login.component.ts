@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
       if(response.text().length>1)
       { 
         sessionStorage.setItem("token",response.text());
-        
         window.location.reload();
       }
       else 

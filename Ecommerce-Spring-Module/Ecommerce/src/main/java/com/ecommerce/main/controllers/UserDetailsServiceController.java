@@ -70,35 +70,5 @@ public class UserDetailsServiceController {
 	 * 
 	 * }
 	 */
-	@RequestMapping(method = RequestMethod.POST, value = "/getAuthentication")
-	public String handleLoginRequest(User user, HttpServletRequest request, HttpServletResponse response,
-			@RequestBody Map<String, String> userRequest) {
-		//HttpHeaders responseHeaders = new HttpHeaders();
-		String emailId = userRequest.get("Username");
-		String password = userRequest.get("lpassword");
 	
-		
-		if (userDetailsService.userAuthentication(emailId, password).equals("Sucessfully Login")) {
-
-			User loggedUser = userService.loginUser(user);
-			if (loggedUser == null) {
-				request.getSession(true).setAttribute("user", loggedUser);				
-				TokenProvider tokenProvider =new TokenProvider();
-				User userToken = new User();
-				userToken.setEmailAddress(userRequest.get("Username"));
-				userToken.setId("id:@"+userRequest.get("lpassword")+"$user");
-				userToken.setRole("User");
-		
-				String token = tokenProvider.generate(userToken);
-			
-				//  responseHeaders.set("token", t);
-				response.addHeader("token",token);
-				
-				System.out.println(token);
-				return token;
-			}
-		}
-		return null;
-	}
-
 }

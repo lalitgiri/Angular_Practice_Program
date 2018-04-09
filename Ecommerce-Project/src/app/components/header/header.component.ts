@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { environment } from '../../../environments/environment';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { TokenDecoderService } from '../../service/token-decoder.service';
 
@@ -13,8 +13,10 @@ export class HeaderComponent implements OnInit {
 
   token = false;
   tokenValue = true;
-  name = "dssa";
-  constructor(private http: Http, private router: Router, private cdRef: ChangeDetectorRef, private tokenDecoder: TokenDecoderService) {
+  status: boolean = false;
+  name = "";
+  constructor(private http: Http, private router: Router, private cdRef: ChangeDetectorRef,
+    private tokenDecoder: TokenDecoderService) {
     if (sessionStorage.getItem("token") != null) {
       this.token = true;
       this.tokenValue = false;
@@ -32,17 +34,35 @@ export class HeaderComponent implements OnInit {
     this.http.get(environment.serverUrl + "getallproductCategory").
       map(response => response.json()).
       subscribe(data => {
-      this.itemData = data
+        this.itemData = data
         this.flag = true;
       },
         (error: Error) => { alert(error.message) });
   }
+
   inValidateSession() {
     console.log("hye");
-    sessionStorage.removeItem("token");
-    window.location.reload();
+
+    let myheaders = new Headers({ 'Content-Type': 'application/json' });    //x-www-form-urlencoded
+    myheaders.append('token', sessionStorage.getItem("token"));
+
+    this.http.get(environment.serverUrl + "logout", { headers: myheaders }).
+      map(response => response.json()).
+      subscribe(data => {
+        console.log(data);
+        if (data == true) {
+          sessionStorage.removeItem("token");
+          window.location.reload();
+          alert("Sucessfully Logout");
+        }
+
+      },
+        (error: Error) => { alert(error.message) });
+
   }
-  status: boolean = false;
+
+
+
   clicked(event) {
     if (this.status == true)
       this.status = false;

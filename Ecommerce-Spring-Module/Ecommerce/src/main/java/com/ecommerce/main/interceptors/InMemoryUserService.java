@@ -3,15 +3,23 @@ package com.ecommerce.main.interceptors;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class InMemoryUserService implements UserService {
     private List<User> users = new ArrayList<>();
 
-       public  InMemoryUserService() {
-        User user = new User();
-        user.setId("1L");       
-        user.setEmailAddress("admin@example.com");
-        users.add(user);
+    public boolean addUser(User user) {
+    			if(user!= null) {
+    				users.add(user);
+    				System.out.println(users);
+    				System.out.println(users.indexOf(user));
+    				return true;
+    			}
+    			return false;
+    			
+    		}
+       public  InMemoryUserService() { 
     }
     
     @Override
@@ -28,4 +36,24 @@ public class InMemoryUserService implements UserService {
                             && existingUser.getId()
                                            .equals(user.getId());
     }
+	@Override
+	public boolean removeUser(User user) {
+	List<User> userList = new ArrayList<>();
+		users.forEach(u ->{
+			if(u.getId().equalsIgnoreCase(user.getId())) {
+				
+			}
+			else {
+				userList.add(u);
+			}
+			
+		});
+		if(userList!=null) {
+			users =userList;
+			//users.size();
+		System.out.println(users);
+		return true;
+		}
+		return false;
+	}
 }

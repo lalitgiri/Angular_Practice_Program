@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.ecommerce.main.interceptors.InMemoryUserService;
 import com.ecommerce.main.interceptors.LoginInterceptor;
+import com.ecommerce.main.interceptors.SessionController;
 import com.ecommerce.main.interceptors.UserService;
 
 @SuppressWarnings("deprecation")
@@ -19,11 +20,11 @@ public class InterceptorRegistory extends WebMvcConfigurerAdapter {
 	    public void addInterceptors (InterceptorRegistry registry) {
 	        registry.addInterceptor(new LoginInterceptor());
 	    }
-	  /*@Bean  session provider
-	    public AppController tradeController () {
-	        return new AppController();
+	 @Bean // session provider
+	    public SessionController sessionController () {
+	        return new SessionController();
 	    }
-*/
+
 	    @Bean
 	    public UserService userService () {
 	        return new InMemoryUserService();

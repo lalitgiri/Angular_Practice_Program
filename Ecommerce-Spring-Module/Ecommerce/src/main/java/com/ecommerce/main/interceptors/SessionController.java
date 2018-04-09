@@ -1,41 +1,79 @@
 package com.ecommerce.main.interceptors;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.main.service.UserDetailsService;
+
+@RestController
 public class SessionController {
 
-	 @Autowired
-	    private UserService userService;
-/*
-	    @RequestMapping(value = "login", method = RequestMethod.GET)
-	    public String handleLoginGetRequest () {
-	        return "user-login";
-	    }
-*/
-	    //@RequestMapping(value = "login", method = RequestMethod.POST)
-	    public String handleLoginRequest (User user, Model model,
-	                                          HttpServletRequest request) {
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/getAuthentication")
+	public String handleLoginRequest( HttpServletRequest request, HttpServletResponse response,
+			@RequestBody Map<String, String> userRequest) {
+		
+		User user=new User();
+		String emailId = userRequest.get("Username");
+		String password = userRequest.get("lpassword");
+	
+		user.setRole("User");
+		user.setEmailAddress(userRequest.get("Username"));
+		user.setId(userRequest.get("lpassword"));
+		
+		if (userDetailsService.userAuthentication(emailId, password).equals("Sucessfully Login")) {
 
-	        User loggedUser = userService.loginUser(user);
-	        if (loggedUser == null) {
-	            request.getSession(true)
-	                   .setAttribute("user", loggedUser);
-	            return "Session Generated";
-	        } else {
-	            model.addAttribute("error", "Not a valid user");
-	            return "user-login";
-	        }
-	    }
+			User loggedUser = userService.loginUser(user);
+			if (loggedUser == null) {
+				userService.addUser(user);
+				request.getSession(true).setAttribute("user", loggedUser);				
+				TokenProvider tokenProvider =new TokenProvider();
+				User userToken = new User();
+				userToken.setEmailAddress(userRequest.get("Username"));
+				userToken.setId(userRequest.get("lpassword"));
+				userToken.setRole("User");
+		
+				String token = tokenProvider.generate(userToken);
+				
+				//response.addHeader("token",token);
+				
+				//System.out.println(token);
+				return token;
+			}
+		}
+		return null;
+	}
 
-/*	    @RequestMapping(value = "app/**", method = RequestMethod.GET)
-	    public String handleAppRequest (Model model, HttpServletRequest request) {
-	        model.addAttribute("uri", request.getRequestURI());
-	        model.addAttribute("user", request.getAttribute("user"));
-	        return "app-page";
-	    }*/
+	
+	@RequestMapping("/logout")
+	public boolean removeSession(HttpServletRequest request, HttpServletResponse response, Object handler) {
+		
+		
+		 JwtValidator validate= new JwtValidator();
+		 
+		 User user=validate.validate(request.getHeader("token"));
+		 User loggedUser = userService.loginUser(user);
+			if (loggedUser != null) {
+				if(userService.removeUser(user)) {
+				request.getSession(true).removeAttribute("user");				
+				System.out.println("Sucessfully Deleted");
+				return true;
+				}
+			}
+		return false;
+	 }
 }

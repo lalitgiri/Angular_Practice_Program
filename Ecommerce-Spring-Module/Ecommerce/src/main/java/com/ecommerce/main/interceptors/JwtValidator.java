@@ -16,7 +16,7 @@ private final String secret="lalit";
 		Claims body=Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
 		user=new User();
 		user.setEmailAddress(body.getSubject());
-		user.setId(((String )body.get("userId")));
+		user.setId(((String )body.get("UserId")));
 		user.setRole((String)body.get("role")) ;
 		}
 		catch(Exception e) {System.out.println(e);}
