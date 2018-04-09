@@ -9,10 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private http:Http,private router:Router,private cdRef:ChangeDetectorRef){}
+  
+  token=false;
+  tokenValue=true;
+  constructor(private http:Http,private router:Router,private cdRef:ChangeDetectorRef){
+    if(sessionStorage.getItem("token")!=null)
+     {
+        this.token=true;
+        this.tokenValue=false;
+     }
+    console.log("token : "+sessionStorage.getItem("token"));
+  }
   itemData;
   flag=false;
+  
 
   ngOnInit() {
     this.http.get(environment.serverUrl + "getallproductCategory").

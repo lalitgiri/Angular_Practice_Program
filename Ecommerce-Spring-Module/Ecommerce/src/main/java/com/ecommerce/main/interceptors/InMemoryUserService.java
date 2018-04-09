@@ -9,8 +9,7 @@ public class InMemoryUserService implements UserService {
 
        public  InMemoryUserService() {
         User user = new User();
-        user.setId(1L);
-        user.setName("admin");
+        user.setId("1L");       
         user.setEmailAddress("admin@example.com");
         users.add(user);
     }

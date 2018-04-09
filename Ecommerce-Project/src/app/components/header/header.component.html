@@ -34,13 +34,13 @@
     <div class="collapse row col-sm-5  navbar-collapse" id="collapsibleNavbar">
 
       <ul class="navbar-nav row col-sm-12 disable-selection">
-        <li class="col-sm-2">
-          <a href="" class="nav-link" *ngIf="false" >Welcome User</a>
-        </li>  <li class="col-sm-1">
-          <a href="" class="nav-link" data-toggle="modal" *ngIf="true" data-target="#myLogin">Login</a>
+        <li class="col-sm-3"  *ngIf=token >
+          <a href="" class="nav-link">Welcome User</a>
+        </li>  <li class="col-sm-3"  *ngIf=tokenValue>
+          <a href="" class="nav-link" data-toggle="modal" data-target="#myLogin">Login</a>
         </li>
-        <li class="col-sm-3">
-          <a href="" class="nav-link" data-toggle="modal" *ngIf="true" data-target="#mySignUp">Sign Up</a>
+        <li class="col-sm-3"  *ngIf=tokenValue>
+          <a href="" class="nav-link" data-toggle="modal" data-target="#mySignUp">Sign Up</a>
         </li>
        
         <li class="col-sm-2">

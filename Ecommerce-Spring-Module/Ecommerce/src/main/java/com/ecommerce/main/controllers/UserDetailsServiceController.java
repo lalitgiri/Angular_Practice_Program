@@ -5,10 +5,14 @@ import java.util.Map;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -67,26 +71,34 @@ public class UserDetailsServiceController {
 	 * }
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = "/getAuthentication")
-	public String handleLoginRequest(User user, Model model, HttpServletRequest request,
+	public String handleLoginRequest(User user, HttpServletRequest request, HttpServletResponse response,
 			@RequestBody Map<String, String> userRequest) {
-
+		//HttpHeaders responseHeaders = new HttpHeaders();
 		String emailId = userRequest.get("Username");
 		String password = userRequest.get("lpassword");
+	
+		
 		if (userDetailsService.userAuthentication(emailId, password).equals("Sucessfully Login")) {
 
 			User loggedUser = userService.loginUser(user);
 			if (loggedUser == null) {
-				request.getSession(true).setAttribute("user", loggedUser);
-				HttpSession session = request.getSession();
-				return "Session Generated";
+				request.getSession(true).setAttribute("user", loggedUser);				
+				TokenProvider tokenProvider =new TokenProvider();
+				User userToken = new User();
+				userToken.setEmailAddress(userRequest.get("Username"));
+				userToken.setId("id:@"+userRequest.get("lpassword")+"$user");
+				userToken.setRole("User");
+		
+				String token = tokenProvider.generate(userToken);
+			
+				//  responseHeaders.set("token", t);
+				response.addHeader("token",token);
 				
-				
-			} else {
-				model.addAttribute("error", "Not a valid user");
-				return "user-login";
+				System.out.println(token);
+				return token;
 			}
 		}
-		return "Invalid Credentials";
+		return null;
 	}
 
 }

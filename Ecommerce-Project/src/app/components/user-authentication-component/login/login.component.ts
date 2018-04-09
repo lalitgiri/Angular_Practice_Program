@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { environment } from '../../../../environments/environment';
 export class LoginComponent implements OnInit {
 
   LoginForm;
-  constructor(private httpClient:HttpClient) { }
+  constructor(private router:Router,private http:Http) { }
 
   ngOnInit() {
     this.LoginForm=new FormGroup({
@@ -22,12 +24,20 @@ export class LoginComponent implements OnInit {
   }
   onLogin(data){
     console.log(data);
-    this.httpClient.post(environment.serverUrl + 'getAuthentication',data,{ responseType: 'text' })
-    .subscribe(response => {alert(response) 
-      console.log(response)
+    this.http.post(environment.serverUrl + 'getAuthentication',data)
+    .subscribe(response => {
+      if(response.text().length>1)
+      { 
+        sessionStorage.setItem("token",response.text());
+        
+        window.location.reload();
+      }
+      else 
+        alert("Invalid Credentials"); 
+      console.log(sessionStorage.getItem("token"));
       this.LoginForm.reset();
     },
-    (error:Error)=>alert(error.message));
+    (error:Error)=>alert("Error :"+error.message));
    
   }
 
