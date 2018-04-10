@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.main.dao.UserDetails;
 import com.ecommerce.main.service.UserDetailsService;
 
 @RestController
@@ -31,27 +32,33 @@ public class SessionController {
 		String emailId = userRequest.get("Username");
 		String password = userRequest.get("lpassword");
 	
-		user.setRole("User");
-		user.setEmailAddress(userRequest.get("Username"));
-		user.setId(userRequest.get("lpassword"));
+				
+		UserDetails userDetails=userDetailsService.userAuthentication(emailId, password);
+		{
+			System.out.println("Name= "+userDetails.getName()+"  Id: "+userDetails.getCart().getUserId());
+			
+		}
 		
-		if (userDetailsService.userAuthentication(emailId, password).equals("Sucessfully Login")) {
-
+		if (userDetails!=null) {
+			
+			user.setEmailAddress(userRequest.get("Username"));
+			user.setId(userRequest.get("lpassword"));
+			user.setUserName(userDetails.getName());
+			user.setUserId(userDetails.getCart().getUserId());
+			user.setRole("User");
+			
+			
 			User loggedUser = userService.loginUser(user);
 			if (loggedUser == null) {
 				userService.addUser(user);
 				request.getSession(true).setAttribute("user", user);				
 				TokenProvider tokenProvider =new TokenProvider();
-				User userToken = new User();
-				userToken.setEmailAddress(userRequest.get("Username"));
-				userToken.setId(userRequest.get("lpassword"));
-				userToken.setRole("User");
-		
-				String token = tokenProvider.generate(userToken);
+						
+				String token = tokenProvider.generate(user);
 				
 				//response.addHeader("token",token);
 				
-				//System.out.println(token);
+				System.out.println(token);
 				return token;
 			}
 		}

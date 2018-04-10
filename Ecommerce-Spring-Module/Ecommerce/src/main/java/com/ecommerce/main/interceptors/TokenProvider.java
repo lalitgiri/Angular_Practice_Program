@@ -11,6 +11,8 @@ public class TokenProvider {
 		Claims claims = Jwts.claims().setSubject(user.getEmailAddress());
 		claims.put("UserId", String.valueOf(user.getId()));
 		claims.put("role", user.getRole());
+		claims.put("userName",user.getUserName());
+		claims.put("userId", user.getUserId());
 
 		return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, "lalit").compact();
 	}

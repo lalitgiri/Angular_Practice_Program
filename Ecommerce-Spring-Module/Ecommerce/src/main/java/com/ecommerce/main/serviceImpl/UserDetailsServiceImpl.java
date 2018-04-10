@@ -69,14 +69,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
 	
-	public String userAuthentication(String emailId,String password) {
+	public UserDetails userAuthentication(String emailId,String password) {
 		
 		UserDetails user=userDetailsRepository.findByemailIdAndPassword(emailId,password);
 		System.out.println(user+"  "+emailId+"  "+ password);
 		if(user!=null)
-		return "Sucessfully Login";
+		return user;
 		
-		return "Invalid Credentials";
+		return null;
 	}
 	
 }
