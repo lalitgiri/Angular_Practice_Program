@@ -5,11 +5,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecommerce.main.dao.CartDetails;
+import com.ecommerce.main.dao.ProductTable;
 import com.ecommerce.main.service.CartDetailsService;
 
 @RestController
@@ -23,9 +25,9 @@ public class CartDetailsServiceController {
 		return cartDetailsService.getCartDetails(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET,value="/updatecart/{id}/{pid}")
-	public String updateCartDetails(@PathVariable long id,@PathVariable int pid) {
-	 String str=cartDetailsService.updateCartDetails(pid, id);
+	@RequestMapping(method=RequestMethod.POST,value="/updatecart/{id}")
+	public String updateCartDetails(@PathVariable long id,@RequestBody ProductTable product) {
+	 String str=cartDetailsService.updateCartDetails(product, id);
 	 System.out.println(str);
 	 return str;
 	}

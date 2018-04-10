@@ -1,6 +1,7 @@
 
 package com.ecommerce.main.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +17,7 @@ public class CartDetails {
 	@Column(name = "UserID")
 	private long userId;		//primaryKey
 	@ManyToMany(mappedBy="cartId")
-	private List<ProductTable> productId;	//foreginKey
+	private List<ProductTable> productId =new ArrayList<>();	//foreginKey
 	
 	private String deliveryAddress;
 	

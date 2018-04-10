@@ -46,12 +46,8 @@ addToCart(){
 
   console.log("userid : "+userId+"pid : "+pId);
   console.log(this.itemData.productId);
-  this.http.get(environment.serverUrl + "updatecart/"+userId+"/"+pId).
-  map(response => alert(response.text())
-  ).
-  subscribe(
-    data => {
-    },
+  this.http.post(environment.serverUrl + "updatecart/"+userId,this.itemData).
+   subscribe(response =>alert(response.text()),
     (error: Error) => { alert(error.message) });
 
   }
