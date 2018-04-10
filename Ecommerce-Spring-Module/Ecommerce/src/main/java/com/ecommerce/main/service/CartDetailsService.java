@@ -11,7 +11,7 @@ public interface CartDetailsService {
 
 	public Optional<CartDetails> getCartDetails(int id);
 	
-	public String updateCartDetails(CartDetails cart,long id) ;
+	public String updateCartDetails(int pid,long id) ;
 	
 	public List<CartDetails> getAllCartDetails();
 	

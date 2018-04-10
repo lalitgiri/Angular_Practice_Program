@@ -1,21 +1,26 @@
-<div class="container bg-color">
-  <div  class="row ">
+<div class="container padding">
+        <h1 class="text-center"><i><u>{{pname}} :</u></i></h1>
+
+ 
+        <div  class="row bg padding">
       
       <div class=" col-sm-6">
           <div class="img-div row" id="img-div">
               <a [href]="imgUrl" > <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'> </a>
           </div><br/>
           <div>
-                <button class="btn btn-primary text " id="add-cart">&nbsp;Add To Cart&nbsp;</button>
+                <button class="btn btn-primary text " (click)="addToCart()" id="add-cart">&nbsp;Add To Cart&nbsp;</button>
                 <button class="btn btn-warning float-right text" id="buy-now">&nbsp;&nbsp;Buy Now&nbsp;&nbsp;</button>
             </div>
         </div><br/>
 
-          <div class="description  col-sm-6" id="description">
-           <h1>Product Name : {{pname}}</h1>
-            <h2>Product Price :  {{pprice}}</h2>
-            <h3>Product Category : {{pcategory}}</h3>
-            <h4>Product Description : {{pdescription}}</h4>
+          <div class="description  col-sm-6 container " id="description">
+            <h3><u>Product Details :</u></h3>
+            <br/>
+           <h5>Product Name :<small> {{pname}}</small></h5>
+            <h5>Product Price : <small>  {{pprice}}</small></h5>
+            <h5>Product Category :  <small>{{pcategory}}</small></h5>
+            <h5>Product Description : <small> {{pdescription}}</small></h5>
 
           </div> 
 

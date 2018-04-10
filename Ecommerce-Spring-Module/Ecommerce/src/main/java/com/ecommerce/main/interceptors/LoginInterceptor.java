@@ -21,7 +21,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		String uri= request.getRequestURI();
+		/*String uri= request.getRequestURI();
 	
 		//System.out.println(rm.value()[0]);
 		
@@ -36,7 +36,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 						
 						else
 							return false;			
-			}
+			}*/
 		return true;
 		}
 

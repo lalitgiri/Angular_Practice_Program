@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +23,11 @@ public class CartDetailsServiceController {
 		return cartDetailsService.getCartDetails(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST,value="/updatecart/{id}")
-	public String updateCartDetails(@RequestBody CartDetails cart,@PathVariable long id) {
-		return cartDetailsService.updateCartDetails(cart, id);
+	@RequestMapping(method=RequestMethod.GET,value="/updatecart/{id}/{pid}")
+	public String updateCartDetails(@PathVariable long id,@PathVariable int pid) {
+	 String str=cartDetailsService.updateCartDetails(pid, id);
+	 System.out.println(str);
+	 return str;
 	}
 	
 	@RequestMapping("/getallcartsdetails")

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { TokenDecoderService } from '../../service/token-decoder.service';
 
 @Component({
   selector: 'app-description',
@@ -10,7 +11,7 @@ import { environment } from '../../../environments/environment';
 })
 export class DescriptionComponent implements OnInit {
 
-  constructor(private http: Http, private route: ActivatedRoute) { }
+  constructor(private http: Http, private route: ActivatedRoute, private tokenDecoder: TokenDecoderService) { }
   itemData;
   url = environment.serverUrl;
   flag = false;
@@ -26,7 +27,7 @@ export class DescriptionComponent implements OnInit {
       map(response => response.json()).
       subscribe(
         data => {
-        this.itemData = data;
+          this.itemData = data;
           this.pname = this.itemData.productName;
           this.pprice = this.itemData.productPrice;
           this.pcategory = this.itemData.productCategory;
@@ -34,10 +35,27 @@ export class DescriptionComponent implements OnInit {
           this.imgUrl = this.imgUrl + this.itemData.imageUrl;
           this.flag = true;
         },
-        (error:Error)=>{ alert(error.message)});
+        (error: Error) => { alert(error.message) });
   }
 
 
+addToCart(){
+  var parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
+  let userId=parsedToken.userId;
+  let pId=this.itemData.productId;
 
+  console.log("userid : "+userId+"pid : "+pId);
+  console.log(this.itemData.productId);
+  this.http.get(environment.serverUrl + "updatecart/"+userId+"/"+pId).
+  map(response => alert(response.text())
+  ).
+  subscribe(
+    data => {
+    },
+    (error: Error) => { alert(error.message) });
+
+  }
 
 }
+
+
