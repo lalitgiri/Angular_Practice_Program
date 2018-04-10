@@ -40,7 +40,7 @@ public class SessionController {
 			User loggedUser = userService.loginUser(user);
 			if (loggedUser == null) {
 				userService.addUser(user);
-				request.getSession(true).setAttribute("user", loggedUser);				
+				request.getSession(true).setAttribute("user", user);				
 				TokenProvider tokenProvider =new TokenProvider();
 				User userToken = new User();
 				userToken.setEmailAddress(userRequest.get("Username"));

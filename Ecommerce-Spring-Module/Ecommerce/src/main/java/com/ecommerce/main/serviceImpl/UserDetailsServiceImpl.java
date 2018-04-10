@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ecommerce.main.dao.CartDetails;
 import com.ecommerce.main.dao.UserDetails;
 import com.ecommerce.main.repository.UserDetailsRepository;
 import com.ecommerce.main.service.UserDetailsService;
@@ -23,6 +24,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	
 	public String addUserDetails(UserDetails user) throws Exception {
+		CartDetails cart=new CartDetails();
+	
+		int i=userDetailsRepository.CountRow();
+		System.out.println("Row : "+i);
+		cart.setUserId(i+1);
+		user.setCart(cart);
 		userDetailsRepository.save(user);
 		return "Sucessfully Added";
 	}

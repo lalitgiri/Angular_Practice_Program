@@ -17,7 +17,6 @@ public class UserDetails {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID") //uniqueKey
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private CartDetails cart;
 	@Id
 	private long  phoneNumber;	//primaryKey

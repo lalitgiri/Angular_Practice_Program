@@ -12,7 +12,7 @@ public interface ProductTableRepository extends CrudRepository<ProductTable,Inte
 	public static final String FIND_CATEGORY = "SELECT DISTINCT product_category FROM product_table";
 											
 														//SELECT DISTINCT  * FROM product_table WHERE product_category='Bicycle'
-	public static final String FIND_PRODUCT_BY_CATEGORY = "SELECT DISTINCT * FROM product_table WHERE product_category=?1";
+	//public static final String FIND_PRODUCT_BY_CATEGORY = "SELECT DISTINCT * FROM product_table WHERE product_category=?1";
 	@Query(value = FIND_CATEGORY, nativeQuery = true)
 	public List<String> findCategory();	
 	/*

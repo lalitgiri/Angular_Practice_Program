@@ -30,14 +30,37 @@ import com.ecommerce.main.service.UserDetailsService;
 public class UserDetailsServiceController {
 
 	@Autowired
-	private UserDetailsService userDetailsService;
-
-	@Autowired
 	private UserService userService;
-
+	
+	@Autowired
+	private UserDetailsService userDetailsService;
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/adduser")
-	public String addUserDetails(@RequestBody UserDetails user) throws Exception {
-		return userDetailsService.addUserDetails(user);
+	public String addUserDetails(@RequestBody UserDetails newUser,HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String message= userDetailsService.addUserDetails(newUser);
+		
+		if(message.equals("Sucessfully Added")) {
+		User user=new User();
+		
+		String emailId = newUser.getEmailId();
+		String password = newUser.getPassword();
+	
+		user.setRole("User");
+		user.setEmailAddress(emailId);
+		user.setId(password);
+		userService.addUser(user);
+		request.getSession(true).setAttribute("user", user);				
+		TokenProvider tokenProvider =new TokenProvider();
+		User userToken = new User();
+		userToken.setEmailAddress(emailId);
+		userToken.setId(password);
+		userToken.setRole("User");
+
+		String token = tokenProvider.generate(userToken);
+		
+		return token;
+		}
+		return message;
 	}
 
 	@RequestMapping("/deleteuser/{id}")

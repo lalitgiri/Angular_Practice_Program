@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 public class EmployeeDetails {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int employeeId;		//primary Key
 	private String employeeName;
 	private String employeeRole;

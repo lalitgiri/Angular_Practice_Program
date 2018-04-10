@@ -13,7 +13,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private http:Http,private httpClient:HttpClient) { }
+  constructor(private http:Http) { }
   
   SignUpForm;
   isd_code;
@@ -36,12 +36,21 @@ export class SignupComponent implements OnInit {
 
     onUpdate(data){
       console.log(data);
-      this.httpClient.post(environment.serverUrl + 'adduser',data,{ responseType: 'text' })
-      .subscribe(response => {alert(response) 
-        console.log(response)
-        this.SignUpForm.reset();
+      this.http.post(environment.serverUrl + 'adduser',data)
+      .subscribe(response => {
+        alert(response.text()) 
+        console.log(response.text())
+        if(response.text().length>1){
+          sessionStorage.setItem("token",response.text());
+           window.location.reload();
+        }
+        
+       
       },
-      (error:Error)=>alert(error.message));
+      (error:Error)=>{
+        alert(error.message)
+        this.SignUpForm.reset();
+      });
      
     }
 
