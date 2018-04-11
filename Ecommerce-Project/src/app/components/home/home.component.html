@@ -35,8 +35,8 @@
 
 
 
-<div class="row  div-list" *ngFor="let category of httpData" >
-  <div class="col-sm-3 col-xs-2  sub-div" >
+<div class="div-list" *ngFor="let category of httpData" >
+  <div class="sub-div" >
     <div class="parent-div">
       <label>{{category}}</label>
         <br>
@@ -44,8 +44,9 @@
       <input type="hidden" #id value="{{category}}"/>
     </div>
   </div>
-   <div class="col-sm-9 col-xs-10  scroll">
-          <app-home-child  [category]="id.value"></app-home-child>
+  
+   <div class="scroll">
+         <app-home-child  [category]="id.value"></app-home-child>
    </div>
-
+  
 </div>

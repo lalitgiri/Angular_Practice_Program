@@ -21,8 +21,6 @@ h1{
     margin-bottom: 5vw; 
     width:auto; 
     background:rgba(210, 180, 140,0.7);
-    
-  
 }
 
 .parent-div{
@@ -31,12 +29,20 @@ h1{
 }
 .sub-div{
     background: tan;
+    width:20vw;
+    display: inline-table;
+    height:25vw;
+  }
+  .wrap-div{
+      display: inline;
   }
 .scroll{
-    overflow: scroll;
     padding:2vw;
-   
+    width:75vw;
+    overflow-y: scroll;
     overflow-x: hidden;
+    float:right;
+    height:25vw;
 }
 ::-webkit-scrollbar {
     width: 1vw;
