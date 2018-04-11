@@ -12,7 +12,7 @@ public interface CartDetailsService {
 
 	public Optional<CartDetails> getCartDetails(int id);
 	
-	public String updateCartDetails(ProductTable product,long id) ;
+	public String updateCartDetails(ProductTable product,int id) ;
 	
 	public List<CartDetails> getAllCartDetails();
 	

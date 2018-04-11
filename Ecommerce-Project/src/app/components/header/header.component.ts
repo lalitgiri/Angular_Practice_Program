@@ -22,9 +22,9 @@ export class HeaderComponent implements OnInit {
       this.tokenValue = false;
       var parsedToken = tokenDecoder.decodeToken(sessionStorage.getItem("token"));
       this.name = parsedToken.userName;
-      console.log("hello " + this.name);
+      //console.log("hello " + this.name);
     }
-    console.log("token : " + sessionStorage.getItem("token"));
+   // console.log("token : " + sessionStorage.getItem("token"));
   }
   itemData;
   flag = false;
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   inValidateSession() {
-    console.log("hye");
+   // console.log("hye");
 
     let myheaders = new Headers({ 'Content-Type': 'application/json' });    //x-www-form-urlencoded
     myheaders.append('token', sessionStorage.getItem("token"));
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
     this.http.get(environment.serverUrl + "logout", { headers: myheaders }).
       map(response => response.json()).
       subscribe(data => {
-        console.log(data);
+       // console.log(data);
         if (data == true) {
           sessionStorage.removeItem("token");
           window.location.reload();
@@ -73,8 +73,8 @@ export class HeaderComponent implements OnInit {
     this.status = false;
   }
   navigate(category: string) {
-    console.log(this.router.navigate(['/viewAll', category]));
-    console.log(category);
+   // console.log(this.router.navigate(['/viewAll', category]));
+   // console.log(category);
   }
   ngAfterViewChecked() {
     this.cdRef.detectChanges();

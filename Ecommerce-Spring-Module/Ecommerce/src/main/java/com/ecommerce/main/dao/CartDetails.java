@@ -3,7 +3,6 @@ package com.ecommerce.main.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,9 +14,7 @@ public class CartDetails {
 	
 	@Id
 	@Column(name = "UserID")
-	private long userId;		//primaryKey
-	
-	
+	private int userId;		//primaryKey
 	@ManyToMany
 	private List<ProductTable> productId =new ArrayList<>();	//foreginKey
 	
@@ -25,10 +22,10 @@ public class CartDetails {
 	
 	
 
-	public long getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getDeliveryAddress() {

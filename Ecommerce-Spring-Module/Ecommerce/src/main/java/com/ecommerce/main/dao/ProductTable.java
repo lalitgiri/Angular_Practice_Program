@@ -1,5 +1,6 @@
 package com.ecommerce.main.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,10 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Entity
-public class ProductTable {
+public class ProductTable implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int productId;    		//primaryKey
@@ -26,6 +32,7 @@ public class ProductTable {
 	@JoinColumn(name = "EmployeeID")
 	private EmployeeDetails employeeId; 			//foreginKey
 	
+	@Transient
 	@ManyToMany(mappedBy="productId")
 	private List<CartDetails> cartId;
 	

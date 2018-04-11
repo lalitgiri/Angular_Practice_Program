@@ -24,7 +24,7 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 		return cartDetailsRepository.findById(id);
 	}
 
-	public String updateCartDetails(ProductTable product, long id) {
+	public String updateCartDetails(ProductTable product, int id) {
 		if (product != null) {
 			cart.setUserId(id);
 			cart.setProductId(product);

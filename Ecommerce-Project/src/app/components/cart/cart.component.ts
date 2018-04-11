@@ -13,13 +13,21 @@ export class CartComponent implements OnInit {
   itemData;
   constructor(private http:Http,private tokenDecoder: TokenDecoderService) { }
   parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-  id=this.parsedToken.getuserId;
+  id=this.parsedToken.userId;
+  p;
   ngOnInit() {
-  /*  this.http.get(environment.serverUrl + "getproductbycategory/" + this.id).
-    map(response => response.json()).
-    subscribe(data => this.itemData = data,
-      (error:Error)=>{ alert(error.message)});
-    */}
+    console.log("hello id:"+this.id);
+    this.http.get(environment.serverUrl + "getcart/" + this.id).
+    map(response => {
+      response.json()
+      
+    }).
+    subscribe(data => {
+      this.itemData = data
+      this.p=this.itemData.deliveryAddress
+    
+    },(error:Error)=>{ alert(error.message)});
+    }
 
 
 }
