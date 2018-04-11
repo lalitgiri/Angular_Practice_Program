@@ -1,17 +1,15 @@
 <div class="row">
-  <div class="col-sm-8 height">
+  <div class="col-sm-9 height">
     <h1>Cart</h1>
     <div id="cartBox">
-    
-        cartBox
-      <div>
-       subDiv
+      <div  *ngFor="let data of productData">
+      <img src="{{imgUrl}}images/{{data.imageUrl}}"/> 
+      imge url= {{imgurl}}images/{{data.imageUrl}}
      </div>
-      p=  {{p}}
-    </div>
+     </div>
   </div>
 
-  <div class="col-sm-4 left-border">
+  <div class="col-sm-3 left-border">
       <h1>User Details</h1>
     </div>
   

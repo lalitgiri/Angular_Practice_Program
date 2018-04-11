@@ -11,20 +11,29 @@ import { TokenDecoderService } from '../../service/token-decoder.service';
 export class CartComponent implements OnInit {
 
   itemData;
-  constructor(private http:Http,private tokenDecoder: TokenDecoderService) { }
+  productData;
+  imgurl;
   parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
   id=this.parsedToken.userId;
   p;
-  ngOnInit() {
+  flag=false;
+  constructor(private http:Http,private tokenDecoder: TokenDecoderService) {
     console.log("hello id:"+this.id);
+    this.imgurl=environment.serverUrl;
     this.http.get(environment.serverUrl + "getcart/" + this.id).
     map(response => response.json()).
     subscribe(data => {
       this.itemData = data
-      this.p=data.deliveryAddress
-      console.log(data);
+      this.productData=this.itemData.productId;
+      console.log(this.productData);
+      this.flag=true;
     
     },(error:Error)=>{ alert(error.message)});
+   }
+  
+  
+  ngOnInit() {
+   
     }
 
 
