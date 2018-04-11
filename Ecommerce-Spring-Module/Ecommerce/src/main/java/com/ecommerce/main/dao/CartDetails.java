@@ -16,7 +16,9 @@ public class CartDetails {
 	@Id
 	@Column(name = "UserID")
 	private long userId;		//primaryKey
-	@ManyToMany(mappedBy="cartId")
+	
+	
+	@ManyToMany
 	private List<ProductTable> productId =new ArrayList<>();	//foreginKey
 	
 	private String deliveryAddress;

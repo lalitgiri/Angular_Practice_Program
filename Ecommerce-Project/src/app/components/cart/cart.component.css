@@ -1,0 +1,17 @@
+*{
+    padding-left: 1vw;
+}
+
+.left-border{
+    border-left:1px solid black;
+}
+
+#cartBox{
+    display: block;
+    background: aquamarine;
+    overflow: scroll;
+}
+.height{
+    min-height: 50vw;
+    
+}

@@ -26,7 +26,7 @@ public class ProductTable {
 	@JoinColumn(name = "EmployeeID")
 	private EmployeeDetails employeeId; 			//foreginKey
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="productId")
 	private List<CartDetails> cartId;
 	
 	public List<CartDetails> getCartId() {
