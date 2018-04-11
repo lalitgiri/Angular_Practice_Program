@@ -1,5 +1,9 @@
 *{
+    text-align: center;
+}
+.padding-left{
     padding-left: 2%;
+    padding-top:5%;
    
 }
 
@@ -9,16 +13,20 @@
 
 .left-border{
     border-right:1px solid black;
+    background: tan;
 }
 
 #cartBox{
     display: block;
-    background: aquamarine;
+    background: tan;
     overflow-x: hidden;
     overflow-y: scroll;
     height:70%;
     width:auto;
     
+}
+label{
+    font-size: 2em;
 }
 .imageAlign{
     height: auto;;
@@ -30,6 +38,9 @@
     
 }
 .padding-top{
-    padding-top: 1%;
+    padding: 1%;
     
+}
+.border{
+  
 }

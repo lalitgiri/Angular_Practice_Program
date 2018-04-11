@@ -17,8 +17,9 @@ export class CartComponent implements OnInit {
   id=this.parsedToken.userId;
   name=this.parsedToken.userName;
   address;
-  p;
-  flag=false;
+  email=this.parsedToken.sub;
+  p;  
+  cartPrice=0;
  
   constructor(private http:Http,private tokenDecoder: TokenDecoderService) {
     console.log("hello id:"+this.id);
@@ -29,11 +30,19 @@ export class CartComponent implements OnInit {
       this.productData=this.itemData.productId;
       this.address=this.itemData.deliveryAddress;
       console.log(this.productData);
-      this.flag=true;
+      this.findProductPrice();
+      
     },(error:Error)=>{ alert(error.message)});
     
    }
   
+   findProductPrice(){
+     this.productData.forEach(element => {
+       this.cartPrice=element.productPrice+this.cartPrice;
+       
+     });
+
+   }
     
   ngOnInit() {
  

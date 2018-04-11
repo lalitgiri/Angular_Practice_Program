@@ -1,7 +1,7 @@
 
 .webSiteName
 {
-        /*margin-left: 2vw;*/
+        margin-left: 2vw;
         text-align: center;
         font-size: 2.5vw;
         font-style: oblique;
@@ -74,10 +74,10 @@ a:hover{
 }
 
 select{
-  /* 
+  
     padding-left: 0.5vw;
     padding-right: 0.5vw;
-    margin-left:2vw;*/
+    margin-left:2vw;
     height:3.1vw;
     font-size:1.3vw;
     border:none;
@@ -87,8 +87,8 @@ select{
 
 input[type=text]
 {
-    /* padding-left: 1vw;
-     margin-left:-0.3vw;*/
+     padding-left: 1vw;
+     margin-left:-0.3vw;
      height:3.1vw; 
      font-size:1.3vw;
      /*width: 25vw;*/
@@ -103,7 +103,7 @@ input[type=text]
     cursor: pointer;
 }
 .menu{
-  /*  margin-left:2vw; */
+    margin-left:2vw; 
     color:white;
     padding:0.5vw;
     border:0.1vw solid transparent;
@@ -126,4 +126,12 @@ input[type=text]
 
 li{
     text-align: center;
+}
+
+.div-padding{
+    margin-left: 20vw;
+}
+
+.support:hover{
+ color:black;   
 }
