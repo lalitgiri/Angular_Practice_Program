@@ -10,6 +10,7 @@
     display: block;
     background: aquamarine;
     overflow: scroll;
+    height:20vw;
 }
 .height{
     min-height: 50vw;

@@ -18,13 +18,11 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     console.log("hello id:"+this.id);
     this.http.get(environment.serverUrl + "getcart/" + this.id).
-    map(response => {
-      response.json()
-      
-    }).
+    map(response => response.json()).
     subscribe(data => {
       this.itemData = data
-      this.p=this.itemData.deliveryAddress
+      this.p=data.deliveryAddress
+      console.log(data);
     
     },(error:Error)=>{ alert(error.message)});
     }
