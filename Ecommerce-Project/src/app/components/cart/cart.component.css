@@ -4,11 +4,12 @@
 .padding-left{
     padding-left: 2%;
     padding-top:5%;
+    
    
 }
 
 .position{
-  max-height: 710px;
+  height: 722px;
 }
 
 .left-border{
@@ -23,10 +24,12 @@
     overflow-y: scroll;
     height:70%;
     width:auto;
+    border:0.2vw solid cornsilk;
     
 }
 label{
-    font-size: 2em;
+    font-size: 1.5em;
+    float: left;
 }
 .imageAlign{
     height: auto;;
@@ -40,7 +43,4 @@ label{
 .padding-top{
     padding: 1%;
     
-}
-.border{
-  
 }

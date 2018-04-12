@@ -9,7 +9,7 @@
               <a [href]="imgUrl" > <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'> </a>
           </div><br/>
           <div>
-                <button class="btn btn-primary text " (click)="addToCart()" id="add-cart">&nbsp;Add To Cart&nbsp;</button>
+                <button class="btn btn-primary text " (click)="addToCart()" id="add-cart">&nbsp;{{cartBtn}}&nbsp;</button>
                 <button class="btn btn-warning float-right text" id="buy-now">&nbsp;&nbsp;Buy Now&nbsp;&nbsp;</button>
             </div>
         </div><br/>

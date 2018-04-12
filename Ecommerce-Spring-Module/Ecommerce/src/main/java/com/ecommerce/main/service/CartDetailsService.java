@@ -16,4 +16,5 @@ public interface CartDetailsService {
 	
 	public List<CartDetails> getAllCartDetails();
 	
+	public String removeItemFromCart(ProductTable product,int id);
 }

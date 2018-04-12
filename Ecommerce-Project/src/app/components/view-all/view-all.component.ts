@@ -9,6 +9,11 @@ import { environment } from '../../../environments/environment';
 })
 export class ViewAllComponent implements OnInit {
 
+
+  id;
+  url = environment.serverUrl;
+  itemData;
+
   constructor(private http: Http, private route: ActivatedRoute) {
     /*
       problem: router navigator does not reload the content of the page if we are on the same page or component.
@@ -29,16 +34,14 @@ export class ViewAllComponent implements OnInit {
     */
     route.params.subscribe(val => {
 
-      const id = this.route.snapshot.paramMap.get('id');
-      this.http.get(environment.serverUrl + "getproductbycategory/" + id).
+      this.id = this.route.snapshot.paramMap.get('id');
+      this.http.get(environment.serverUrl + "getproductbycategory/" + this.id).
         map(response => response.json()).
         subscribe(data => this.itemData = data,
           (error:Error)=>{ alert(error.message)});
     });
 
   }
-  url = environment.serverUrl;
-  itemData;
   ngOnInit() {
 
   }

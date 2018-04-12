@@ -39,8 +39,8 @@ public class CartDetails {
 	public List<ProductTable> getProductId() {
 		return productId;
 	}
-	public void setProductId(ProductTable product) {
-		this.productId.add(product);
+	public void setProductId(List<ProductTable> productId) {
+		this.productId = productId;
 	}
 	
 }

@@ -20,6 +20,8 @@ export class DescriptionComponent implements OnInit {
   pprice: number;
   pdescription: string;
   pcategory: string;
+  cartBtn="Add To Cart";
+  cartBtnflag=true;
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.imgUrl = this.url + "images/";
@@ -46,10 +48,20 @@ addToCart(){
 
   console.log("userid : "+userId+"pid : "+pId);
   console.log(this.itemData.productId);
-  this.http.post(environment.serverUrl + "updatecart/"+userId,this.itemData).
-   subscribe(response =>alert(response.text()),
+  if(this.cartBtnflag)
+  {
+    this.http.post(environment.serverUrl + "updatecart/"+userId,this.itemData).
+   subscribe(response =>{
+     this.cartBtn="Added To Cart";
+     this.cartBtnflag=false;
+    },
     (error: Error) => { alert(error.message) });
-
+  }
+    else
+      {
+        this.cartBtnflag=false;
+        alert("Item Already Added");
+      }
   }
 
 }

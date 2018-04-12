@@ -1,4 +1,4 @@
-<div (mouseleave)="hide(event)">
+<div (mouseleave)="hide($event)">
   <!--This div is create to use the functionality of 
                                       mouse enter and mouse leave property for menu!!!.-->
   <br/>
@@ -22,7 +22,7 @@
     </div>
     <!--<span class="menu menu_links"  (mouseenter)="clicked(event)" (click)="clicked(event)" >-->
     <span class="">
-      <span class="menu menu_links" (click)="clicked(event)">Menu</span>
+      <span class="menu menu_links" (click)="clicked($event)">Menu</span>
     </span>
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">

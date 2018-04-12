@@ -36,4 +36,9 @@ public class CartDetailsServiceController {
 	public List<CartDetails> getAllCartDetails(){
 		return cartDetailsService.getAllCartDetails();
 	}
+	
+	@RequestMapping(method=RequestMethod.POST,value="/removefromcart/{id}")
+	public String removeItemFromCart(@RequestBody ProductTable product,@PathVariable int id) {
+		return cartDetailsService.removeItemFromCart(product, id);
+	}	
 }

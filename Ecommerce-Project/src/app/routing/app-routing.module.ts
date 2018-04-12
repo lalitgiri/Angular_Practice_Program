@@ -28,7 +28,7 @@ const appRoutes: Routes = [
 
   ]},
   {path:'description/:id',component:DescriptionComponent},
-//  {path:'cart',component:CartComponent},
+  {path:'cart',component:CartComponent},
  // {path:'login',component:LoginComponent},
  // {path:'signup',component:SignupComponent},
   {path:'viewAll/:id',component:ViewAllComponent},

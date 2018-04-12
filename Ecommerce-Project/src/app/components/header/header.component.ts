@@ -73,8 +73,8 @@ export class HeaderComponent implements OnInit {
     this.status = false;
   }
   navigate(category: string) {
-   // console.log(this.router.navigate(['/viewAll', category]));
-   // console.log(category);
+    this.router.navigate(['/viewAll', category]);
+    console.log(category);
   }
   ngAfterViewChecked() {
     this.cdRef.detectChanges();
