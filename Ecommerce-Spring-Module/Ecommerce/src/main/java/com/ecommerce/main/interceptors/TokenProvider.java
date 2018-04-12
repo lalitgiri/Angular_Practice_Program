@@ -13,7 +13,7 @@ public class TokenProvider {
 		claims.put("role", user.getRole());
 		claims.put("userName",user.getUserName());
 		claims.put("userId", user.getUserId());
-
+		claims.put("phoneNumber", user.getPhoneNumber());
 		return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS512, "lalit").compact();
 	}
 }

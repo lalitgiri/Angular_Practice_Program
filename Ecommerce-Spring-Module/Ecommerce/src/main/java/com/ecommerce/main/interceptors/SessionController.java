@@ -46,6 +46,7 @@ public class SessionController {
 			user.setUserName(userDetails.getName());
 			user.setUserId(userDetails.getCart().getUserId());
 			user.setRole("User");
+			user.setPhoneNumber(userDetails.getPhoneNumber());
 			
 			
 			User loggedUser = userService.loginUser(user);

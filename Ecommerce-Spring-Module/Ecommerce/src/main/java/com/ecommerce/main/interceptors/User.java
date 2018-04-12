@@ -9,8 +9,17 @@ public class User implements Serializable{
     private String  role;
     private String userName;
     private long userId;
+    private long phoneNumber;
    
-    public long getUserId() {
+    public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public long getUserId() {
 		return userId;
 	}
 

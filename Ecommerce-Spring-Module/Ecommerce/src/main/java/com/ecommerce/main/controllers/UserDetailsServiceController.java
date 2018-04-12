@@ -70,6 +70,7 @@ public class UserDetailsServiceController {
 
 	@RequestMapping("/getuser/{id}")
 	public Optional<UserDetails> getUserDetails(@PathVariable long id) {
+		System.out.println("hello");
 		return userDetailsService.getUserDetails(id);
 	}
 
