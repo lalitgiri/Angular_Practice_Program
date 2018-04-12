@@ -1,0 +1,26 @@
+.parent{
+    padding: 1vw;
+    margin:1vw;
+    align-content: center;
+    
+}
+.div{
+    padding: 1vw;
+    margin:2vw;
+    background: burlywood;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+    width:70%;
+}
+.sub-div{
+    padding: 1vw;
+    margin:1vw;
+    background:blanchedalmond;
+    
+}
+.floatproperty{
+    float:right;
+    background: blanchedalmond;
+    border: 0.1vw solid blanchedalmond;
+    border-radius: 0.5vw;
+}

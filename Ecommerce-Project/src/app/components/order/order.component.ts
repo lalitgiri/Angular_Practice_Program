@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
+  flag=0;
   constructor() { }
 
   ngOnInit() {
   }
 
+  onclick(flag) {
+    if(this.flag==flag)
+      flag=0;
+    this.flag=flag;
+  }
 }

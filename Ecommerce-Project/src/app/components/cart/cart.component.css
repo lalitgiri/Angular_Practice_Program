@@ -14,12 +14,12 @@
 
 .left-border{
     border-right:1px solid black;
-    background: tan;
+    background: burlywood;
 }
 
 #cartBox{
     display: block;
-    background: tan;
+    background: burlywood;
     overflow-x: hidden;
     overflow-y: scroll;
     height:70%;

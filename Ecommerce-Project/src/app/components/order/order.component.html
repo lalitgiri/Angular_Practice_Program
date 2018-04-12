@@ -1,3 +1,46 @@
-<p>
-  order works!
-</p>
+<div class="parent">
+  <div class="div">
+    User Details:
+    <button class="floatproperty"  (click)="onclick(1)">View</button>
+    <div class="sub-div" *ngIf="flag==1">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+  <div class="div">
+    Delivery Address:
+    <button class="floatproperty"  (click)="onclick(2)">View</button>
+    <div class="sub-div" *ngIf="flag==2">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+  <div class="div" >
+    Order Summary:
+    <button class="floatproperty" (click)="onclick(3)">View</button>
+    <div class="sub-div" *ngIf="flag==3">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+  <div class="div" >
+    Payment Options:
+    <button class="floatproperty" (click)="onclick(4)">View</button>
+    <div class="sub-div" *ngIf="flag==4">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+
+</div>

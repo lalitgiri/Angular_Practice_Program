@@ -27,7 +27,7 @@ hr {
     text-align: center;
     border:0.1vw solid white;
     display: inline-block;
-    background:tan;
+    background:burlywood;
 }
 .sub-div-list:hover{
     color: black;
@@ -42,7 +42,7 @@ a:hover{
     
 }
 .bg-nav{
-    background:tan;
+    background:burlywood;
     border:none;
     color:white;
     padding:0%;

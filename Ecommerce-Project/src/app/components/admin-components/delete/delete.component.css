@@ -5,7 +5,7 @@
 }
 
 tr:hover{
-    background: rgba(210, 180, 140,0.5);
+    background: rgba(222, 184, 135,0.5);
 }
 th.rightBorderRadius{
     border-top-right-radius: 1vw;
@@ -24,7 +24,7 @@ td.leftBorderRadius{
 }
 th{
     padding: 0.5vw;
-    background: tan; 
+    background: burlywood; 
 }
 *{
     text-align: center;

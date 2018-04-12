@@ -2,7 +2,7 @@
 .carousel-div-list{
    height:25vw ; 
    width:auto; 
-   background:tan;
+   background:burlywood;
 }
 
 h1{
@@ -28,7 +28,7 @@ h1{
     text-align: center;
 }
 .sub-div{
-    background: tan;
+    background: burlywood;
     width:20vw;
     display: inline-table;
     height:25vw;
