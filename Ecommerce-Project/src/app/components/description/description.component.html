@@ -10,7 +10,7 @@
           </div><br/>
           <div>
                 <button class="btn btn-primary text " (click)="addToCart()" id="add-cart">{{cartBtn}}</button>
-                <button class="btn btn-warning float-right text" id="buy-now">&nbsp;&nbsp;Buy Now&nbsp;&nbsp;</button>
+                <button class="btn btn-warning float-right text" [routerLink]="['/order']" id="buy-now">&nbsp;&nbsp;Buy Now&nbsp;&nbsp;</button>
             </div>
         </div><br/>
 
