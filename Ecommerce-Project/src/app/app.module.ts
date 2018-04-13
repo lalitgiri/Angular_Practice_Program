@@ -26,6 +26,7 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { CartComponent } from './components/cart/cart.component';
 import { TokenDecoderService } from './service/token-decoder.service';
 import { OrderComponent } from './components/order/order.component';
+import { DataSharingService } from './service/data-sharing.service';
 
 
 //import { routing } from './routing/app-routing.module';

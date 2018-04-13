@@ -3,10 +3,10 @@
     User Details:
     <button class="floatproperty"  (click)="onclick(1)">View</button>
     <div class="sub-div" *ngIf="flag==1">
-     Username :{{userDetails.userName}} <br/>
-      <br/>
-      <br/>
-      <br/>
+      Username :{{userDetails.name}} <br/>
+     Contact Number : {{userDetails.countryCode}}-{{userDetails.phoneNumber}} <br/>
+     Email Id :{{userDetails.emailId}} <br/>
+     
     </div>
   </div>
 
@@ -14,10 +14,8 @@
     Delivery Address:
     <button class="floatproperty"  (click)="onclick(2)">View</button>
     <div class="sub-div" *ngIf="flag==2">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+     Address:<br/><small>{{userDetails.cart.deliveryAddress}}</small><br/>
+      
     </div>
   </div>
 
@@ -25,10 +23,7 @@
     Order Summary:
     <button class="floatproperty" (click)="onclick(3)">View</button>
     <div class="sub-div" *ngIf="flag==3">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      product name:
     </div>
   </div>
 

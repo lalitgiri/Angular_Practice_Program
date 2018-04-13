@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { TokenDecoderService } from '../../service/token-decoder.service';
+import { DataSharingService } from '../../service/data-sharing.service';
 
 @Component({
   selector: 'app-description',
@@ -11,7 +12,7 @@ import { TokenDecoderService } from '../../service/token-decoder.service';
 })
 export class DescriptionComponent implements OnInit {
 
-  constructor(private http: Http, private route: ActivatedRoute, private tokenDecoder: TokenDecoderService) { }
+  constructor(private http: Http,private dataSharingService:DataSharingService, private route: ActivatedRoute, private tokenDecoder: TokenDecoderService,private router:Router) { }
   itemData;
   url = environment.serverUrl;
   flag = false;
@@ -62,6 +63,12 @@ addToCart(){
         this.cartBtnflag=false;
         alert("Item Already Added");
       }
+  }
+
+  onClick(){
+      this.dataSharingService.setProduct(this.itemData);
+      this.router.navigate(['/order']);
+
   }
 
 }

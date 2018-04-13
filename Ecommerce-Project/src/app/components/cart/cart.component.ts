@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Http } from '@angular/http';
 import { TokenDecoderService } from '../../service/token-decoder.service';
+import { Router } from '@angular/router';
+import { DataSharingService } from '../../service/data-sharing.service';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +23,7 @@ export class CartComponent implements OnInit {
   p;
   cartPrice = 0;
 
-  constructor(private http: Http, private tokenDecoder: TokenDecoderService) {
+  constructor(private http: Http, private tokenDecoder: TokenDecoderService,private router:Router,private dataSharingService:DataSharingService) {
     this.http.get(environment.serverUrl + "getcart/" + this.id).
       map(response => response.json()).
       subscribe(data => {
@@ -53,5 +55,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  onClick(){
+    this.dataSharingService.setProduct(this.itemData);
+    this.router.navigate(['/order']);
   }
 }
