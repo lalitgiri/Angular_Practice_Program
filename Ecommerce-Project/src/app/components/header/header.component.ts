@@ -55,6 +55,7 @@ export class HeaderComponent implements OnInit {
           window.location.reload();
           alert("Sucessfully Logout");
           sessionStorage.clear();
+          this.router.navigate(['/']);
         }
 
       },
