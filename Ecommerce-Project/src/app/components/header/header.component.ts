@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   inValidateSession() {
    // console.log("hye");
-
+   
     let myheaders = new Headers({ 'Content-Type': 'application/json' });    //x-www-form-urlencoded
     myheaders.append('token', sessionStorage.getItem("token"));
 
@@ -54,6 +54,7 @@ export class HeaderComponent implements OnInit {
           sessionStorage.removeItem("token");
           window.location.reload();
           alert("Sucessfully Logout");
+          sessionStorage.clear();
         }
 
       },

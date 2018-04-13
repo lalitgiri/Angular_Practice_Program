@@ -23,8 +23,8 @@ export class OrderComponent implements OnInit {
 
 
   ngOnInit() {  
-    this.products = this.dataSharingService.getProduct();
-   
+    //this.products = this.dataSharingService.getProduct();
+    this.products = JSON.parse(sessionStorage.getItem('services_assigned'));
       console.log(this.products);
 
     this.http.get(environment.serverUrl + "getuser/" + this.userId)

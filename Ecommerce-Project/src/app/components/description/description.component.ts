@@ -23,6 +23,8 @@ export class DescriptionComponent implements OnInit {
   pcategory: string;
   cartBtn="Add To Cart";
   cartBtnflag=true;
+   parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
+  userId=this.parsedToken.userId;
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.imgUrl = this.url + "images/";
@@ -43,15 +45,14 @@ export class DescriptionComponent implements OnInit {
 
 
 addToCart(){
-  var parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-  let userId=parsedToken.userId;
+ 
   let pId=this.itemData.productId;
 
-  console.log("userid : "+userId+"pid : "+pId);
+  console.log("userid : "+this.userId+"pid : "+pId);
   console.log(this.itemData.productId);
   if(this.cartBtnflag)
   {
-    this.http.post(environment.serverUrl + "updatecart/"+userId,this.itemData).
+    this.http.post(environment.serverUrl + "updatecart/"+this.userId,this.itemData).
    subscribe(response =>{
      this.cartBtn="Added To Cart";
      this.cartBtnflag=false;
@@ -66,7 +67,14 @@ addToCart(){
   }
 
   onClick(){
-      this.dataSharingService.setProduct(this.itemData);
+      //this.dataSharingService.setProduct(this.itemData);
+      sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
+      this.http.post(environment.serverUrl + "updatecart/"+this.userId,this.itemData).
+      subscribe(response =>{
+        this.cartBtn="Added To Cart";
+        this.cartBtnflag=false;
+       },
+       (error: Error) => { alert(error.message) });
       this.router.navigate(['/order']);
 
   }

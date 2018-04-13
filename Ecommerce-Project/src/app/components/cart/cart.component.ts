@@ -43,6 +43,7 @@ export class CartComponent implements OnInit {
     });
 
   }
+  
 
   removeData(data) {
     console.log(data);
@@ -51,7 +52,8 @@ export class CartComponent implements OnInit {
       .subscribe((response) => { window.location.reload(); },
         (error: Error) => { alert(error.message)
         });
-  }
+        
+      }
 
   ngOnInit() {
 
