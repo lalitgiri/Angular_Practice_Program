@@ -60,7 +60,8 @@ export class CartComponent implements OnInit {
   }
 
   onClick(){
-    this.dataSharingService.setProduct(this.itemData);
-    this.router.navigate(['/order']);
+    sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
+    //this.dataSharingService.setProduct(this.itemData);
+    this.router.navigate(['/order',"cart"]);
   }
 }

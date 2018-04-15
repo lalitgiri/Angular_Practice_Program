@@ -1,33 +1,74 @@
-<div class="parent">
+<div class="parent" *ngIf="(pFlag!='payment') && (pFlag!='hi')">
   <div class="div">
     User Details:
-    <button class="floatproperty"  (click)="onclick(1)">View</button>
+    <button class="floatproperty" (click)="onclick(1)">View</button>
     <div class="sub-div" *ngIf="flag==1">
-      Username :{{userDetails.name}} <br/>
-     Contact Number : {{userDetails.countryCode}}-{{userDetails.phoneNumber}} <br/>
-     Email Id :{{userDetails.emailId}} <br/>
-     
+      Username :{{userDetails.name}}
+      <br/> Contact Number :{{userDetails.phoneNumber}}
+      <br/> Email Id :{{userDetails.emailId}}
+      <br/>
+
+      <button class="floatproperty" (click)="onclick(2)">Continue</button>
     </div>
+
   </div>
 
   <div class="div">
     Delivery Address:
-    <button class="floatproperty"  (click)="onclick(2)">View</button>
+    <button class="floatproperty" (click)="onclick(2)">View</button>
     <div class="sub-div" *ngIf="flag==2">
-     Address:<br/><small>{{userDetails.cart.deliveryAddress}}</small><br/>
-      
+      Address:
+      <br/>
+      <small>{{userDetails.cart.deliveryAddress}}</small>
+      <br/>
+
     </div>
   </div>
 
-  <div class="div" >
+  <div class="div">
     Order Summary:
     <button class="floatproperty" (click)="onclick(3)">View</button>
     <div class="sub-div" *ngIf="flag==3">
-      product name:
+      <div *ngIf="summaryFlag=='cart'">
+
+        <div *ngFor="let data of products" class="content-div">
+          <div class="imgDiv">
+            <img src="{{imgUrl}}{{data.imageUrl}}" class="imageAlign" alt="" srcset="">
+          </div>
+          <div class="dataDiv">
+            Product Name : {{data.productName}}
+            <br/> Product Category : {{data.productCategory}}
+            <br/> Product Price : Rs. {{data.productPrice}}
+            <br/> Qunatity : 1
+            <br/> Description : {{data.description}}
+          </div>
+          <br/>
+          <br/>
+        </div>
+
+      </div>
+
+      <div *ngIf="summaryFlag=='product'">
+        <div class="content-div">
+          <div class="imgDiv">
+            <img src="{{imgUrl}}{{products.imageUrl}}" class="imageAlign" alt="" srcset="">
+          </div>
+          <div class="dataDiv">
+            Product Name : {{products.productName}}
+            <br/> Product Category : {{products.productCategory}}
+            <br/> Product Price : Rs. {{products.productPrice}}
+            <br/> Qunatity : 1
+            <br/> Description : {{products.description}}
+          </div>
+        </div>
+
+      </div>
+
     </div>
+    <br/>Total Cost : Rs. {{cost}}
   </div>
 
-  <div class="div" >
+  <div class="div">
     Payment Options:
     <button class="floatproperty" (click)="onclick(4)">View</button>
     <div class="sub-div" *ngIf="flag==4">
@@ -38,4 +79,41 @@
     </div>
   </div>
 
+</div>
+
+<div class="div" *ngIf="pFlag=='payment'">
+  Payment Options:
+  <button class="floatproperty" (click)="onclick(4)">Back</button>
+  <div class="sub-div" *ngIf="flag==4">
+    <b>Credit/Debit/ATM Card</b>
+    <br/>
+    <br/>
+    <form #addCardDetail="ngForm" (ngSubmit)="payment(5)" class="form">
+      <div>
+        Enter the Card Number :
+        <input type="text"  name="CardNumber" class="form-control" ngModel required/>
+      </div>
+      <div>
+        Enter CVV Number :
+        <input type="text" name="CVV" class="form-control" ngModel required/>
+      </div>
+      <div>
+        Enter Expiry Date :
+        <input type="date" name="expiryDate" class="form-control" ngModel required/>
+      </div>
+      <br/><br/>
+      <input  class=" btn btn-warning"type="reset"/>
+      <input type="submit" class="float-right  btn btn-primary" [disabled]="addCardDetail.invalid"  value="Pay Rs.{{cost}}"/>
+    </form>
+
+  </div>
+</div>
+
+
+<div *ngIf="flag==5" style="text-align: center">
+  <br/><br/><br/><br/>
+  <h1>Order Confirmed</h1>
+
+  <br/>
+  <h3>Your Product Will Be Delivered Soon......</h3>
 </div>

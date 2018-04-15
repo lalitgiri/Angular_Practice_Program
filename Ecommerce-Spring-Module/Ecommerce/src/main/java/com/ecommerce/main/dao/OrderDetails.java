@@ -11,7 +11,7 @@ public class OrderDetails {
 	private int orderId;  //primaryKey
 	
 	private String  address;
-	private byte[] itemDetail;
+	private ProductTable itemDetail;
 	@ManyToOne
 	private UserDetails userId;
 	
@@ -34,10 +34,10 @@ public class OrderDetails {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public byte[] getItemDetail() {
+	public ProductTable getItemDetail() {
 		return itemDetail;
 	}
-	public void setItemDetail(byte[] itemDetail) {
+	public void setItemDetail(ProductTable itemDetail) {
 		this.itemDetail = itemDetail;
 	}
 	

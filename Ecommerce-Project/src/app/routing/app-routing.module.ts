@@ -32,7 +32,7 @@ const appRoutes: Routes = [
  // {path:'login',component:LoginComponent},
  // {path:'signup',component:SignupComponent},
   {path:'viewAll/:id',component:ViewAllComponent},
-  { path: 'order', component: OrderComponent },
+  { path: 'order/:id', component: OrderComponent },
   { path: '**', component: HomeComponent }
 ];
 

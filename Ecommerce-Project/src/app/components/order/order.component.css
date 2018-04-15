@@ -16,11 +16,59 @@
     padding: 1vw;
     margin:1vw;
     background:blanchedalmond;
-    
+    overflow: scroll;
 }
+
 .floatproperty{
     float:right;
-    background: blanchedalmond;
+    background: rgba(222, 184, 135,0.3);
     border: 0.1vw solid blanchedalmond;
     border-radius: 0.5vw;
+}
+
+.sub-div{
+    max-height: 25vw;
+   
+}
+
+.scrollable{
+ 
+}
+.center1{
+    align-content: center
+}
+.content-div{
+    height:15vw;
+    width:60vw;
+    padding: 1vw;
+    max-height: 20vw;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.imgDiv{
+    width:20vw;
+    height:10vw;
+    display:inline-table;
+}
+.dataDiv{
+
+    padding: 1vw;
+    width:30vw;
+    height:10vw;
+    float:right;
+    text-align: center;
+    display:inline-table;
+    overflow:hidden
+}
+.imageAlign{
+    border-radius: 0.5vw;
+    height: auto;
+    width:100%;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.5 vw;
+    background: bisque; /* make scrollbar transparent */
 }

@@ -23,8 +23,12 @@ export class DescriptionComponent implements OnInit {
   pcategory: string;
   cartBtn="Add To Cart";
   cartBtnflag=true;
-   parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-  userId=this.parsedToken.userId;
+  userId;
+  token(){
+    let parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
+    this.userId=parsedToken.userId;
+
+  }
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.imgUrl = this.url + "images/";
@@ -45,11 +49,7 @@ export class DescriptionComponent implements OnInit {
 
 
 addToCart(){
- 
-  let pId=this.itemData.productId;
-
-  console.log("userid : "+this.userId+"pid : "+pId);
-  console.log(this.itemData.productId);
+  this.token();
   if(this.cartBtnflag)
   {
     this.http.post(environment.serverUrl + "updatecart/"+this.userId,this.itemData).
@@ -69,13 +69,15 @@ addToCart(){
   onClick(){
       //this.dataSharingService.setProduct(this.itemData);
       sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
+      
+      this.token();
       this.http.post(environment.serverUrl + "updatecart/"+this.userId,this.itemData).
       subscribe(response =>{
         this.cartBtn="Added To Cart";
         this.cartBtnflag=false;
        },
        (error: Error) => { alert(error.message) });
-      this.router.navigate(['/order']);
+      this.router.navigate(['/order',"product"]);
 
   }
 

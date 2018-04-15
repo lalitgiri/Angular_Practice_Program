@@ -20,7 +20,7 @@ h1{
     margin-top:5vw;
     margin-bottom: 5vw; 
     width:auto; 
-    background:rgba(210, 180, 140,0.7);
+    background:rgba(222, 184, 135,0.7);
 }
 
 .parent-div{
@@ -45,6 +45,6 @@ h1{
     height:25vw;
 }
 ::-webkit-scrollbar {
-    width: 1vw;
-    background: rosybrown; /* make scrollbar transparent */
+    width: 0.5vw;
+    background: burlywood; /* make scrollbar transparent */
 }
