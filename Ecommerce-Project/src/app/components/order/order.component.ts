@@ -88,11 +88,11 @@ export class OrderComponent implements OnInit {
         "itemDetail":this.products,
         "orderId":1
      }
- /*    this.http.post(environment.serverUrl + 'addorder', this.order)
+     this.http.post(environment.serverUrl + 'addorder', this.order)
      .subscribe((response) => {alert(response.text()) },
      (error:Error)=>{ alert(error.message)});
 
-*/
+
   }
 
 }
