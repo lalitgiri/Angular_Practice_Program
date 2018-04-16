@@ -9,7 +9,7 @@
   
     <div class="searchForm ">
       <form class="form-inline ">
-        <select class="option ">
+        <select>
           <option *ngFor="let data of itemData">{{data}}</option>
         </select>
         <input type="text" class=""/>
@@ -72,9 +72,7 @@
   <div class="menu-div" *ngIf='status'>
     <br/>
     <span *ngFor="let data of itemData" class="sub-div-list" id="{{data}}" (click)="navigate(data) ">{{data}}</span>
-    <span *ngFor="let data of itemData" class="sub-div-list" id="{{data}}" (click)="navigate(data) ">{{data}}</span>
-    <br/>
-  </div>
+      </div>
   <!-- Menu Code end-->
 </div>
 <div class="modal fade" id="myLogin">

@@ -33,7 +33,7 @@
 
   <div class="col-sm-12 row">
     <label for="productImage" class="col-sm-6 margin">Product Image : </label>
-    <input type="file" name="productImage" (change)="onImageSelected($event)" *ngIf="fileInput" required accept=".png,.jpg" class=" defaultPropertyRemove col-sm-6 margin " />
+    <input type="file" name="productImage" (change)="onImageSelected($event)" *ngIf="fileInput" required accept=".png,.jpg,.jpeg" class=" defaultPropertyRemove col-sm-6 margin " />
     <input type="file"   *ngIf="fileInputDummy"disabled required accept=".png,.jpg" class=" defaultPropertyRemove col-sm-6 margin " />
   </div>
   <br/><br/><br/>

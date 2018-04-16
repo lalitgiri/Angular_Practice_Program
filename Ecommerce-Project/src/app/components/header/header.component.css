@@ -79,10 +79,12 @@ select{
     padding-right: 0.5vw;
     margin-left:2vw;
     height:3.1vw;
+    width:10vw;
     font-size:1.3vw;
     border:none;
     border-bottom-left-radius: 0.6vw;
     border-top-left-radius: 0.6vw;
+
 }
 
 input[type=text]

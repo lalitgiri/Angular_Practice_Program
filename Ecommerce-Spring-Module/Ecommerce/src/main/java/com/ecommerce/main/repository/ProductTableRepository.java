@@ -21,7 +21,7 @@ public interface ProductTableRepository extends CrudRepository<ProductTable,Inte
 	*/
 	public List<ProductTable> findByproductCategory(String category);
 	
-	public static final String COUNT_ROWS = "SELECT count(*)  FROM product_table";
+	public static final String COUNT_ROWS = "SELECT count(product_id)  FROM product_table";
 	@Query(value = COUNT_ROWS, nativeQuery = true)
 	public int CountRow();
 	
