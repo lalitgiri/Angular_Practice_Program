@@ -54,11 +54,13 @@ export class AddProductComponent implements OnInit {
           "productPrice": product.productPrice,
           "description": product.description,
           "imageUrl": this.imgUrl,
-          "cartId": null
+          "cartId": null,
+          "status":true
         };
      
       this.http.post(environment.serverUrl + 'addproduct', this.data, { responseType: 'text' })
-        .subscribe((response: Response) => {alert(response) },
+        .subscribe((response: Response) => {alert(response)
+        window.location.reload(); },
         (error:Error)=>{ alert(error.message)});
     }
   }

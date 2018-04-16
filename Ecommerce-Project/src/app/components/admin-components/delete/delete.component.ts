@@ -38,6 +38,8 @@ export class DeleteComponent implements OnInit {
       this.add(id)
     else
       this.remove(id)
+
+      console.log(this.idArray);
   }
 
   remove(id) {
@@ -60,7 +62,9 @@ export class DeleteComponent implements OnInit {
 
   deleteItems(){
     this.httpClient.post(environment.serverUrl + 'deleteproduct', this.idArray, { responseType: 'text' })
-    .subscribe((response) => {alert(response),this.setTable()},
+    .subscribe((response) => {alert(response),this.setTable()
+           
+      },
               (error:Error)=>{ alert(error.message)});
   }
 }

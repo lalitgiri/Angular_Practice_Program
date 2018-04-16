@@ -28,6 +28,8 @@ public class ProductTable implements Serializable{
 	private long productPrice;
 	private String description;
 	private String imageUrl;
+	private boolean status;
+	
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
 	private EmployeeDetails employeeId; 			//foreginKey
@@ -92,6 +94,12 @@ public class ProductTable implements Serializable{
 	}
 	public void setEmployeeId(EmployeeDetails employeeId) {
 		this.employeeId = employeeId;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 	

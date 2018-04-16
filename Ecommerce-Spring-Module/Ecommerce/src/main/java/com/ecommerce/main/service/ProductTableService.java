@@ -10,7 +10,7 @@ public interface ProductTableService {
 
 	public String addProduct(ProductTable product) throws Exception ;
 	
-	public String deleteProduct(int id[]);
+	public String deleteProduct(ProductTable id[]);
 	public Optional<ProductTable> getProductDetails(int id);
 	public String updateProductDetails(ProductTable product,long id) ;
 	public List<ProductTable> getAllProducts();

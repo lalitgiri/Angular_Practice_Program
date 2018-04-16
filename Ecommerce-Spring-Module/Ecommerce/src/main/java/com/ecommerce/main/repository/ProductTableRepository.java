@@ -20,4 +20,13 @@ public interface ProductTableRepository extends CrudRepository<ProductTable,Inte
 	public List<ProductTable> findProductByCategory(String category);
 	*/
 	public List<ProductTable> findByproductCategory(String category);
+	
+	public static final String COUNT_ROWS = "SELECT count(*)  FROM product_table";
+	@Query(value = COUNT_ROWS, nativeQuery = true)
+	public int CountRow();
+	
+	
+	public static final String FIND_BY_STATUS = "SELECT * FROM product_table where status=true";
+	@Query(value =FIND_BY_STATUS, nativeQuery = true)
+	public Iterable<ProductTable> findByStatus();
 }

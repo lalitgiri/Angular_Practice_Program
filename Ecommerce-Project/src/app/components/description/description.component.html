@@ -6,7 +6,7 @@
       
       <div class=" col-sm-6">
           <div class="img-div row" id="img-div">
-              <a [href]="imgUrl" > <img [src]= "imgUrl"  class="col-sm-12" id="img" *ngIf='flag'> </a>
+              <a [href]="imgUrl" > <img [src]= "imgUrl"  class="col-sm-12 imageAlign" id="img" *ngIf='flag'> </a>
           </div><br/>
           <div>
                 <button class="btn btn-primary text " (click)="addToCart()" id="add-cart">{{cartBtn}}</button>
@@ -20,7 +20,7 @@
            <h5>Product Name :<small> {{pname}}</small></h5>
             <h5>Product Price : <small>  {{pprice}}</small></h5>
             <h5>Product Category :  <small>{{pcategory}}</small></h5>
-            <h5>Product Description : <small> {{pdescription}}</small></h5>
+            <h5>Product Description : <br/><small> {{pdescription}}</small></h5>
 
           </div> 
 

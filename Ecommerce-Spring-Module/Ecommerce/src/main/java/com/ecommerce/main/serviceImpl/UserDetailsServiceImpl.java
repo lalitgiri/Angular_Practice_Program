@@ -27,7 +27,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		CartDetails cart=new CartDetails();
 	
 		int i=userDetailsRepository.CountRow();
-		System.out.println("Row : "+i);
 		cart.setUserId(i+1);
 		user.setCart(cart);
 		userDetailsRepository.save(user);

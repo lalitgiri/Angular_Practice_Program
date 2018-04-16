@@ -79,7 +79,7 @@ export class UpdateProductComponent implements OnInit  {
         "productPrice": formValue.UproductPrice,
         "description": formValue.description,
         "imageUrl": this.imgUrl,
-        "cartId": null
+        "status":true
       };
 
       console.log(formValue)

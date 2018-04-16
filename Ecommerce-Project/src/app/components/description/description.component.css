@@ -7,3 +7,22 @@
     padding: 4vw;
   
 }
+.img-div{
+    margin :0 auto;
+    height: auto;
+    padding: 0.5vw;
+    background: white;
+}
+.imageAlign{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    display: block;
+    border-radius: 0.5vw;
+    height: auto;
+    width:50%;
+    padding-top: 1vw;
+
+   
+}

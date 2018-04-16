@@ -1,17 +1,24 @@
- 
+
+h1{
+    margin:0 45vw;
+    font-style: italic;
+    font-size: 3vw;
+}
+
 .sub-div-list{
-    height:20vw;
+    height:30vw;
     width:20vw;
     border-radius: 1vw;
     margin: 1vw;
     text-align: center;
     border:0.2vw solid white;
-    display: inline-block;
+    display: inline-table;
     background:whitesmoke;
 }
 .cdiv{
     padding:5vw;
-}
+  
+    }
 .sub-div-list:hover{    
     border:0.2vw solid tan;  
 }
@@ -19,7 +26,13 @@
     padding:1vw;
 }
 .imageAlign{
-    height: auto;;
-    width:100%;
+  /*  height: auto;;
+    width:100%;*/
+    height: auto;
+    width:10vw;
+    padding-top: 1vw;
     border-radius: 0.5vw;
+}
+label{
+    font-size: 1.5vw;
 }

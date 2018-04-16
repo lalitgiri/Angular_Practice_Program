@@ -18,16 +18,22 @@ public class ProductTableServiceImpl implements ProductTableService {
 	private ProductTableRepository productTableRepository;
 	
 	public String addProduct(ProductTable product) throws Exception {
+		int i=productTableRepository.CountRow();
+		product.setProductId(i+1);		
 		productTableRepository.save(product);
 		return "Sucessfully Added";
 	}
 	
 	
-	public String deleteProduct(int id[]){
+	public String deleteProduct(ProductTable id[]){
 		
-		for(int i : id) {
-			try{if(productTableRepository.existsById(i))
-				productTableRepository.deleteById(i);
+		for(ProductTable i : id) {
+			try{if(productTableRepository.existsById(i.getProductId()))
+				{
+					i.setStatus(false);
+					productTableRepository.save(i);
+				
+				}
 			}catch(Exception e) {
 				return "Error Deleting item with id=" + i;
 			}
@@ -50,7 +56,7 @@ public class ProductTableServiceImpl implements ProductTableService {
 	public List<ProductTable> getAllProducts(){
 		
 		List <ProductTable> productList = new ArrayList<>();
-		productTableRepository.findAll().
+		productTableRepository.findByStatus().
 		forEach(productList::add);
 		if(productList==null)
 			return null;

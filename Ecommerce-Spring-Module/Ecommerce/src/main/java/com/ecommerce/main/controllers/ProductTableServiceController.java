@@ -21,11 +21,12 @@ public class ProductTableServiceController {
 	
 	@RequestMapping(method=RequestMethod.POST,value="/addproduct")
 	public String addProduct(@RequestBody ProductTable product) throws Exception {
+		
 			return productTableService.addProduct(product);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/deleteproduct")
-	public String deleteProduct(@RequestBody int id[]){
+	public String deleteProduct(@RequestBody ProductTable id[]){
 		return productTableService.deleteProduct(id);
 	}
 	

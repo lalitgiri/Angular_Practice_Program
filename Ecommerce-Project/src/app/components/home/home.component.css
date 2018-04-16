@@ -37,7 +37,7 @@ h1{
       display: inline;
   }
 .scroll{
-    padding:2vw;
+    
     width:75vw;
     overflow-y: scroll;
     overflow-x: hidden;
