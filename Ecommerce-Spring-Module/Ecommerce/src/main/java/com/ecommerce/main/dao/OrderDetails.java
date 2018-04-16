@@ -1,5 +1,6 @@
 package com.ecommerce.main.dao;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -12,6 +13,8 @@ public class OrderDetails {
 	
 	private String  address;
 	private ProductTable itemDetail;
+	
+	private boolean status;
 	@ManyToOne
 	private UserDetails userId;
 	
@@ -28,6 +31,12 @@ public class OrderDetails {
 		this.userId = userId;
 	}
 	
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 	public String getAddress() {
 		return address;
 	}

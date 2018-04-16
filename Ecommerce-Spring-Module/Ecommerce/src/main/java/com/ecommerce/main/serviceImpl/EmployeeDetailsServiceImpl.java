@@ -12,51 +12,57 @@ import com.ecommerce.main.repository.EmployeeDetailRepository;
 import com.ecommerce.main.service.EmployeeDetailsService;
 
 @Service
-public class EmployeeDetailsServiceImpl implements EmployeeDetailsService{
+public class EmployeeDetailsServiceImpl implements EmployeeDetailsService {
 
 	@Autowired
 	private EmployeeDetailRepository employeeDetailsReposiotory;
-	
 
 	public String addEmployeeDetails(EmployeeDetails employee) throws Exception {
 		employeeDetailsReposiotory.save(employee);
 		return "Sucessfully Added";
 	}
-	
-	
-	public String deleteEmployeeDetails(int id){
-		if(employeeDetailsReposiotory.existsById(id)){
+
+	public String deleteEmployeeDetails(int id) {
+		if (employeeDetailsReposiotory.existsById(id)) {
 			employeeDetailsReposiotory.deleteById(id);
 			return "SucessFully Deleted";
 		}
 		return "Employee NotFound";
 	}
-	
+
 	public Optional<EmployeeDetails> getEmployeeDetails(int id) {
 
-		return employeeDetailsReposiotory.findById(id);		 
+		return employeeDetailsReposiotory.findById(id);
 	}
-	
-	public String updateEmployeeDetails(EmployeeDetails employee,int id) {
-		
-		if(employeeDetailsReposiotory.existsById(id))
-		{
+
+	public String updateEmployeeDetails(EmployeeDetails employee, int id) {
+
+		if (employeeDetailsReposiotory.existsById(id)) {
 			employeeDetailsReposiotory.save(employee);
 			return "SucessFully Updated";
 		}
 		return "Illegal Modification";
 	}
-	
-	public List<EmployeeDetails> getAllEmployeeDetails(){
-		
-		List <EmployeeDetails> employeeList = new ArrayList<>();
-		employeeDetailsReposiotory.findAll().
-		forEach(employeeList::add);
-		
-		if(employeeList== null)
-			return  null;
-	
+
+	public List<EmployeeDetails> getAllEmployeeDetails() {
+
+		List<EmployeeDetails> employeeList = new ArrayList<>();
+		employeeDetailsReposiotory.findAll().forEach(employeeList::add);
+
+		if (employeeList == null)
+			return null;
+
 		return employeeList;
 	}
-	
+
+	@Override
+	public EmployeeDetails userAuthentication(String userName, String password) {
+		EmployeeDetails user = employeeDetailsReposiotory.findByemployeeNameAndPassword(userName, password);
+
+		if (user != null)
+			return user;
+
+		return null;
+	}
+
 }

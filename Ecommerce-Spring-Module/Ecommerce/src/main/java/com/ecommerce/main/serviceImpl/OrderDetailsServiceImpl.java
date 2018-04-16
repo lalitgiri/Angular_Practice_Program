@@ -19,6 +19,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
 
 	@Override
 	public String addOrder(OrderDetails order) {
+		order.setStatus(true);
 		orderDetailsRepository.save(order);
 		return "Order Placed Sucessfully";
 	}

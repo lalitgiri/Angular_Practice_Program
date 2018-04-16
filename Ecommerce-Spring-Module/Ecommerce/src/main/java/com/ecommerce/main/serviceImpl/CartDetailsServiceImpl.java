@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.CartDetails;
 import com.ecommerce.main.dao.ProductTable;
-import com.ecommerce.main.interceptors.User;
 import com.ecommerce.main.repository.CartDetailsRepository;
 import com.ecommerce.main.service.CartDetailsService;
 
@@ -82,10 +81,7 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 			if(u.getProductId()!=product.getProductId()) {
 				list.add(u);
 			}
-			
 				
-			
-			
 		});
 		if(list!=null) {
 			productList =list;

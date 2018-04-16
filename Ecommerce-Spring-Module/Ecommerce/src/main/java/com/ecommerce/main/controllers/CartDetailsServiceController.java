@@ -28,7 +28,6 @@ public class CartDetailsServiceController {
 	@RequestMapping(method=RequestMethod.POST,value="/updatecart/{id}")
 	public String updateCartDetails(@PathVariable int id,@RequestBody ProductTable product) {
 	 String str=cartDetailsService.updateCartDetails(product, id);
-	 System.out.println(str);
 	 return str;
 	}
 	

@@ -73,7 +73,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails userAuthentication(String emailId,String password) {
 		
 		UserDetails user=userDetailsRepository.findByemailIdAndPassword(emailId,password);
-		System.out.println(user+"  "+emailId+"  "+ password);
+		
 		if(user!=null)
 		return user;
 		

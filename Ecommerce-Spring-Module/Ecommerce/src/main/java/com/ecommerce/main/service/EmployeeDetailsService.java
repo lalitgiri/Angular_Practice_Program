@@ -12,4 +12,5 @@ public interface EmployeeDetailsService {
 	public Optional<EmployeeDetails> getEmployeeDetails(int id) ;
 	public String updateEmployeeDetails(EmployeeDetails employee,int id) ;
 	public List<EmployeeDetails> getAllEmployeeDetails();
+	public EmployeeDetails userAuthentication(String userName, String password);
 }

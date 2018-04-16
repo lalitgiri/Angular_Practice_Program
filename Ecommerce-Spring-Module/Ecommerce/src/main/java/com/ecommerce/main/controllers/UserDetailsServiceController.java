@@ -48,15 +48,14 @@ public class UserDetailsServiceController {
 		user.setRole("User");
 		user.setEmailAddress(emailId);
 		user.setId(password);
+		user.setUserName(newUser.getName());
+		user.setPhoneNumber(newUser.getPhoneNumber());
+		user.setUserId(newUser.getCart().getUserId());
 		userService.addUser(user);
+		
 		request.getSession(true).setAttribute("user", user);				
 		TokenProvider tokenProvider =new TokenProvider();
-		User userToken = new User();
-		userToken.setEmailAddress(emailId);
-		userToken.setId(password);
-		userToken.setRole("User");
-
-		String token = tokenProvider.generate(userToken);
+		String token = tokenProvider.generate(user);
 		
 		return token;
 		}

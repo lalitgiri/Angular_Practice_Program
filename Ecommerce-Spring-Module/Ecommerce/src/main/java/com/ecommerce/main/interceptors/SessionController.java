@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.main.dao.EmployeeDetails;
 import com.ecommerce.main.dao.UserDetails;
+import com.ecommerce.main.service.EmployeeDetailsService;
 import com.ecommerce.main.service.UserDetailsService;
 
 @RestController
@@ -23,6 +25,9 @@ public class SessionController {
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
+	
+	@Autowired
+	private EmployeeDetailsService employeeDetailsService;
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/getAuthentication")
 	public String handleLoginRequest( HttpServletRequest request, HttpServletResponse response,
@@ -66,7 +71,48 @@ public class SessionController {
 		return null;
 	}
 
+	@RequestMapping(method = RequestMethod.POST, value = "/getAdminAuthentication")
+	public String handleAdminLoginRequest( HttpServletRequest request, HttpServletResponse response,
+			@RequestBody Map<String, String> userRequest) {
+		
+		User user=new User();
+		String userName = userRequest.get("Username");
+		String password = userRequest.get("lpassword");
 	
+				
+		EmployeeDetails employeeDetails=employeeDetailsService.userAuthentication(userName, password);
+		{
+			System.out.println("Employee Name= "+employeeDetails.getEmployeeName()+"  Id: "+employeeDetails.getPassword());
+			
+		}
+		
+		if (employeeDetails!=null) {
+			
+			user.setEmailAddress(userRequest.get("Username"));
+			user.setId(userRequest.get("lpassword"));
+			user.setUserName(employeeDetails.getEmployeeName());
+			user.setUserId(employeeDetails.getEmployeeId());
+			user.setRole(employeeDetails.getEmployeeRole());
+			user.setPhoneNumber(employeeDetails.getContactNumber());
+			
+			
+			User loggedUser = userService.loginUser(user);
+			if (loggedUser == null) {
+				userService.addUser(user);
+				request.getSession(true).setAttribute("user", user);				
+				TokenProvider tokenProvider =new TokenProvider();
+						
+				String token = tokenProvider.generate(user);
+				
+				//response.addHeader("token",token);
+				
+				System.out.println(token);
+				return token;
+			}
+		}
+		return null;
+	}
+
 	@RequestMapping("/logout")
 	public boolean removeSession(HttpServletRequest request, HttpServletResponse response, Object handler) {
 		

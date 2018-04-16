@@ -1,4 +1,8 @@
-<div class="row height  ">
+
+<app-employee-login *ngIf="user!='admin'"></app-employee-login>
+
+
+<div class="row height" *ngIf="user=='admin'">
   <nav class="col-sm-2 adminNav ">
     <br/>
     <label class="navbar-brand disable-selection">
