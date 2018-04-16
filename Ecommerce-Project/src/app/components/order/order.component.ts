@@ -40,7 +40,6 @@ export class OrderComponent implements OnInit {
       this.userDetails = data;
       console.log(this.userDetails)
       //console.log(data);
-      debugger
      
     }, (error: Error) => { alert(error.message) });
    
