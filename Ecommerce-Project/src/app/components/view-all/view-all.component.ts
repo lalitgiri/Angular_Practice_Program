@@ -40,7 +40,7 @@ export class ViewAllComponent implements OnInit {
         subscribe(data => this.itemData = data,
           (error:Error)=>{ alert(error.message)});
     });
-
+   
   }
   ngOnInit() {
 

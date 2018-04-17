@@ -17,4 +17,6 @@ public interface ProductTableService {
 	public List<String> getAllProductCategory();
 
 	public List<ProductTable> getProductByCategory(String category);
+	
+	public Iterable<ProductTable> getByProductNameAndCategory(String category,String name);
 }

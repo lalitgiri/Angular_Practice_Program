@@ -28,6 +28,7 @@ import { TokenDecoderService } from './service/token-decoder.service';
 import { OrderComponent } from './components/order/order.component';
 import { DataSharingService } from './service/data-sharing.service';
 import { EmployeeLoginComponent } from './components/admin-components/employee-login/employee-login.component';
+import { SearchResultComponentComponent } from './components/search-result-component/search-result-component.component';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -52,7 +53,8 @@ import { EmployeeLoginComponent } from './components/admin-components/employee-l
     HeaderComponent,
     CartComponent,
     OrderComponent,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    SearchResultComponentComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule

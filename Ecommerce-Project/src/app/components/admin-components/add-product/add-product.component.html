@@ -3,7 +3,7 @@
 
 <h3>Add New Product</h3>
 <br/>
-<form class="row" #addProductForm="ngForm" (ngSubmit)="onSubmit(addProductForm.value)">
+<form class="row" #addProductForm="ngForm" (ngSubmit)="onSubmit(addProductForm.value);addProductForm.reset()">
 
   <div class="row col-sm-9">
   <div class="col-sm-12 row">

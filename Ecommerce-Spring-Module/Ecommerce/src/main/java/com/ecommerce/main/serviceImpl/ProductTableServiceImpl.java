@@ -82,4 +82,9 @@ public class ProductTableServiceImpl implements ProductTableService {
 		return productTableRepository.findByproductCategory(category);
 	}
 	
+	public Iterable<ProductTable> getByProductNameAndCategory(String category,String name){
+		return productTableRepository.findByProductNameWithCategory(category,name);
+		
+	}
+	
 }

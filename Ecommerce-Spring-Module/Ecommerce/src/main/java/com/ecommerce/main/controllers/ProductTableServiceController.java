@@ -59,4 +59,8 @@ public class ProductTableServiceController {
 		return productTableService.getProductByCategory(category);
 	}
 	
+	@RequestMapping(value="/searchProduct/{category}/{name}",method=RequestMethod.GET)
+	public Iterable<ProductTable> getByProductNameAndCategory(@PathVariable String category,@PathVariable String name){
+		return productTableService.getByProductNameAndCategory(category.toUpperCase(), name.toUpperCase());
+	}
 }

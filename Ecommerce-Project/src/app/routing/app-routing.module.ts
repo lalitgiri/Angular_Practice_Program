@@ -15,6 +15,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { NgModule } from '@angular/core';
 import { CartComponent } from '../components/cart/cart.component';
 import { OrderComponent } from '../components/order/order.component';
+import { SearchResultComponentComponent } from '../components/search-result-component/search-result-component.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -33,7 +34,9 @@ const appRoutes: Routes = [
  // {path:'signup',component:SignupComponent},
   {path:'viewAll/:id',component:ViewAllComponent},
   { path: 'order/:id', component: OrderComponent },
+  { path: 'search/:category/:name',component:SearchResultComponentComponent},
   { path: '**', component: HomeComponent }
+ 
 ];
 
 @NgModule({

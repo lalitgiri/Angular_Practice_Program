@@ -28,6 +28,7 @@
 }
 .sub-div{
     max-height: 25vw;
+    overflow:scroll;
    
 }
 

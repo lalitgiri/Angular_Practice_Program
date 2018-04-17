@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { TokenDecoderService } from '../../service/token-decoder.service';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
   tokenValue = true;
   status: boolean = false;
   name = "";
+  category="";
   constructor(private http: Http, private router: Router, private cdRef: ChangeDetectorRef,
     private tokenDecoder: TokenDecoderService) {
     if (sessionStorage.getItem("token") != null) {
@@ -26,6 +28,7 @@ export class HeaderComponent implements OnInit {
     }
    // console.log("token : " + sessionStorage.getItem("token"));
   }
+
   itemData;
   flag = false;
 
@@ -38,6 +41,15 @@ export class HeaderComponent implements OnInit {
         this.flag = true;
       },
         (error: Error) => { alert(error.message) });
+  }
+
+  search(data){
+   
+    this.router.navigate(['/search/'+data.category+"/"+data.name]);
+    
+  }
+  change(data){
+    console.log(this.name+ " ");
   }
 
   inValidateSession() {

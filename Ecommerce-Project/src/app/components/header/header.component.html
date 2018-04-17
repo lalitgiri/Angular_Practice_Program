@@ -8,17 +8,18 @@
     <a class="navbar-brand webSiteName " href="#">eShopping</a>
   
     <div class="searchForm ">
-      <form class="form-inline ">
-        <select>
-          <option *ngFor="let data of itemData">{{data}}</option>
-        </select>
-        <input type="text" class=""/>
-        <button class="btn-bg " >
-          <img src="../assets/icon/search icon.png" class="searchIcon image-fluid" />
-          
-        </button>
-      </form>
-
+        <form class="form-inline" #searchForm="ngForm" (ngSubmit)="search(searchForm.value); searchForm.reset()" >
+            <select name="category" ngModel required>
+              <option selected="selected">-select-</option>
+              <option *ngFor="let data of itemData">{{data}}</option>
+            </select>
+            <input type="text" name="name" placeholder="search" ngModel required/>
+            <button type="submit" class="btn-bg " [disabled]="searchForm.invalid" >
+              <img src="../assets/icon/search icon.png" class="searchIcon image-fluid" />
+              
+            </button>
+          </form>
+    
     </div>
     <!--<span class="menu menu_links"  (mouseenter)="clicked(event)" (click)="clicked(event)" >-->
     <span class="">

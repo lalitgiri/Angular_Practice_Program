@@ -60,7 +60,7 @@ export class AddProductComponent implements OnInit {
      
       this.http.post(environment.serverUrl + 'addproduct', this.data, { responseType: 'text' })
         .subscribe((response: Response) => {alert(response)
-        window.location.reload(); },
+        },
         (error:Error)=>{ alert(error.message)});
     }
   }
