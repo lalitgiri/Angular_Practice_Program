@@ -7,68 +7,65 @@
 .div{
     padding: 1vw;
     margin:2vw;
-    background: burlywood;
+    color:white;
+    background: cadetblue;
     border-top-left-radius: 1vw;
     border-top-right-radius: 1vw;
-    width:70%;
+    width:auto;
 }
 .sub-div{
     padding: 1vw;
     margin:1vw;
-    background:blanchedalmond;
-    overflow: scroll;
+    background:ghostwhite;
+    color: black;
+  
 }
 
 .floatproperty{
     float:right;
-    background: rgba(222, 184, 135,0.3);
-    border: 0.1vw solid blanchedalmond;
     border-radius: 0.5vw;
+    
 }
-
 .sub-div{
     max-height: 25vw;
    
 }
 
-.scrollable{
- 
-}
+
 .center1{
-    align-content: center
+    align-content: center;
 }
 .content-div{
     height:15vw;
-    width:60vw;
+    width:auto;
     padding: 1vw;
     max-height: 20vw;
     display: inline-block;
-    overflow: hidden;
+   
 }
 
 .imgDiv{
-    width:20vw;
+    width:20%;
     height:10vw;
-    display:inline-table;
+    display: inline-block;   
 }
 .dataDiv{
-
+    color: black;
     padding: 1vw;
-    width:30vw;
-    height:10vw;
+    width:80%;
+    height:15vw;
     float:right;
-    text-align: center;
-    display:inline-table;
-    overflow:hidden
+    overflow-x:scroll;
+    overflow-y: hidden;
 }
 .imageAlign{
     border-radius: 0.5vw;
-    height: auto;
-    width:100%;
+    height: 50%;
+    width:50%;
 }
 
 
 ::-webkit-scrollbar {
     width: 0.5 vw;
-    background: bisque; /* make scrollbar transparent */
+    background: ghostwhite; /* make scrollbar transparent */
 }

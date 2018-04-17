@@ -21,14 +21,37 @@ label{
 }
 
 tr:hover{
-    background: rgba(222, 184, 135,0.5);
+    background:white;
 }
 thead{
-    background: burlywood; 
+    background: cadetblue; 
    }
 
 
 .button-div{
     margin-top:3vw;
     padding-left: 3.5vw;    
+}
+
+tr:hover{
+    background: white;
+}
+th.rightBorderRadius{
+    border-top-right-radius: 1vw;
+}
+td.rightBorderRadius{
+    border-top-right-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+th.leftBorderRadius{
+    border-top-left-radius: 1vw;
+}
+td.leftBorderRadius{
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+.imageSize{
+    height:80%;
+    width:80%;
 }

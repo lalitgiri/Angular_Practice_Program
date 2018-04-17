@@ -34,8 +34,11 @@
     <div class="collapse div-padding  navbar-collapse" id="collapsibleNavbar">
 
       <ul class="navbar-nav   disable-selection">
+          <li class="float-right"  *ngIf=token >
+              <a href="" class="nav-link">Welcome </a>
+            </li> 
         <li class="float-right"  *ngIf=token >
-          <a href="" class="nav-link text-capitalize">Welcome {{name}}</a>
+          <a href="" class="nav-link">{{name[0]}}</a>
         </li> 
          <li class=""  *ngIf=token>
           <a href="" class="nav-link" data-toggle="modal" (click)="inValidateSession()">Logout</a>

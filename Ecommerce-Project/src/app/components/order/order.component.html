@@ -1,21 +1,22 @@
 <div class="parent" *ngIf="(pFlag!='payment') && (pFlag!='hi')">
   <div class="div">
     User Details:
-    <button class="floatproperty" (click)="onclick(1)">View</button>
+    <button class="floatproperty btn-info" (click)="onclick(1)">View</button>
     <div class="sub-div" *ngIf="flag==1">
       Username :{{userDetails.name}}
       <br/> Contact Number :{{userDetails.phoneNumber}}
       <br/> Email Id :{{userDetails.emailId}}
       <br/>
+      
 
-      <button class="floatproperty" (click)="onclick(2)">Continue</button>
+      <button class="floatproperty btn-info" (click)="onclick(2)">Continue</button>
     </div>
 
   </div>
 
   <div class="div">
     Delivery Address:
-    <button class="floatproperty" (click)="onclick(2)">View</button>
+    <button class="floatproperty btn-info" (click)="onclick(2)">View</button>
     <div class="sub-div" *ngIf="flag==2">
       Address:
       <br/>
@@ -27,7 +28,7 @@
 
   <div class="div">
     Order Summary:
-    <button class="floatproperty" (click)="onclick(3)">View</button>
+    <button class="floatproperty btn-info" (click)="onclick(3)">View</button>
     <div class="sub-div" *ngIf="flag==3">
       <div *ngIf="summaryFlag=='cart'">
 
@@ -42,8 +43,7 @@
             <br/> Qunatity : 1
             <br/> Description : {{data.description}}
           </div>
-          <br/>
-          <br/>
+          
         </div>
 
       </div>
@@ -65,12 +65,12 @@
       </div>
 
     </div>
-    <br/>Total Cost : Rs. {{cost}}
+    Total Cost : Rs. {{cost}}
   </div>
 
   <div class="div">
     Payment Options:
-    <button class="floatproperty" (click)="onclick(4)">View</button>
+    <button class="floatproperty btn-info" (click)="onclick(4)">View</button>
     <div class="sub-div" *ngIf="flag==4">
       <br/>
       <br/>
@@ -83,7 +83,7 @@
 
 <div class="div" *ngIf="pFlag=='payment'">
   Payment Options:
-  <button class="floatproperty" (click)="onclick(4)">Back</button>
+  <button class="floatproperty btn-info" (click)="onclick(4)">Back</button>
   <div class="sub-div" *ngIf="flag==4">
     <b>Credit/Debit/ATM Card</b>
     <br/>
@@ -91,7 +91,7 @@
     <form #addCardDetail="ngForm" (ngSubmit)="payment(5)" class="form">
       <div>
         Enter the Card Number :
-        <input type="text"  name="CardNumber" class="form-control" ngModel required/>
+        <input type="text" name="CardNumber" class="form-control" ngModel required/>
       </div>
       <div>
         Enter CVV Number :
@@ -101,9 +101,10 @@
         Enter Expiry Date :
         <input type="date" name="expiryDate" class="form-control" ngModel required/>
       </div>
-      <br/><br/>
-      <input  class=" btn btn-warning"type="reset"/>
-      <input type="submit" class="float-right  btn btn-primary" [disabled]="addCardDetail.invalid"  value="Pay Rs.{{cost}}"/>
+      <br/>
+      <br/>
+      <input class=" btn btn-warning" type="reset" />
+      <input type="submit" class="float-right  btn btn-primary" [disabled]="addCardDetail.invalid" value="Pay Rs.{{cost}}" />
     </form>
 
   </div>
@@ -111,7 +112,10 @@
 
 
 <div *ngIf="flag==5" style="text-align: center">
-  <br/><br/><br/><br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <h1>Order Confirmed</h1>
 
   <br/>

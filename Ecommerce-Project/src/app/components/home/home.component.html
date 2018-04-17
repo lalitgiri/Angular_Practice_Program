@@ -10,17 +10,23 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="carousel-div-list"></div>
-      <div class="carousel-caption">
+      <div class="carousel-div-list">
+        <img src="../assets/CAROUSEL/harkum.jpg"  />
+      </div>
+      <!--<div class="carousel-caption">
         <h3>Los Angeles</h3>
         <p>We had such a great time in LA!</p>
+      </div>-->
+    </div>
+    <div class="carousel-item">
+      <div class="carousel-div-list">
+        <img src="../assets/CAROUSEL/CAROUSEL.jpg"  />
       </div>
     </div>
     <div class="carousel-item">
-      <div class="carousel-div-list" style=" background:white;"></div>
-    </div>
-    <div class="carousel-item">
-      <div class="carousel-div-list" style="background:black;"></div>
+      <div class="carousel-div-list">
+        <img src="../assets/CAROUSEL/carousel1.jpg"  />
+      </div>
     </div>
   </div>
 
@@ -38,9 +44,9 @@
 <div class="div-list" *ngFor="let category of httpData" >
   <div class="sub-div" >
     <div class="parent-div">
-      <label>{{category}}</label>
+      <label class="category">{{category}}</label>
         <br>
-      <button class="btn btn-info" #btn [routerLink]="['/viewAll',category]" >View All</button>
+      <button class="button btn-info" #btn [routerLink]="['/viewAll',category]" >View All</button>
       <input type="hidden" #id value="{{category}}"/>
     </div>
   </div>

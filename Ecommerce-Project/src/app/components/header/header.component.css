@@ -5,6 +5,7 @@
         text-align: center;
         font-size: 2.5vw;
         font-style: oblique;
+        font-family: cursive;
         color:cornsilk;
         text-shadow:0.2vw 0.3vw  grey;
 }
@@ -27,7 +28,7 @@ hr {
     text-align: center;
     border:0.1vw solid white;
     display: inline-block;
-    background:burlywood;
+    background:cadetblue;
 }
 .sub-div-list:hover{
     color: black;
@@ -42,7 +43,7 @@ a:hover{
     
 }
 .bg-nav{
-    background:burlywood;
+    background:cadetblue;
     border:none;
     color:white;
     padding:0%;
@@ -123,15 +124,19 @@ input[type=text]
     z-index:1;
     text-align: center;
     position: fixed;
-    background: rgba(210, 180, 140,1);
+    background: rgba(95, 158, 160,0.4);
 }
-
+.overflow{
+    width:8vw;
+    height:1vw;
+    text-overflow: ellipsis;
+}
 li{
     text-align: center;
 }
 
 .div-padding{
-    margin-left: 20vw;
+    margin-left: 10vw;
 }
 
 .support:hover{

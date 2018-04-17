@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
       this.token = true;
       this.tokenValue = false;
       var parsedToken = tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-      this.name = parsedToken.userName;
+      this.name = parsedToken.userName.split(" ");;
       console.log("hello " + this.name);
     }
    // console.log("token : " + sessionStorage.getItem("token"));

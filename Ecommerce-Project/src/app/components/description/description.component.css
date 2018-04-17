@@ -1,6 +1,7 @@
 
 .bg{
-    background: tan;
+    background: #e9efef;
+    border-radius: 0.5vw;
 }
 
 .padding{
@@ -27,13 +28,17 @@
 }
 
 
-label{
+.label{
     font-weight: bolder;
     font-size: 1.8vw;
+    text-align: center;
+   
 }
 
 .subLabel{
     font-size: 1.5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+   
 }
 .description{
     height:auto;

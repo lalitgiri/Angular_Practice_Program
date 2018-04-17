@@ -6,25 +6,23 @@ h1{
 }
 
 .sub-div-list{
-    height:25vw;
-    width:26vw;
+    height:26vw;
+    width:25vw;
     border-radius: 1vw;
     margin: 1vw;
     text-align: center;
-    border:0.2vw solid white;
+    border:0.2vw solid gainsboro;
     display: inline-table;
     background:white;
 }
 .cdiv{
-    padding:5vw;
+    padding:0vw 7vw;
   
     }
 .sub-div-list:hover{    
-    border:0.2vw solid tan;  
+    border:0.2vw solid cadetblue;  
 }
-.ccdiv{
-    padding:1vw;
-}
+
 .imageAlign{
   /*  height: auto;;
     width:100%;*/
@@ -34,7 +32,7 @@ h1{
     border-radius: 0.5vw;
 }
 label{
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 .heading{
     margin-left: auto;

@@ -20,6 +20,7 @@ export class DescriptionComponent implements OnInit {
   pname: string;
   pprice: number;
   pdescription: string;
+  description;
   pcategory: string;
   cartBtn = "Add To Cart";
   cartBtnflag = true;
@@ -43,10 +44,16 @@ export class DescriptionComponent implements OnInit {
           this.pdescription = this.itemData.description;
           this.imgUrl = this.imgUrl + this.itemData.imageUrl;
           this.flag = true;
+          this.splitDescriptionString();
         },
         (error: Error) => { alert(error.message) });
   }
 
+  splitDescriptionString() {
+    
+    this.description = this.pdescription.split(";");
+    console.log(this.description);
+  }
 
   addToCart() {
     if (sessionStorage.getItem("token") != null) {
@@ -67,26 +74,26 @@ export class DescriptionComponent implements OnInit {
     }
     else
       alert("Login First");
-  
 
-}
 
-onClick(){
-  //this.dataSharingService.setProduct(this.itemData);
-  sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
-  if (sessionStorage.getItem("token") != null) {
-    this.token();
-    this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
-      subscribe(response => {
-        this.cartBtn = "Added To Cart";
-        this.cartBtnflag = false;
-      },
-        (error: Error) => { alert(error.message) });
-    this.router.navigate(['/order', "product"]);
   }
-  else
-    alert("Login First");
-}
+
+  onClick() {
+    //this.dataSharingService.setProduct(this.itemData);
+    sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
+    if (sessionStorage.getItem("token") != null) {
+      this.token();
+      this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
+        subscribe(response => {
+          this.cartBtn = "Added To Cart";
+          this.cartBtnflag = false;
+        },
+          (error: Error) => { alert(error.message) });
+      this.router.navigate(['/order', "product"]);
+    }
+    else
+      alert("Login First");
+  }
 
 }
 
