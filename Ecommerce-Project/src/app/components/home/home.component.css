@@ -55,15 +55,16 @@ h1{
 }
 
 ::-webkit-scrollbar {
-    width: 1.5vw;
+    width: 1vw;
     background: cadetblue; /* make scrollbar transparent */
     border-radius: 10vw 0vw 0vw 10vw;
 }
 ::-webkit-scrollbar-thumb{
+   
     background:cadetblue;
     border-radius: 10vw 0vw 0vw 10vw;
 }
 ::-webkit-scrollbar:hover{
-    width:2vw;
+    
     background:rgba(95, 158, 160,0.2);
 }
