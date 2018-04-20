@@ -38,9 +38,7 @@ export class SignupComponent implements OnInit {
       console.log(data);
       this.http.post(environment.serverUrl + 'adduser',data)
       .subscribe(response => {
-        alert(response.text()) 
-        console.log(response.text())
-        if(response.text().length>1){
+         if(response.text().length>1){
           sessionStorage.setItem("token",response.text());
            window.location.reload();
         }

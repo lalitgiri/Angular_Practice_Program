@@ -21,22 +21,22 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		/*String uri= request.getRequestURI();
+		String uri= request.getRequestURI();
 	
-		//System.out.println(rm.value()[0]);
+		//System.out.println(uri);
 		
-		if(uri.contains("gsjhgsa"))
-			{
+		if(uri.contains("Authentication")&& request.getHeader("token")==null)
+			{/*
 			 			String token = request.getHeader("token");
 						User user = jwtValidator.validate(token);
-						System.out.println(uri);
-						
+												
 						if(userService.loginUser(user)!=null)
 							return true;
-						
 						else
-							return false;			
-			}*/
+						 return false;		*/	
+			
+			
+			}
 		return true;
 		}
 

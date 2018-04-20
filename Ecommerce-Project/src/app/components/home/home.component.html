@@ -46,7 +46,7 @@
     <div class="parent-div">
       <label class="category">{{category}}</label>
         <br>
-      <button class="button btn-info" #btn [routerLink]="['/viewAll',category]" >View All</button>
+      <button class="button viewbtn btn-info" #btn [routerLink]="['/viewAll',category]" >View All</button>
       <input type="hidden" #id value="{{category}}"/>
     </div>
   </div>

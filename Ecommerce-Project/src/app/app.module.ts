@@ -29,6 +29,7 @@ import { OrderComponent } from './components/order/order.component';
 import { DataSharingService } from './service/data-sharing.service';
 import { EmployeeLoginComponent } from './components/admin-components/employee-login/employee-login.component';
 import { SearchResultComponentComponent } from './components/search-result-component/search-result-component.component';
+import { FetchDataService } from './service/fetch-data.service';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -59,7 +60,7 @@ import { SearchResultComponentComponent } from './components/search-result-compo
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule
   ],
-  providers: [TokenDecoderService],
+  providers: [TokenDecoderService,FetchDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

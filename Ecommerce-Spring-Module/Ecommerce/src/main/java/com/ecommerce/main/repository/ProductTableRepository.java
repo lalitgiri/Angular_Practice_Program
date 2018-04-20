@@ -28,6 +28,6 @@ public interface ProductTableRepository extends CrudRepository<ProductTable,Inte
 	 @Query("select u from User u where u.firstname like %?1")
 	  List<User> findByFirstnameEndsWith(String firstname);*/
 	
-	 @Query(value="select * from Product_Table u where UPPER(u.product_category) = :category OR UPPER(u.product_name) LIKE CONCAT('%',:productName,'%')", nativeQuery = true)
+	 @Query(value="select * from Product_Table u where UPPER(u.product_category) = :category AND UPPER(u.product_name) LIKE CONCAT('%',:productName,'%')", nativeQuery = true)
 	  public Iterable<ProductTable> findByProductNameWithCategory(@Param("category") String category, @Param("productName") String productName);
 }

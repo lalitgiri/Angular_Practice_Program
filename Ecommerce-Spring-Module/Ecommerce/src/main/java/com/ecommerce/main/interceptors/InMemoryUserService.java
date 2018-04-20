@@ -12,8 +12,8 @@ public class InMemoryUserService implements UserService {
     public boolean addUser(User user) {
     			if(user!= null) {
     				users.add(user);
-    				System.out.println(users);
-    				System.out.println(users.indexOf(user));
+    				/*System.out.println(users);
+    				System.out.println(users.indexOf(user));*/
     				return true;
     			}
     			return false;
