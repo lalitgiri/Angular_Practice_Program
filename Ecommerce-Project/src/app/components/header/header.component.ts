@@ -17,13 +17,15 @@ export class HeaderComponent implements OnInit {
   status: boolean = false;
   name = "";
   category="";
+  user;
   constructor(private http: Http, private router: Router, private cdRef: ChangeDetectorRef,
     private tokenDecoder: TokenDecoderService) {
     if (sessionStorage.getItem("token") != null) {
       this.token = true;
       this.tokenValue = false;
       var parsedToken = tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-      this.name = parsedToken.userName.split(" ");;
+      this.name = parsedToken.userName.split(" ");
+      this.user = parsedToken.role;
       console.log("hello " + this.name);
     }
    // console.log("token : " + sessionStorage.getItem("token"));

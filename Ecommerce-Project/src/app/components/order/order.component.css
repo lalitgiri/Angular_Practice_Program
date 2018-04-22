@@ -18,6 +18,8 @@
     margin:1vw;
     background:ghostwhite;
     color: black;
+    max-height: 35vw;
+    overflow:scroll;
   
 }
 
@@ -26,13 +28,6 @@
     border-radius: 0.5vw;
     
 }
-.sub-div{
-    max-height: 25vw;
-    overflow:scroll;
-   
-}
-
-
 .center1{
     align-content: center;
 }

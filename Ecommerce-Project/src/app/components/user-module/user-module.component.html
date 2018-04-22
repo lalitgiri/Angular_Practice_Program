@@ -1,0 +1,42 @@
+<div class="user-details-div">
+  <div class="sub-div">
+    <label> Personal Information </label><br/>
+    <input type="text" />
+  </div>
+  <div class="sub-div">
+    <label> Email Address </label><br/>
+    <input type="text" />
+  </div>
+  <div class="sub-div">
+    <label> Mobile Number </label><br/>
+    <input type="text" />
+  </div>
+
+</div>
+
+
+<div class="div">
+   <label class="heading"> My Orders</label>
+     <div class="sub-divs">
+             
+        <div *ngFor="let data of orders" class="content-div">
+          <div class="imgDiv">
+            <img src="{{imgUrl}}{{data.itemDetail.imageUrl}}" class="imageAlign" alt="" srcset="">
+          </div>
+          <div class="dataDiv">
+            Product Name : <small>{{data.itemDetail.productName}}</small>
+            <br/> Product Category : <small>{{data.itemDetail.productCategory}}</small>
+            <br/> Product Price : <small>Rs. {{data.itemDetail.productPrice}}</small>
+            <br/> Qunatity : <small>1</small>
+            <br/> Description : <small>{{data.itemDetail.description}}</small>
+          </div>
+           
+          
+      </div>
+      
+
+     
+
+    </div>
+  
+  </div>

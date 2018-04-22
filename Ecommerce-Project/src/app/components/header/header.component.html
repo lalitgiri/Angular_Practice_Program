@@ -51,7 +51,7 @@
         <li class=""  *ngIf=tokenValue>
           <a href="" class="nav-link" data-toggle="modal" data-target="#mySignUp">Sign Up</a>
         </li>
-        <li class="" *ngIf=token>
+        <li class="" *ngIf= "token && user=='User'">
           <a class="nav-link " [routerLink]="['/cart']">Cart</a>
         </li>
       <li class="dropdown ">

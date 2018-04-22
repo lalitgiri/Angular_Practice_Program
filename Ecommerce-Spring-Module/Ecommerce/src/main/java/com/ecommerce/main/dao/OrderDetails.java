@@ -1,27 +1,30 @@
 package com.ecommerce.main.dao;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class OrderDetails {
 
 	@Id
-	private int orderId;  //primaryKey
+	private long orderId;  //primaryKey
 	
 	private String  address;
 	private ProductTable itemDetail;
 	
 	private boolean status;
-	@ManyToOne
+	@ManyToOne//(fetch=FetchType.EAGER)
+//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private UserDetails userId;
 	
-	public int getOrderId() {
+	public long getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(int orderId) {
+	public void setOrderId(long orderId) {
 		this.orderId = orderId;
 	}
 	public UserDetails getUserId() {
