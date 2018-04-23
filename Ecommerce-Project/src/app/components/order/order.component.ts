@@ -86,8 +86,7 @@ export class OrderComponent implements OnInit {
         "userId":this.userDetails,
         "address":this.userDetails.cart.deliveryAddress,
         "itemDetail":this.products,
-        "orderId":4
-     }
+           }
      this.http.post(environment.serverUrl + 'addorder', this.order)
      .subscribe((response) => {alert(response.text()) },
      (error:Error)=>{ alert(error.message)});

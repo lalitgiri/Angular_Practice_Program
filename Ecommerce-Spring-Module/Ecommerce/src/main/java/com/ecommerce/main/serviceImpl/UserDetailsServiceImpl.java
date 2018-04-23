@@ -29,6 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		int i=userDetailsRepository.CountRow();
 		cart.setUserId(i+1);
 		user.setCart(cart);
+		user.setOrderId(null);
 		userDetailsRepository.save(user);
 		return "Sucessfully Added";
 	}
@@ -47,7 +48,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return userDetailsRepository.findById(id);
 		
 	}
-	
 	public String updateUserDetails(UserDetails user,long id) {
 		if(userDetailsRepository.existsById(id)) {
 		userDetailsRepository.save(user);

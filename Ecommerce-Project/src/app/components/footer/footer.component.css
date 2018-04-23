@@ -1,29 +1,26 @@
 .parentDiv{
-    margin: 4vw 2vw;
+   
     height: auto;
     background: cadetblue;
-    margin-bottom: 1vw;
-    padding:2vw 4vw;
-    border-radius: 2vw;
+    padding-left: 1vw;
+    padding-right:1vw;
+    font-size: 1.3vw;
+    
+    width:100%;
+    bottom: 0vw;
+  /* position: fixed;*/
    
 }
 
 .imageAlign{
-    margin-left: auto;
-    margin-right: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    margin-left: 2vw;
     border-radius: 0.5vw;
-    height: auto;
-    width:100%;
-    padding-top: 1vw;
-}
-.child-div{
-
+    height:auto;
+    width:50%;
+   
 }
 .head-label{
     font-style: italic;
-    font-size: x-large;
+    font-size: 1.5vw;;
     margin-right: 1vw;
 }

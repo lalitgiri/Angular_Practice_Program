@@ -68,9 +68,13 @@ public class UserDetailsServiceController {
 	}
 
 	@RequestMapping("/getuser/{id}")
-	public Optional<UserDetails> getUserDetails(@PathVariable long id) {
-		System.out.println("hello");
-		return userDetailsService.getUserDetails(id);
+	public UserDetails getUserDetails(@PathVariable long id) {
+		//System.out.println("hello");
+		Optional<UserDetails> user = userDetailsService.getUserDetails(id);
+		if(user.isPresent()) {
+			return user.get();
+		}
+		return null;
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/updateuser/{id}")

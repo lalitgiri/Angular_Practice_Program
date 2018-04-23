@@ -26,8 +26,9 @@ public class UserDetails {
 	
 	private String password;
 
-	@Transient
+	
 	@OneToMany(mappedBy="userId")
+	@Transient
 	private Collection<OrderDetails> orderId;
 	
 	public Collection<OrderDetails> getOrderId() {
