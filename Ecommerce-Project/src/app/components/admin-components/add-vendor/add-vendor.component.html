@@ -1,7 +1,7 @@
 <br/>
 <br/>
 
-<h3>Add New Employee</h3>
+<h3>Add New Employee / Vendor</h3>
 <br/>
 <form class="row" #addEmployeeForm="ngForm" (ngSubmit)="onSubmit(addEmployeeForm.value)">
 <div class="row col-sm-9 col-xs-4" >
@@ -27,6 +27,7 @@
     <select name="employeeRole" class="col-sm-6 col-xs-6 margin" ngModel required>
       <option> Admin</option>
       <option> Employee</option>
+      <option> Vendor</option>
     </select>
   </div>
 
