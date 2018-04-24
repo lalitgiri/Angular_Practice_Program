@@ -25,9 +25,10 @@ export class DescriptionComponent implements OnInit {
   cartBtn = "Add To Cart";
   cartBtnflag = true;
   userId;
+  parsedToken;
   token() {
-    let parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
-    this.userId = parsedToken.userId;
+    this.parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
+    this.userId = this.parsedToken.userId;
 
   }
   ngOnInit() {
@@ -50,27 +51,32 @@ export class DescriptionComponent implements OnInit {
   }
 
   splitDescriptionString() {
-    
+
     this.description = this.pdescription.split(";");
     console.log(this.description);
   }
 
   addToCart() {
-    if (sessionStorage.getItem("token") != null) {
 
+    if (sessionStorage.getItem("token") != null) {
       this.token();
-      if (this.cartBtnflag) {
-        this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
-          subscribe(response => {
-            this.cartBtn = "Added To Cart";
-            this.cartBtnflag = false;
-          },
-            (error: Error) => { alert(error.message) });
+      if (this.parsedToken.role == 'User') {
+
+        if (this.cartBtnflag) {
+          this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
+            subscribe(response => {
+              this.cartBtn = "Added To Cart";
+              this.cartBtnflag = false;
+            },
+              (error: Error) => { alert(error.message) });
+        }
+        else {
+          this.cartBtnflag = false;
+          alert("Item Already Added");
+        }
       }
-      else {
-        this.cartBtnflag = false;
-        alert("Item Already Added");
-      }
+      else
+        alert("Login As a User");
     }
     else
       alert("Login First");
@@ -83,14 +89,19 @@ export class DescriptionComponent implements OnInit {
     sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
     if (sessionStorage.getItem("token") != null) {
       this.token();
-      this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
-        subscribe(response => {
-          this.cartBtn = "Added To Cart";
-          this.cartBtnflag = false;
-        },
-          (error: Error) => { alert(error.message) });
-      this.router.navigate(['/order', "product"]);
+      if (this.parsedToken.role == 'User') {
+        this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
+          subscribe(response => {
+            this.cartBtn = "Added To Cart";
+            this.cartBtnflag = false;
+          },
+            (error: Error) => { alert(error.message) });
+        this.router.navigate(['/order', "product"]);
+      }
+      else
+        alert("Login As a User");
     }
+
     else
       alert("Login First");
   }

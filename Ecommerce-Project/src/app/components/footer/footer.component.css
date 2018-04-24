@@ -6,8 +6,11 @@
     padding-right:1vw;
     font-size: 1.3vw;
     
-    width:100%;
-    bottom: 0vw;
+   
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   /* position: fixed;*/
    
 }
@@ -23,4 +26,13 @@
     font-style: italic;
     font-size: 1.5vw;;
     margin-right: 1vw;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+  
+    text-align: center;
 }
