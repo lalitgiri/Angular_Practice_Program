@@ -72,10 +72,8 @@ export class UserModuleComponent implements OnInit {
 
   }
 
-  changePass(data) {
-    console.log(data);
-
-
+  changePass() {
+    
     if (this.currentPass == this.cpass) {
       if (this.rpass == this.npass) {
           this.userDetails.password=this.npass;
