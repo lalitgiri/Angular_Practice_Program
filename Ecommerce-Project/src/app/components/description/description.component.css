@@ -27,6 +27,15 @@
     padding-top: 1vw;
 }
 
+.quantity-div{
+    margin-top: 0.5vw;
+    margin: 0vw 13vw;
+}
+.quantity-input{
+    text-align: center;
+    width:4vw;
+    
+}
 
 .label{
     font-weight: bolder;

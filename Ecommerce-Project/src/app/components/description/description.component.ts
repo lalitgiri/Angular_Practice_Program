@@ -26,6 +26,17 @@ export class DescriptionComponent implements OnInit {
   cartBtnflag = true;
   userId;
   parsedToken;
+  quantity=1;
+
+  addValue(){
+    this.quantity=this.quantity+1;
+  }
+
+  decreaseValue(){
+    if(this.quantity>1)
+      this.quantity=this.quantity-1;
+
+  }
   token() {
     this.parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
     this.userId = this.parsedToken.userId;
@@ -53,7 +64,7 @@ export class DescriptionComponent implements OnInit {
   splitDescriptionString() {
 
     this.description = this.pdescription.split(";");
-    console.log(this.description);
+    //console.log(this.description);
   }
 
   addToCart() {
@@ -61,7 +72,7 @@ export class DescriptionComponent implements OnInit {
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
-
+        console.log(this.itemData);
         if (this.cartBtnflag) {
           this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
             subscribe(response => {

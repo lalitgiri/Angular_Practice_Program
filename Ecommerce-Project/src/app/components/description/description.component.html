@@ -6,6 +6,13 @@
       <div class="img-div row" id="img-div">
         <a [href]="imgUrl">
           <img [src]="imgUrl" class="col-md-12 imageAlign" id="img" *ngIf='flag'> </a>
+       
+     </div>
+
+     <div class="quantity-div">
+        <button (click)="decreaseValue()">-</button>
+        <input type="text" class="quantity-input" [value]="quantity" disabled/>
+        <button (click)="addValue()">+</button>
       </div>
 
     </div>
