@@ -35,6 +35,7 @@ public class ProductTable implements Serializable{
 	@ManyToMany(mappedBy="productId")
 	private List<CartDetails> cartId;
 	
+	
 	public List<CartDetails> getCartId() {
 		return cartId;
 	}

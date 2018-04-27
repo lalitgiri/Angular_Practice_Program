@@ -14,6 +14,8 @@ import com.ecommerce.main.dao.CartDetails;
 import com.ecommerce.main.dao.ProductTable;
 import com.ecommerce.main.service.CartDetailsService;
 
+import net.minidev.json.JSONObject;
+
 @RestController
 public class CartDetailsServiceController {
 
@@ -21,7 +23,7 @@ public class CartDetailsServiceController {
 	private CartDetailsService cartDetailsService;
 	
 	@RequestMapping("/getcart/{id}")
-	public Optional<CartDetails> getCartDetails(@PathVariable int id){
+	public String getCartDetails(@PathVariable int id){
 		return cartDetailsService.getCartDetails(id);
 	}
 	

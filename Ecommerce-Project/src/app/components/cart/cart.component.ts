@@ -20,21 +20,28 @@ export class CartComponent implements OnInit {
   name = this.parsedToken.userName;
   address;
   email = this.parsedToken.sub;
-  p;
   cartPrice = 0;
+  quantity: number[];
+  quantityx: number[];
+
 
   constructor(private http: Http, private tokenDecoder: TokenDecoderService,private router:Router,private dataSharingService:DataSharingService) {
     this.http.get(environment.serverUrl + "getcart/" + this.id).
       map(response => response.json()).
       subscribe(data => {
+        console.log(data);
         this.itemData = data
-        this.productData = this.itemData.productId;
+        this.productData = this.itemData.products;
         this.address = this.itemData.deliveryAddress;
+        debugger;
         this.findProductPrice();
+      console.log(this.quantity);
 
       }, (error: Error) => { alert(error.message) });
 
   }
+
+ 
 
   findProductPrice() {
     this.productData.forEach(element => {
@@ -46,7 +53,7 @@ export class CartComponent implements OnInit {
   
 
   removeData(data) {
-    console.log(data);
+   // console.log(data);
     this.id;
     this.http.post(environment.serverUrl +'removefromcart/'+this.id, data)
       .subscribe((response) => { window.location.reload(); },
