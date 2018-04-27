@@ -3,11 +3,16 @@ package com.ecommerce.main.dao;
 import java.sql.Date;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class EmployeeDetails {
@@ -24,7 +29,9 @@ public class EmployeeDetails {
 	private boolean status;
 	private Date joiningDate,resigningDate;
 	
-	@OneToMany(mappedBy="employeeId")
+	@JsonIgnore
+	@OneToMany(mappedBy="employeeId",fetch=FetchType.LAZY)
+	@Fetch(FetchMode.SELECT)
 	private Collection <ProductTable> productId;
 	
 	public Collection<ProductTable> getProductId() {
