@@ -71,7 +71,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
 
 		order.getProductQuantity().forEach(u -> {
 			OrderDetails orderDetails = new OrderDetails();
-			System.out.println("User Id:" +order.getUserId());
+		//	System.out.println("User Id:" +order.getUserId());
 			orderDetails.setUserId(userDetailsRepository.findById((long)order.getUserId()).get());
 			orderDetails.setAddress(order.getDeliveryAddress());
 			orderDetails.setStatus(true);

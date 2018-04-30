@@ -51,7 +51,7 @@ public class InMemoryUserService implements UserService {
 		if(userList!=null) {
 			users =userList;
 			//users.size();
-		System.out.println(users);
+		//System.out.println(users);
 		return true;
 		}
 		return false;

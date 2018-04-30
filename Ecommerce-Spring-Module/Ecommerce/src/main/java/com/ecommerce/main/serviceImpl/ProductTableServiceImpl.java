@@ -20,7 +20,7 @@ public class ProductTableServiceImpl implements ProductTableService {
 	public String addProduct(ProductTable product) throws Exception {
 		int i=productTableRepository.CountRow();
 		product.setProductId(i+1);	
-		System.out.println("i="+i+" i+1="+(i+1));
+		//System.out.println("i="+i+" i+1="+(i+1));
 		productTableRepository.save(product);
 		return "Sucessfully Added";
 	}

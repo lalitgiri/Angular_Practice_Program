@@ -8,6 +8,7 @@ export class AddHeaderInHttpService {
 
   createAuthorizationHeader(headers: Headers) {
     if (sessionStorage.getItem('token')) {
+      headers.append('Content-Type','application/json')
       headers.append('token', sessionStorage.getItem('token'));
     }
 
