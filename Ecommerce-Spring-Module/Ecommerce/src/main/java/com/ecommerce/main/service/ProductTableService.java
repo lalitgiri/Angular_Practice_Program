@@ -8,7 +8,7 @@ import com.ecommerce.main.dao.ProductTable;
 public interface ProductTableService {
 
 
-	public String addProduct(ProductTable product) throws Exception ;
+	public String addProduct(ProductTable product,int employeeId) throws Exception ;
 	
 	public String deleteProduct(ProductTable id[]);
 	public Optional<ProductTable> getProductDetails(int id);

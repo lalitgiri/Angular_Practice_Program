@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
+import { TokenDecoderService } from '../../../service/token-decoder.service';
 
 @Component({
   selector: 'app-add-product',
@@ -18,7 +19,9 @@ export class AddProductComponent implements OnInit {
   fileInput: boolean = false;
   fileInputDummy: boolean = true;
   url = environment.serverUrl;
-  constructor(private http: HttpClient) { }
+  parsedToken = this.tokenDecoder.decodeToken(sessionStorage.getItem("token"));
+  id = this.parsedToken.userId;
+  constructor(private http: HttpClient,private tokenDecoder:TokenDecoderService) { }
 
   ngOnInit() {
        
@@ -58,7 +61,7 @@ export class AddProductComponent implements OnInit {
           "status":true
         };
      
-      this.http.post(environment.serverUrl + 'addproduct', this.data, { responseType: 'text' })
+      this.http.post(environment.serverUrl + 'addproduct/'+this.id, this.data, { responseType: 'text' })
         .subscribe((response: Response) => {alert(response)
         },
         (error:Error)=>{ alert(error.message)});

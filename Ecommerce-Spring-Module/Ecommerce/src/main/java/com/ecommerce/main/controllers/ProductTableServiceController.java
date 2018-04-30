@@ -19,10 +19,10 @@ public class ProductTableServiceController {
 	@Autowired
 	private ProductTableService productTableService;
 	
-	@RequestMapping(method=RequestMethod.POST,value="/addproduct")
-	public String addProduct(@RequestBody ProductTable product) throws Exception {
+	@RequestMapping(method=RequestMethod.POST,value="/addproduct/{employeeId}")
+	public String addProduct(@RequestBody ProductTable product,@PathVariable int employeeId) throws Exception {
 		
-			return productTableService.addProduct(product);
+			return productTableService.addProduct(product, employeeId);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/deleteproduct")

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ecommerce.main.dao.ProductTable;
+import com.ecommerce.main.repository.EmployeeDetailRepository;
 import com.ecommerce.main.repository.ProductTableRepository;
 import com.ecommerce.main.service.ProductTableService;
 
@@ -17,9 +18,12 @@ public class ProductTableServiceImpl implements ProductTableService {
 	@Autowired
 	private ProductTableRepository productTableRepository;
 	
-	public String addProduct(ProductTable product) throws Exception {
+	@Autowired
+	private EmployeeDetailRepository employeeDetailRepository;
+	public String addProduct(ProductTable product,int employeeId) throws Exception {
 		int i=productTableRepository.CountRow();
 		product.setProductId(i+1);	
+		product.setEmployeeId(employeeDetailRepository.findById(employeeId).get());
 		//System.out.println("i="+i+" i+1="+(i+1));
 		productTableRepository.save(product);
 		return "Sucessfully Added";
