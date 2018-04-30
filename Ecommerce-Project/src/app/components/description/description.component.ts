@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { TokenDecoderService } from '../../service/token-decoder.service';
 import { DataSharingService } from '../../service/data-sharing.service';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-description',
@@ -12,7 +13,7 @@ import { DataSharingService } from '../../service/data-sharing.service';
 })
 export class DescriptionComponent implements OnInit {
 
-  constructor(private http: Http, private dataSharingService: DataSharingService, private route: ActivatedRoute, private tokenDecoder: TokenDecoderService, private router: Router) { }
+  constructor(private http:AddHeaderInHttpService,private route: ActivatedRoute, private tokenDecoder: TokenDecoderService, private router: Router) { }
   itemData;
   url = environment.serverUrl;
   flag = false;
@@ -26,15 +27,15 @@ export class DescriptionComponent implements OnInit {
   cartBtnflag = true;
   userId;
   parsedToken;
-  quantity=1;
+  quantity = 1;
 
-  addValue(){
-    this.quantity=this.quantity+1;
+  addValue() {
+    this.quantity = this.quantity + 1;
   }
 
-  decreaseValue(){
-    if(this.quantity>1)
-      this.quantity=this.quantity-1;
+  decreaseValue() {
+    if (this.quantity > 1)
+      this.quantity = this.quantity - 1;
 
   }
   token() {
@@ -72,15 +73,20 @@ export class DescriptionComponent implements OnInit {
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
-        console.log(this.itemData);
+    //    console.log(this.itemData);
         if (this.cartBtnflag) {
-          this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
-            subscribe(response => {
-              this.cartBtn = "Added To Cart";
-              this.cartBtnflag = false;
-            },
-              (error: Error) => { alert(error.message) });
-        }
+   
+                this.http.post(environment.serverUrl + "token/updatecart/" + this.userId+"/"+this.quantity, this.itemData).
+                subscribe(response => {
+                  this.cartBtn = "Added To Cart";
+                  this.cartBtnflag = false;
+                  
+                },
+                  (error: Error) => { alert(error.message) });
+            
+         
+          }
+        
         else {
           this.cartBtnflag = false;
           alert("Item Already Added");
@@ -101,7 +107,7 @@ export class DescriptionComponent implements OnInit {
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
-        this.http.post(environment.serverUrl + "updatecart/" + this.userId, this.itemData).
+        this.http.post(environment.serverUrl + "token/updatecart/" + this.userId+"/"+this.quantity, this.itemData).
           subscribe(response => {
             this.cartBtn = "Added To Cart";
             this.cartBtnflag = false;

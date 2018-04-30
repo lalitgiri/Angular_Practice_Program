@@ -15,7 +15,7 @@ public interface CartDetailsService {
 
 	public String getCartDetails(int id);
 	
-	public String updateCartDetails(ProductTable product,int id) ;
+	public String updateCartDetails(ProductTable product,int id,int quantity) ;
 	
 	public List<CartDetails> getAllCartDetails();
 	

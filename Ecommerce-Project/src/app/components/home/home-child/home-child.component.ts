@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../../../environments/environment';
+import { AddHeaderInHttpService } from '../../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-home-child',
@@ -11,7 +12,7 @@ import { environment } from '../../../../environments/environment';
 export class HomeChildComponent implements OnInit {
 
   @Input() category: string;
-  constructor(private http:Http) {
+  constructor(private http:AddHeaderInHttpService) {
     
    }
   itemData;

@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,7 +10,7 @@ import { environment } from '../../../environments/environment';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: Http, private cdRef: ChangeDetectorRef) { }
+  constructor(private http: AddHeaderInHttpService, private cdRef: ChangeDetectorRef) { }
   httpData = [];
   itemData;
   url = environment.serverUrl;

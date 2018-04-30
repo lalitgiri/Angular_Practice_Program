@@ -30,83 +30,78 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 
 	public String getCartDetails(int id) {
 		String jsonResult = null;
-		CartHandlerSupportClass cartHandlerSupportClass =new CartHandlerSupportClass();
+		CartHandlerSupportClass cartHandlerSupportClass = new CartHandlerSupportClass();
 		List<ProductQuantity> productQuantity = new ArrayList<ProductQuantity>();
-	
+
 		if (cartDetailsRepository.findById(id).get() != null) {
 
 			CartDetails cartDetails = cartDetailsRepository.findById(id).get();
-			
+
 			List<ProductTable> list = cartDetails.getProductId();
 			Set<ProductTable> uniqueProducts = new HashSet<>();
 			list.forEach(p -> uniqueProducts.add(p));
 			List<ProductTable> uniqueIds = uniqueProducts.stream().collect(Collectors.toList());
-			//int count = 0;
-			for(ProductTable i : uniqueIds) {
+			// int count = 0;
+			for (ProductTable i : uniqueIds) {
 				int count = 0;
-				 for (ProductTable p : list) {
-					 if(p.equals(i)) {
-						 count++;
-					 }
+				for (ProductTable p : list) {
+					if (p.equals(i)) {
+						count++;
 					}
-				 productQuantity.add(new ProductQuantity(count,i) );
-				 
+				}
+				productQuantity.add(new ProductQuantity(count, i));
+
 			}
-			
-			
-			productQuantity.forEach(System.out::print);
-				
-			
-		
-			
+
+			// productQuantity.forEach(System.out::print);
+
 			cartHandlerSupportClass.setProductQuantity(productQuantity);
 
 			cartHandlerSupportClass.setDeliveryAddress(cartDetails.getDeliveryAddress());
-			
+
 			cartHandlerSupportClass.setUserId(cartDetails.getUserId());
-			
+
 			ObjectMapper mapper = new ObjectMapper();
 			try {
 				jsonResult = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cartHandlerSupportClass);
-				//jsonResult = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResult+"hello"+cartDetails.getUserId());
-				
+
 			} catch (JsonProcessingException e) {
 
 				e.printStackTrace();
 			}
 
-		
+			// Set<Entry<ProductTable,Integer>> ssss = data.entrySet();
+			// ssss.forEach(System.out::println); return cartDetailsRepository.findById(id);
 
-			
-			 // Set<Entry<ProductTable,Integer>> ssss = data.entrySet();
-			 // ssss.forEach(System.out::println); return cartDetailsRepository.findById(id);
-			 
 			return jsonResult;
 
-	}
+		}
 		return "hello";
 	}
 
-	public String updateCartDetails(ProductTable product, int id) {
-
-		if (product != null) {
-			cart.setUserId(id);
-			if (addItemToCart(product, id))
-				cart.setProductId(productList);
-			cart.setDeliveryAddress(null);
-			if (cartDetailsRepository.save(cart) != null)
-				return "SucessFully Updated";
+	public String updateCartDetails(ProductTable product, int id, int quantity) {
+		boolean flag=false;
+		for (int i = 0; i < quantity; i++) {
+			if (product != null) {
+				cart.setUserId(id);
+				
+				if (addItemToCart(product, id))
+					cart.setProductId(productList);
+				cart.setDeliveryAddress(null);
+				if (cartDetailsRepository.save(cart) != null)
+					flag=true;
+				else
+					{
+						flag=false;
+						break;
+					}
+			}
 		}
+		
+		if(flag==true)
+			return "SucessFully Updated";
 
 		return "error";
-	}
-
-	public List<CartDetails> getAllCartDetails() {
-
-		List<CartDetails> cartList = new ArrayList<>();
-		cartDetailsRepository.findAll().forEach(cartList::add);
-
-		return cartList;
 	}
 
 	public boolean addItemToCart(ProductTable product, int id) {
@@ -121,9 +116,18 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 		return false;
 	}
 
+	public List<CartDetails> getAllCartDetails() {
+
+		List<CartDetails> cartList = new ArrayList<>();
+		cartDetailsRepository.findAll().forEach(cartList::add);
+
+		return cartList;
+	}
+
 	public String removeItemFromCart(ProductTable product, int id) {
 
 		Optional<CartDetails> cart2 = cartDetailsRepository.findById(id);
+
 		if (cart2.isPresent()) {
 			productList = cart2.get().getProductId();
 
@@ -140,7 +144,7 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 
 	public boolean removeItemLocal(ProductTable product) {
 
-		System.out.println(productList.size());
+		// System.out.println("List size before removed products: "+productList.size());
 		List<ProductTable> list = new ArrayList<>();
 		productList.forEach(u -> {
 			if (u.getProductId() != product.getProductId()) {
@@ -150,8 +154,6 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 		});
 		if (list != null) {
 			productList = list;
-			// list.size();
-			System.out.println(productList.size());
 			return true;
 		}
 		return false;

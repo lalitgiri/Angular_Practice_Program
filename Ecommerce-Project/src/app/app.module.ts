@@ -32,6 +32,7 @@ import { SearchResultComponentComponent } from './components/search-result-compo
 import { FetchDataService } from './service/fetch-data.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserModuleComponent } from './components/user-module/user-module.component';
+import { AddHeaderInHttpService } from './service/add-header-in-http.service';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -64,7 +65,7 @@ import { UserModuleComponent } from './components/user-module/user-module.compon
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule
   ],
-  providers: [TokenDecoderService,FetchDataService],
+  providers: [TokenDecoderService,FetchDataService,AddHeaderInHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

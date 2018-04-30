@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { TokenDecoderService } from '../../service/token-decoder.service';
 import { Router } from '@angular/router';
 import { DataSharingService } from '../../service/data-sharing.service';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-cart',
@@ -25,17 +26,16 @@ export class CartComponent implements OnInit {
   quantityx: number[];
 
 
-  constructor(private http: Http, private tokenDecoder: TokenDecoderService,private router:Router,private dataSharingService:DataSharingService) {
-    this.http.get(environment.serverUrl + "getcart/" + this.id).
+  constructor(private http:AddHeaderInHttpService, private tokenDecoder:TokenDecoderService,private router:Router) {
+    this.http.get(environment.serverUrl + "token/getcart/" + this.id).
       map(response => response.json()).
       subscribe(data => {
-        console.log(data);
+      //  console.log(data);
         this.itemData = data
-        this.productData = this.itemData.products;
+        this.productData = this.itemData.productQuantity;
         this.address = this.itemData.deliveryAddress;
-        debugger;
         this.findProductPrice();
-      console.log(this.quantity);
+      //console.log(this.quantity);
 
       }, (error: Error) => { alert(error.message) });
 
@@ -45,7 +45,7 @@ export class CartComponent implements OnInit {
 
   findProductPrice() {
     this.productData.forEach(element => {
-      this.cartPrice = element.productPrice + this.cartPrice;
+      this.cartPrice = (element.productTable.productPrice * element.quantity )+ this.cartPrice;
 
     });
 
@@ -55,7 +55,7 @@ export class CartComponent implements OnInit {
   removeData(data) {
    // console.log(data);
     this.id;
-    this.http.post(environment.serverUrl +'removefromcart/'+this.id, data)
+    this.http.post(environment.serverUrl +'token/removefromcart/'+this.id, data)
       .subscribe((response) => { window.location.reload(); },
         (error: Error) => { alert(error.message)
         });

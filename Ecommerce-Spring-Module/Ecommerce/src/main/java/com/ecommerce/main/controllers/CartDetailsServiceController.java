@@ -22,23 +22,23 @@ public class CartDetailsServiceController {
 	@Autowired
 	private CartDetailsService cartDetailsService;
 	
-	@RequestMapping("/getcart/{id}")
+	@RequestMapping("token/getcart/{id}")
 	public String getCartDetails(@PathVariable int id){
 		return cartDetailsService.getCartDetails(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST,value="/updatecart/{id}")
-	public String updateCartDetails(@PathVariable int id,@RequestBody ProductTable product) {
-	 String str=cartDetailsService.updateCartDetails(product, id);
+	@RequestMapping(method=RequestMethod.POST,value="token/updatecart/{id}/{quantity}")
+	public String updateCartDetails(@PathVariable int id,@PathVariable int  quantity,@RequestBody ProductTable product) {
+	 String str=cartDetailsService.updateCartDetails(product, id,quantity);
 	 return str;
 	}
 	
-	@RequestMapping("/getallcartsdetails")
+	@RequestMapping("token/getallcartsdetails")
 	public List<CartDetails> getAllCartDetails(){
 		return cartDetailsService.getAllCartDetails();
 	}
 	
-	@RequestMapping(method=RequestMethod.POST,value="/removefromcart/{id}")
+	@RequestMapping(method=RequestMethod.POST,value="token/removefromcart/{id}")
 	public String removeItemFromCart(@RequestBody ProductTable product,@PathVariable int id) {
 		return cartDetailsService.removeItemFromCart(product, id);
 	}	
