@@ -18,6 +18,7 @@ export class AddHeaderInHttpService {
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
     console.log("Get Header = "+headers.get('token'));
+         
     return this.http.get(url, {
       headers: headers      
     });

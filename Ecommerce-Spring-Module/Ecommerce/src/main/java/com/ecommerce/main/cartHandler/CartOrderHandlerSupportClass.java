@@ -1,12 +1,8 @@
 package com.ecommerce.main.cartHandler;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.ecommerce.main.dao.ProductTable;
-
-public class CartHandlerSupportClass {
+public class CartOrderHandlerSupportClass {
 	
 	private int userId;
 	private String deliveryAddress;

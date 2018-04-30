@@ -1,11 +1,8 @@
 package com.ecommerce.main.dao;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class OrderDetails {
@@ -15,12 +12,18 @@ public class OrderDetails {
 	
 	private String  address;
 	private ProductTable itemDetail;
+	private int quantity ;
 	
 	private boolean status;
 	@ManyToOne//(fetch=FetchType.EAGER)
 //	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private UserDetails userId;
-	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public long getOrderId() {
 		return orderId;
 	}

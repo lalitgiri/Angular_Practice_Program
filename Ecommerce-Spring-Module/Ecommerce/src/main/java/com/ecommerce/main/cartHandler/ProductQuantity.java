@@ -3,6 +3,10 @@ package com.ecommerce.main.cartHandler;
 import com.ecommerce.main.dao.ProductTable;
 
 public class ProductQuantity {
+	
+	private int quantity;
+	private ProductTable productTable;
+	
 	public ProductQuantity() {}
 	@Override
 	public String toString() {
@@ -13,8 +17,7 @@ public class ProductQuantity {
 		this.quantity = quantity;
 		this.productTable = productTable;
 	}
-	private int quantity;
-	private ProductTable productTable;
+	
 	
 	public int getQuantity() {
 		return quantity;

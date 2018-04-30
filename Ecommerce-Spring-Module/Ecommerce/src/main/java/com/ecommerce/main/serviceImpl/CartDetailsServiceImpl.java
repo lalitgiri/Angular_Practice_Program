@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.main.cartHandler.CartHandlerSupportClass;
+import com.ecommerce.main.cartHandler.CartOrderHandlerSupportClass;
 import com.ecommerce.main.cartHandler.ProductQuantity;
 import com.ecommerce.main.dao.CartDetails;
 import com.ecommerce.main.dao.ProductTable;
@@ -30,7 +30,7 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 
 	public String getCartDetails(int id) {
 		String jsonResult = null;
-		CartHandlerSupportClass cartHandlerSupportClass = new CartHandlerSupportClass();
+		CartOrderHandlerSupportClass cartOrderHandlerSupportClass = new CartOrderHandlerSupportClass();
 		List<ProductQuantity> productQuantity = new ArrayList<ProductQuantity>();
 
 		if (cartDetailsRepository.findById(id).get() != null) {
@@ -55,15 +55,15 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 
 			// productQuantity.forEach(System.out::print);
 
-			cartHandlerSupportClass.setProductQuantity(productQuantity);
+			cartOrderHandlerSupportClass.setProductQuantity(productQuantity);
 
-			cartHandlerSupportClass.setDeliveryAddress(cartDetails.getDeliveryAddress());
+			cartOrderHandlerSupportClass.setDeliveryAddress(cartDetails.getDeliveryAddress());
 
-			cartHandlerSupportClass.setUserId(cartDetails.getUserId());
+			cartOrderHandlerSupportClass.setUserId(cartDetails.getUserId());
 
 			ObjectMapper mapper = new ObjectMapper();
 			try {
-				jsonResult = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cartHandlerSupportClass);
+				jsonResult = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(cartOrderHandlerSupportClass);
 
 			} catch (JsonProcessingException e) {
 

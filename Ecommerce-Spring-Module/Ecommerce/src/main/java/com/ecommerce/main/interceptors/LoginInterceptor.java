@@ -4,8 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -23,9 +21,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 		String uri= request.getRequestURI();
 	
-		System.out.println("Token before : "+request.getHeader("token"));
+		//System.out.println("Token before : "+request.getHeader("token"));
 
-		System.out.println("Uri before : "+uri);
+		//System.out.println("Uri before : "+uri);
 		//System.out.println(uri);
 		
 		if(uri.contains("token"))
@@ -36,14 +34,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 						if(userService.loginUser(user)!=null)
 							return true;
 						else
-						 return false;			
+						 return false;		
 				System.out.println(uri);
 					System.out.println("Token : "+request.getHeader("token"));
 					if(request.getHeader("token")!=null)
 						return true;
 					else 
 						return false;
-		*/		}
+					*/}
 		return true;
 		}
 

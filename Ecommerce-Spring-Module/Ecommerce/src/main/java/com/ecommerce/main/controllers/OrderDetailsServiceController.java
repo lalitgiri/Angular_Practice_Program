@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecommerce.main.cartHandler.CartOrderHandlerSupportClass;
 import com.ecommerce.main.dao.OrderDetails;
 import com.ecommerce.main.service.OrderDetailsService;
+
 
 @RestController
 public class OrderDetailsServiceController {
@@ -19,6 +21,10 @@ public class OrderDetailsServiceController {
 	@Autowired
 	private OrderDetailsService orderDetailsService;
 	
+	@RequestMapping(method=RequestMethod.POST,value="/add_cart_order")
+	public String addCartOrder(@RequestBody CartOrderHandlerSupportClass order) {
+		return orderDetailsService.addCartOrder(order);
+	}
 	@RequestMapping(method=RequestMethod.POST,value="/addorder")
 	public String addOrder(@RequestBody OrderDetails order) {
 		return orderDetailsService.addOrder(order);

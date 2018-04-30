@@ -34,14 +34,14 @@
 
         <div *ngFor="let data of products" class="content-div">
           <div class="imgDiv">
-            <img src="{{imgUrl}}{{data.imageUrl}}" class="imageAlign" alt="" srcset="">
+            <img src="{{imgUrl}}{{data.productTable.imageUrl}}" class="imageAlign" alt="" srcset="">
           </div>
           <div class="dataDiv">
-            Product Name : {{data.productName}}
-            <br/> Product Category : {{data.productCategory}}
-            <br/> Product Price : Rs. {{data.productPrice}}
-            <br/> Qunatity : 1
-            <br/> Description : {{data.description}}
+            Product Name : {{data.productTable.productName}}
+            <br/> Product Category : {{data.productTable.productCategory}}
+            <br/> Product Price : Rs. {{data.productTable.productPrice}}
+            <br/> Qunatity :{{data.quantity}}
+            <br/> Description : {{data.productTable.description}}
           </div>
           
         </div>

@@ -104,6 +104,7 @@ export class DescriptionComponent implements OnInit {
   onClick() {
     //this.dataSharingService.setProduct(this.itemData);
     sessionStorage.setItem('services_assigned', JSON.stringify(this.itemData));
+    sessionStorage.setItem('quantity',JSON.stringify(this.quantity));
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
