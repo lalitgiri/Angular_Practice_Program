@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment.prod';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-search-result-component',
@@ -15,7 +16,7 @@ export class SearchResultComponentComponent implements OnInit {
   category;
   name;
   url=environment.serverUrl;
-  constructor(private http: Http, private route: ActivatedRoute) {
+  constructor(private http: AddHeaderInHttpService, private route: ActivatedRoute) {
    
     route.params.subscribe(val => {
 

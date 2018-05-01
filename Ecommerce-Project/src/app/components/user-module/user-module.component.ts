@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { TokenDecoderService } from '../../service/token-decoder.service';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-user-module',
@@ -10,7 +11,7 @@ import { TokenDecoderService } from '../../service/token-decoder.service';
 })
 export class UserModuleComponent implements OnInit {
 
-  constructor(private http: Http, private tokenDecoder: TokenDecoderService) { }
+  constructor(private http: AddHeaderInHttpService, private tokenDecoder: TokenDecoderService) { }
 
   url = environment.serverUrl;
   orders;

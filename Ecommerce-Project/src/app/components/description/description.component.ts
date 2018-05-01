@@ -46,7 +46,7 @@ export class DescriptionComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.imgUrl = this.url + "images/";
-    this.http.get(environment.serverUrl + "getproduct/" + id).
+    this.http.get(environment.serverUrl + 'getproduct/' + id).
       map(response => response.json()).
       subscribe(
         data => {
@@ -59,7 +59,7 @@ export class DescriptionComponent implements OnInit {
           this.flag = true;
           this.splitDescriptionString();
         },
-        (error: Error) => { alert(error.message) });
+        (error: Error) => { /*alert(error.message)*/ });
   }
 
   splitDescriptionString() {
@@ -82,7 +82,7 @@ export class DescriptionComponent implements OnInit {
                   this.cartBtnflag = false;
                   
                 },
-                  (error: Error) => { alert(error.message) });
+                  (error: Error) => { /*alert(error.message)*/ });
             
          
           }
@@ -113,7 +113,7 @@ export class DescriptionComponent implements OnInit {
             this.cartBtn = "Added To Cart";
             this.cartBtnflag = false;
           },
-            (error: Error) => { alert(error.message) });
+            (error: Error) => {/* alert(error.message) */});
         this.router.navigate(['/order', "product"]);
       }
       else

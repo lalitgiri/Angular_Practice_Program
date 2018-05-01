@@ -6,7 +6,7 @@ import { delay } from 'q';
 
 @Injectable()
 export class FetchDataService {
-
+/*
   httpData;
   constructor(private router:Router,private http:Http) { }
 
@@ -26,6 +26,6 @@ export class FetchDataService {
   }
 
   
-
+*/
 
 }

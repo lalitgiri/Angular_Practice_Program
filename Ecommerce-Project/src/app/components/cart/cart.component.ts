@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
         this.findProductPrice()
       //console.log(this.quantity);
 
-      }, (error: Error) => { alert(error.message) });
+      }, (error: Error) => { /*alert(error.message) */});
 
   }
 
@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
     this.id;
     this.http.post(environment.serverUrl +'token/removefromcart/'+this.id, data)
       .subscribe((response) => { window.location.reload(); },
-        (error: Error) => { alert(error.message)
+        (error: Error) => { /*alert(error.message)*/
         });
         
       }

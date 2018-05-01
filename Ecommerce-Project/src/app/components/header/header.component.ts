@@ -4,6 +4,7 @@ import { Http, RequestOptions, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { TokenDecoderService } from '../../service/token-decoder.service';
 import { ControlValueAccessor } from '@angular/forms';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   name = "";
   category="";
   user;
-  constructor(private http: Http, private router: Router, private cdRef: ChangeDetectorRef,
+  constructor(private http: AddHeaderInHttpService, private router: Router, private cdRef: ChangeDetectorRef,
     private tokenDecoder: TokenDecoderService) {
     if (sessionStorage.getItem("token") != null) {
       this.token = true;
@@ -60,10 +61,10 @@ export class HeaderComponent implements OnInit {
     let myheaders = new Headers({ 'Content-Type': 'application/json' });    //x-www-form-urlencoded
     myheaders.append('token', sessionStorage.getItem("token"));
 
-    this.http.get(environment.serverUrl + "logout", { headers: myheaders }).
+    this.http.get(environment.serverUrl + "logout").
       map(response => response.json()).
       subscribe(data => {
-       // console.log(data);
+       console.log(data);
         if (data == true) {
           sessionStorage.removeItem("token");
           window.location.reload();
@@ -71,9 +72,18 @@ export class HeaderComponent implements OnInit {
           sessionStorage.clear();
           this.router.navigate(['/']);
         }
+        if (data == false) {
+        
+          window.location.reload();
+          sessionStorage.clear();
+          this.router.navigate(['/']);
+        }
 
       },
-        (error: Error) => { alert(error.message) });
+        (error: Error) => { 
+          sessionStorage.clear();
+          this.router.navigate(['/']);
+          alert(error.message) });
 
   }
 

@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { DataSharingService } from '../../service/data-sharing.service';
 import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 
 @Component({
   selector: 'app-order',
@@ -29,7 +30,7 @@ export class OrderComponent implements OnInit {
   cost = 0;
   order;
   quantity = 0;
-  constructor(private tokenDecoder: TokenDecoderService, private route: ActivatedRoute, private http: Http, private dataSharingService: DataSharingService) { }
+  constructor(private tokenDecoder: TokenDecoderService, private route: ActivatedRoute, private http: AddHeaderInHttpService, private dataSharingService: DataSharingService) { }
 
 
   ngOnInit() {
