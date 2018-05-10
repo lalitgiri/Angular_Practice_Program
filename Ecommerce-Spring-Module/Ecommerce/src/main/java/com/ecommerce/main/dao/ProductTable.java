@@ -10,6 +10,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class ProductTable implements Serializable{
 
@@ -26,6 +28,7 @@ public class ProductTable implements Serializable{
 	private String description;
 	private String imageUrl;
 	private boolean status;
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "EmployeeID")
