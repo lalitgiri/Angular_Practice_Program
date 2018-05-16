@@ -66,7 +66,7 @@ export class OrderComponent implements OnInit {
     if (this.flag == flag)
       flag = 0;
     this.flag = flag;
-    if (flag == 4)
+    if (flag == 6)
       this.pFlag = "payment"
     else
       this.pFlag = null;
@@ -92,7 +92,6 @@ export class OrderComponent implements OnInit {
       //    console.log(this.products);
       this.http.post(environment.serverUrl + 'addorder', this.order)
         .subscribe((response) => {
-          alert(response.text());
           this.flag = data;
           this.pFlag = 'hi';
         },
@@ -100,25 +99,26 @@ export class OrderComponent implements OnInit {
     }
 
     if (this.summaryFlag == 'cart') {
-      
-        this.order = {
-          "userId": this.userDetails.phoneNumber,
-          "deliveryAddress": this.userDetails.cart.deliveryAddress,
-          "productQuantity": this.products
-                  
-        }
-        
-        this.http.post(environment.serverUrl + 'add_cart_order', this.order)
-          .subscribe((response) => {
-           
-           },
-            (error: Error) => { alert(error.message) });
-          
-        console.log(this.order);
 
-     
-      this.flag = data;
-      this.pFlag = 'hi';
+      this.order = {
+        "userId": this.userDetails.phoneNumber,
+        "deliveryAddress": this.userDetails.cart.deliveryAddress,
+        "productQuantity": this.products
+
+      }
+
+      this.http.post(environment.serverUrl + 'add_cart_order', this.order)
+        .subscribe((response) => {
+
+
+          this.flag = data;
+          this.pFlag = 'hi';
+        }//,(error: Error) => { alert(error.message) }
+        );
+
+      // console.log(this.order);
+
+
     }
 
   }

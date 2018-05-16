@@ -33,6 +33,7 @@ import { FetchDataService } from './service/fetch-data.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserModuleComponent } from './components/user-module/user-module.component';
 import { AddHeaderInHttpService } from './service/add-header-in-http.service';
+import { BillGenerationComponent } from './components/bill-generation/bill-generation.component';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -60,7 +61,8 @@ import { AddHeaderInHttpService } from './service/add-header-in-http.service';
     EmployeeLoginComponent,
     SearchResultComponentComponent,
     FooterComponent,
-    UserModuleComponent
+    UserModuleComponent,
+    BillGenerationComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule

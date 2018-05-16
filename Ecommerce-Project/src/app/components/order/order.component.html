@@ -73,9 +73,13 @@
     <button class="floatproperty btn-info" (click)="onclick(4)">View</button>
     <div class="sub-div" *ngIf="flag==4">
       <br/>
-      <br/>
-      <br/>
-      <br/>
+      <div class="row">
+        <span class="col">
+        <input  type="radio" name="paymentMode" value="cash" (click)="payment(5)"/>&nbsp;&nbsp; Cash On Delivery</span>
+        <span class="col">
+        <input type="radio" name="paymentMode" value="credit" (click)="onclick(6)"/>&nbsp;&nbsp;Credit/Debit</span>
+      </div>
+        <br/>
     </div>
   </div>
 
@@ -84,7 +88,7 @@
 <div class="div" *ngIf="pFlag=='payment'">
   Payment Options:
   <button class="floatproperty btn-info" (click)="onclick(4)">Back</button>
-  <div class="sub-div" *ngIf="flag==4">
+  <div class="sub-div" *ngIf="flag==6">
     <b>Credit/Debit/ATM Card</b>
     <br/>
     <br/>
@@ -124,4 +128,5 @@
 
   <br/>
   <h3>Your Product Will Be Delivered Soon......</h3>
+  <app-bill-generation></app-bill-generation>
 </div>
