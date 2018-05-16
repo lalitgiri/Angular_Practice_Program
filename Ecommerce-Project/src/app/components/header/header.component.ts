@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
       var parsedToken = tokenDecoder.decodeToken(sessionStorage.getItem("token"));
       this.name = parsedToken.userName.split(" ");
       this.user = parsedToken.role;
-      console.log("hello " + this.name);
+     
     }
    // console.log("token : " + sessionStorage.getItem("token"));
   }
@@ -67,14 +67,25 @@ export class HeaderComponent implements OnInit {
        console.log(data);
         if (data == true) {
           sessionStorage.removeItem("token");
-          window.location.reload();
-          alert("Sucessfully Logout");
+         // window.location.reload();
+        {
+            this.token = false;
+         this.tokenValue = true;
+         this.name ="";
+         this.user = "";
+        }alert("Sucessfully Logout");
           sessionStorage.clear();
           this.router.navigate(['/']);
         }
         if (data == false) {
         
-          window.location.reload();
+        //  window.location.reload();
+        {
+          this.token = false;
+       this.tokenValue = true;
+       this.name ="";
+       this.user = "";
+      }
           sessionStorage.clear();
           this.router.navigate(['/']);
         }
