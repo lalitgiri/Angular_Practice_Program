@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, HttpModule } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { AddHeaderInHttpService } from '../../service/add-header-in-http.service';
 @Component({
   selector: 'app-view-all',
   templateUrl: './view-all.component.html',
@@ -14,7 +14,7 @@ export class ViewAllComponent implements OnInit {
   url = environment.serverUrl;
   itemData;
 
-  constructor(private http: Http, private route: ActivatedRoute) {
+  constructor(private http: AddHeaderInHttpService, private route: ActivatedRoute) {
     /*
       problem: router navigator does not reload the content of the page if we are on the same page or component.
 

@@ -6,18 +6,19 @@ export class AddHeaderInHttpService {
 
   constructor(private http: Http) { }
 
-  createAuthorizationHeader(headers: Headers) {
+  createAuthorizationHeader() {
+    let headers = new Headers();
     if (sessionStorage.getItem('token')) {
-      headers.append('Content-Type','application/json')
       headers.append('token', sessionStorage.getItem('token'));
     }
 
     else
       headers.append('token', 'Lalit');
-  }
+    
+      return headers;
+    }
   get(url) {
-    let headers = new Headers();
-    this.createAuthorizationHeader(headers);
+    let headers : Headers= this.createAuthorizationHeader();
     console.log("Get Header = "+headers.get('token'));
          
     return this.http.get(url, {
@@ -27,11 +28,12 @@ export class AddHeaderInHttpService {
   }
 
   post(url, data) {
-    let headers = new Headers();
-    this.createAuthorizationHeader(headers);
-    console.log("Post Header : "+headers.get('token'));
+    let header =new Headers()
+    header= this.createAuthorizationHeader();
+    console.log("Post Header : "+header.get('token'));
+    
     return this.http.post(url, data, {
-      headers: headers
+      headers: header
     });
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { TokenDecoderService } from '../../service/token-decoder.service';
@@ -73,7 +72,7 @@ export class DescriptionComponent implements OnInit {
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
-    //    console.log(this.itemData);
+        console.log("ADD to cart");
         if (this.cartBtnflag) {
    
                 this.http.post(environment.serverUrl + "token/updatecart/" + this.userId+"/"+this.quantity, this.itemData).

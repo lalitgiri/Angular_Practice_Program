@@ -34,14 +34,14 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 						if(userService.loginUser(user)!=null)
 							return true;
 						else
-						 return false;	
+						 return false;*/	
 					System.out.println(uri);
 					System.out.println("Token : "+request.getHeader("token"));
 					if(request.getHeader("token")!=null)
 						return true;
 					else 
 						return false;
-					*/	}
+						}
 		return true;
 		}
 
