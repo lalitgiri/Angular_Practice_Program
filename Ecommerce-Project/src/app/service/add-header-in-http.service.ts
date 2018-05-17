@@ -19,8 +19,7 @@ export class AddHeaderInHttpService {
     }
   get(url) {
     let headers : Headers= this.createAuthorizationHeader();
-    console.log("Get Header = "+headers.get('token'));
-         
+           
     return this.http.get(url, {
       headers: headers      
     });
@@ -30,7 +29,7 @@ export class AddHeaderInHttpService {
   post(url, data) {
     let header =new Headers()
     header= this.createAuthorizationHeader();
-    console.log("Post Header : "+header.get('token'));
+  
     
     return this.http.post(url, data, {
       headers: header

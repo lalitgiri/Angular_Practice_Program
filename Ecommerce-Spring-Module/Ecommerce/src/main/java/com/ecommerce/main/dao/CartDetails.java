@@ -1,6 +1,7 @@
 
 package com.ecommerce.main.dao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class CartDetails {
+public class CartDetails implements Serializable {
 	
 	@Id
 	@Column(name = "UserID")

@@ -10,6 +10,7 @@ import { AddHeaderInHttpService } from '../../service/add-header-in-http.service
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
+ 
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
@@ -30,6 +31,7 @@ export class OrderComponent implements OnInit {
   cost = 0;
   order;
   quantity = 0;
+  
   constructor(private tokenDecoder: TokenDecoderService, private route: ActivatedRoute, private http: AddHeaderInHttpService, private dataSharingService: DataSharingService) { }
 
 
@@ -58,7 +60,7 @@ export class OrderComponent implements OnInit {
 
       this.findProductPrice();
     }
-    console.log("hello" + this.products)
+   // console.log("hello" + this.products)
 
   }
 

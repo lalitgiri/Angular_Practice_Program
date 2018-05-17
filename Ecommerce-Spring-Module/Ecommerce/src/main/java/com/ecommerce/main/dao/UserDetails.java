@@ -1,5 +1,6 @@
 package com.ecommerce.main.dao;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.Transient;
 
 @Entity
 
-public class UserDetails {
+public class UserDetails implements Serializable {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "UserID") //uniqueKey

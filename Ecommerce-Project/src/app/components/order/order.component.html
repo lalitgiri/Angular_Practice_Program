@@ -7,7 +7,7 @@
       <br/> Contact Number :{{userDetails.phoneNumber}}
       <br/> Email Id :{{userDetails.emailId}}
       <br/>
-      
+
 
       <button class="floatproperty btn-info" (click)="onclick(2)">Continue</button>
     </div>
@@ -43,7 +43,7 @@
             <br/> Qunatity :{{data.quantity}}
             <br/> Description : {{data.productTable.description}}
           </div>
-          
+
         </div>
 
       </div>
@@ -75,11 +75,11 @@
       <br/>
       <div class="row">
         <span class="col">
-        <input  type="radio" name="paymentMode" value="cash" (click)="payment(5)"/>&nbsp;&nbsp; Cash On Delivery</span>
+          <input type="radio" name="paymentMode" value="cash" (click)="payment(5)" />&nbsp;&nbsp; Cash On Delivery</span>
         <span class="col">
-        <input type="radio" name="paymentMode" value="credit" (click)="onclick(6)"/>&nbsp;&nbsp;Credit/Debit</span>
+          <input type="radio" name="paymentMode" value="credit" (click)="onclick(6)" />&nbsp;&nbsp;Credit/Debit</span>
       </div>
-        <br/>
+      <br/>
     </div>
   </div>
 
@@ -98,9 +98,9 @@
         <input type="text" name="CardNumber" class="form-control" ngModel required/>
       </div>
       <div>
-          Enter the Card Holder's Name :
-          <input type="text" name="CardHolderName" class="form-control" ngModel required/>
-        </div>
+        Enter the Card Holder's Name :
+        <input type="text" name="CardHolderName" class="form-control" ngModel required/>
+      </div>
       <div>
         Enter CVV Number :
         <input type="password" name="CVV" class="form-control" ngModel required/>
@@ -120,13 +120,16 @@
 
 
 <div *ngIf="flag==5" style="text-align: center">
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+  
   <h1>Order Confirmed</h1>
 
   <br/>
   <h3>Your Product Will Be Delivered Soon......</h3>
-  <app-bill-generation></app-bill-generation>
+
+  <br/>
+  
+  <div  class="app-bill-generation">
+    <app-bill-generation [orderDetails]="order" [summaryFlag]="summaryFlag"></app-bill-generation>
+  </div>
+
 </div>

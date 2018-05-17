@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     })
   }
   onLogin(data){
-    console.log(data);
+   // console.log(data);
     this.http.post(environment.serverUrl + 'getAuthentication',data)
     .subscribe(response => {
       if(response.text().length>1)
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       }
       else 
         alert("Invalid Credentials"); 
-      console.log(sessionStorage.getItem("token"));
+     // console.log(sessionStorage.getItem("token"));
       this.LoginForm.reset();
     },
     (error:Error)=>alert("Error :"+error.message));

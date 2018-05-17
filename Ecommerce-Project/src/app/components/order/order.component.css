@@ -66,3 +66,10 @@
     background: ghostwhite; /* make scrollbar transparent */
 }
 
+.app-bill-generation{
+    background: white;
+    margin-left:10%;
+    margin-right:  10%;
+    border: 1vh ridge black;
+}
+

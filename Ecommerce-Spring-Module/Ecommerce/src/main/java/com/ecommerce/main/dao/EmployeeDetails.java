@@ -1,5 +1,6 @@
 package com.ecommerce.main.dao;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Collection;
 
@@ -14,7 +15,7 @@ import org.hibernate.annotations.FetchMode;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class EmployeeDetails {
+public class EmployeeDetails implements Serializable {
 	
 	@Id
 	private int employeeId;		//primary Key

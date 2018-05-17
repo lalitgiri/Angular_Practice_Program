@@ -34,6 +34,7 @@ export class CartComponent implements OnInit {
         this.itemData = data
         this.productData = this.itemData.productQuantity;
         this.address = this.itemData.deliveryAddress;
+       
         this.findProductPrice()
       //console.log(this.quantity);
 

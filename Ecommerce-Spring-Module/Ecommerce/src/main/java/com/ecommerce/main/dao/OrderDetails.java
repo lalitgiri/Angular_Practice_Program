@@ -1,11 +1,13 @@
 package com.ecommerce.main.dao;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class OrderDetails {
+public class OrderDetails implements Serializable {
 
 	@Id
 	private long orderId;  //primaryKey

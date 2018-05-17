@@ -107,12 +107,12 @@ export class DescriptionComponent implements OnInit {
     if (sessionStorage.getItem("token") != null) {
       this.token();
       if (this.parsedToken.role == 'User') {
-        this.http.post(environment.serverUrl + "token/updatecart/" + this.userId+"/"+this.quantity, this.itemData).
+     /*   this.http.post(environment.serverUrl + "token/updatecart/" + this.userId+"/"+this.quantity, this.itemData).
           subscribe(response => {
             this.cartBtn = "Added To Cart";
             this.cartBtnflag = false;
           },
-            (error: Error) => {/* alert(error.message) */});
+            (error: Error) => {/* alert(error.message) *///});
         this.router.navigate(['/order', "product"]);
       }
       else

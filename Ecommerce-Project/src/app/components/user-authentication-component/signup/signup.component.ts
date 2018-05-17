@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.http.get("../../assets/products/isd_code.json").
       map(response => response.json()).
-      subscribe(data => this.isd_code = data); console.log(this.isd_code)
+      subscribe(data => this.isd_code = data);// console.log(this.isd_code)
     
       this.SignUpForm=new FormGroup({
         "name":new FormControl(""),
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
     
 
     onUpdate(data){
-      console.log(data);
+    //  console.log(data);
       this.http.post(environment.serverUrl + 'adduser',data)
       .subscribe(response => {
          if(response.text().length>1){

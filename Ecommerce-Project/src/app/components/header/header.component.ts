@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
     
   }
   change(data){
-    console.log(this.name+ " ");
+   // console.log(this.name+ " ");
   }
 
   inValidateSession() {
@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
     this.http.get(environment.serverUrl + "logout").
       map(response => response.json()).
       subscribe(data => {
-       console.log(data);
+    //   console.log(data);
         if (data == true) {
           sessionStorage.removeItem("token");
          // window.location.reload();
@@ -111,7 +111,7 @@ export class HeaderComponent implements OnInit {
   }
   navigate(category: string) {
     this.router.navigate(['/viewAll', category]);
-    console.log(category);
+  //  console.log(category);
   }
   ngAfterViewChecked() {
     this.cdRef.detectChanges();
