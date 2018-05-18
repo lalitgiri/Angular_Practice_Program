@@ -25,8 +25,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 		System.out.println("Uri before : "+uri);
 		//System.out.println(uri);
-		
-		if(uri.contains("token"))
+		if("OPTIONS".equals(request.getMethod()))
+			return true;
+		else if(uri.contains("token"))
 			{/*
 			 			String token = request.getHeader("token");
 						User user = jwtValidator.validate(token);
