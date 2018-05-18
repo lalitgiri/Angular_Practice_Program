@@ -73,3 +73,8 @@
     border: 1vh ridge black;
 }
 
+.print-invoice-button{
+    float: right;
+    margin:1vw;
+}
+

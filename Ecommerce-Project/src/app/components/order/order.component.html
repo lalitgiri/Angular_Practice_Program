@@ -126,10 +126,11 @@
   <br/>
   <h3>Your Product Will Be Delivered Soon......</h3>
 
-  <br/>
+ 
   
   <div  class="app-bill-generation">
-    <app-bill-generation [orderDetails]="order" [summaryFlag]="summaryFlag"></app-bill-generation>
+      <button (click)="print()" class="print-invoice-button">Print Invoice</button>
+    <app-bill-generation id="printContent" [orderDetails]="order" [summaryFlag]="summaryFlag"></app-bill-generation>
   </div>
 
 </div>

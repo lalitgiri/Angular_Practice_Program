@@ -27,7 +27,8 @@ export class BillGenerationComponent implements OnInit {
     if(this.summaryFlag=='cart')
       this.hello();
     else
-      this.total=this.orderDetails.quantity * this.orderDetails.itemDetail.productPrice
+      this.total=this.orderDetails.quantity * this.orderDetails.itemDetail.productPrice;
+
    
   }
   hello(){
@@ -36,4 +37,5 @@ export class BillGenerationComponent implements OnInit {
     });
    
   }
+  
 }
