@@ -48,6 +48,7 @@ public class SessionController {
 			user.setPhoneNumber(userDetails.getPhoneNumber());
 
 			User loggedUser = userService.loginUser(user);
+			
 			if (loggedUser == null) {
 				userService.addUser(user);
 				request.getSession(true).setAttribute("user", user);

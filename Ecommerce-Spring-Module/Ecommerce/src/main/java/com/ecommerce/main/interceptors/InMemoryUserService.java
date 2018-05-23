@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class InMemoryUserService implements UserService {
-	private List<User> users = new ArrayList<>();
+	private static List<User> users = new ArrayList<>();
 
 	public boolean addUser(User user) {
 		if (user != null) {
 			users.add(user);
-			/*
-			 * System.out.println(users); System.out.println(users.indexOf(user));
-			 */
+			
+			  System.out.println(users); System.out.println(users.indexOf(user));
+			 
 			return true;
 		}
 		return false;
@@ -29,7 +29,7 @@ public class InMemoryUserService implements UserService {
 	public User loginUser(User user) {
 		Optional<User> loggedInUser = users.stream().filter(u -> validateUser(u, user)).findAny();
 		
-		//System.out.println(loggedInUser.get().getEmailAddress());
+		System.out.println("Login User : "+users);
 		return loggedInUser.isPresent() ? loggedInUser.get() : null;
 	}
 

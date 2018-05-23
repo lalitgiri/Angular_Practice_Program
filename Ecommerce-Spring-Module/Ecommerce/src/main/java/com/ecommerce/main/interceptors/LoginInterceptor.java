@@ -13,8 +13,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	JwtValidator jwtValidator = new JwtValidator();
 	
 	@Autowired
-	UserService userService;
-	
+	//UserService userService;
+	InMemoryUserService userService=new InMemoryUserService();
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
@@ -30,18 +30,19 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 				System.out.println("Options "+request.getRequestURI());
 				return true;
 			}
-		else if(uri.contains("token") && "POST".equals(request.getMethod()))
-			{/*
+		else if(uri.contains("token"))
+			{
 			 			String token = request.getHeader("token");
 						User user = jwtValidator.validate(token);
 							
-						User valid=userService.loginUser(user);
-						System.out.println("Valid : "+valid);
+						User valid = new User();
+						valid=userService.loginUser(user);
+							System.out.println("Valid : "+valid);
 						if(valid!=null)
 							return true;
 						else
 						 return false;	
-			*/		}
+					}
 		return true;
 		}
 
