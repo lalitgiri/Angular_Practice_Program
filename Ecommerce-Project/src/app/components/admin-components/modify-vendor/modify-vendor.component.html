@@ -37,64 +37,58 @@
 <form class="row container" [formGroup]="updateProductForm"  (ngSubmit)="onUpdate(updateProductForm.value)">
 
   <div class="col-sm-6 row bottom-margin">
-    <label for="productId" class="col">Employee Id : </label>
-    <input type="text" name="productid" disabled  [(ngModel)]="productid" class="col" formControlName="productid"/>
+    <label for="employeeId" class="col">Employee Id : </label>
+    <input type="text" name="employeeId" disabled  [(ngModel)]="employeeId" class="col" formControlName="employeeId"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
-    <label for="productName " class="col">Employee Name : </label>
-    <input type="text" name="UproductName"  required [(ngModel)]="UproductName"  class="col " formControlName="UproductName"/>
+    <label for="employeeName" class="col">Employee Name : </label>
+    <input type="text" name="employeeName"  required [(ngModel)]="employeeName"  class="col " formControlName="employeeName"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
-    <label for="productCategory" class="col ">Date Of Birth : </label>
-    <input type="text" name="UproductCategory"  [(ngModel)]="UproductCategory"  class="col" required formControlName="UproductCategory"/>
-  </div>
-
-  <div class="col-sm-6 row bottom-margin">
-
-    <label for="productQuantity" class="col">Employee Role : </label>
-    <input type="text" name="UproductQuantity"  [(ngModel)]="UproductQuantity" class="col" formControlName="UproductQuantity"/>
+    <label for="dob" class="col ">Date Of Birth : </label>
+    <input type="text" name="dob"  [(ngModel)]="dob"  class="col" required formControlName="dob"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
 
-    <label for="productPrice" class="col">Contact Number : </label>
-    <input type="text" name="UproductPrice" [(ngModel)]="UproductPrice" class="col" formControlName="UproductPrice"/>
+    <label for="employeeRole" class="col">Employee Role : </label>
+    <input type="text" name="employeeRole"  [(ngModel)]="employeeRole" class="col" formControlName="employeeRole"/>
   </div>
 
   <div class="col-sm-6 row bottom-margin">
-    <label for="productImage" class="col ">Joining Date : </label>
-    <input type="Date" name="UproductImage" (change)="onImageSelected($event)"class="  col defaultPropertyRemove"  />
+
+    <label for="contactNumber" class="col">Contact Number : </label>
+    <input type="text" name="contactNumber" [(ngModel)]="contactNumber" class="col" formControlName="contactNumber"/>
+  </div>
+
+  <div class="col-sm-6 row bottom-margin">
+    <label for="joiningDate" class="col ">Joining Date : </label>
+    <input type="Date" name="joiningDate" class="  col defaultPropertyRemove"  formControlName="joiningDate"/>
     
   </div>
+  <div class="col-sm-6 row bottom-margin">
+
+    <label for="password" class="col">Password : </label>
+    <input type="password" name="password" class="  col " [(ngModel)]="password" formControlName="password"/>
+  </div>
+
+
+  <div class="col-sm-6 row bottom-margin">
+
+    <label for="empImage" class="col">Employee Image : </label>
+    <input type="file" name="empImage" class="  col defaultPropertyRemove" [(ngModel)]="empImage" formControlName="empImage">
+  </div>
+
   
   <div class="col-sm-6 row bottom-margin">
 
-    <label for="description" class="col">Address : </label>
-    <textarea rows="4" cols="50" class="col" name="description"  [(ngModel)]="description" formControlName="description"></textarea>
+    <label for="address" class="col">Address : </label>
+    <textarea rows="4" cols="50" class="col" name="address"  [(ngModel)]="address" formControlName="address"></textarea>
   </div>
 
 
-  <div class="col-sm-6 row bottom-margin">
-
-    <label for="description" class="col">Employee Image : </label>
-    <textarea rows="4" cols="50" class="col" name="description"  [(ngModel)]="description" formControlName="description"></textarea>
-  </div>
-
-
-  <div class="col-sm-6 row bottom-margin">
-
-    <label for="description" class="col">Address : </label>
-    <textarea rows="4" cols="50" class="col" name="description"  [(ngModel)]="description" formControlName="description"></textarea>
-  </div>
-
-
-  <div class="col-sm-6 row bottom-margin">
-
-    <label for="description" class="col">Employee Image : </label>
-    <textarea rows="4" cols="50" class="col" name="description"  [(ngModel)]="description" formControlName="description"></textarea>
-  </div>
 
   <div class="col-sm-6 row bottom-margin button-div">
     <span class="  col-sm-6 ">
