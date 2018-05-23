@@ -9,8 +9,8 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 
-	@Autowired
-	JwtValidator jwtValidator;
+	
+	JwtValidator jwtValidator = new JwtValidator();
 	
 	@Autowired
 	UserService userService;
@@ -26,23 +26,22 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		System.out.println("Uri before : "+uri);
 		//System.out.println(uri);
 		if("OPTIONS".equals(request.getMethod()))
-			return true;
-		else if(uri.contains("token"))
+			{
+				System.out.println("Options "+request.getRequestURI());
+				return true;
+			}
+		else if(uri.contains("token") && "POST".equals(request.getMethod()))
 			{/*
 			 			String token = request.getHeader("token");
 						User user = jwtValidator.validate(token);
-												
-						if(userService.loginUser(user)!=null)
+							
+						User valid=userService.loginUser(user);
+						System.out.println("Valid : "+valid);
+						if(valid!=null)
 							return true;
 						else
 						 return false;	
-					System.out.println(uri);
-					System.out.println("Token : "+request.getHeader("token"));
-					if(request.getHeader("token")!=null)
-						return true;
-					else 
-						return false;
-						*/}
+			*/		}
 		return true;
 		}
 

@@ -126,7 +126,6 @@ input[type=text]
     border:0.1vw solid black;
 }
 .menu-div{
-    margin-top: 1vw;
     min-height:10vw;
     width:100vw;
     z-index:1;

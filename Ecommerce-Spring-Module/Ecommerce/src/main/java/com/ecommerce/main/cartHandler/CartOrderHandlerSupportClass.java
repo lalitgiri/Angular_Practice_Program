@@ -4,7 +4,7 @@ import java.util.List;
 
 public class CartOrderHandlerSupportClass {
 	
-	private int userId;
+	private long userId;
 	private String deliveryAddress;
 	
 	private List<ProductQuantity> productQuantity;
@@ -15,10 +15,10 @@ public class CartOrderHandlerSupportClass {
 	public void setProductQuantity(List<ProductQuantity> productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	public String getDeliveryAddress() {

@@ -11,6 +11,8 @@ public class JwtValidator {
 private final String secret="lalit";
 
 	public User validate(String token) {
+		
+		System.out.println("JWT Validator");
 		User user=null;
 		try {
 		Claims body=Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
@@ -22,11 +24,18 @@ private final String secret="lalit";
 		user.setEmailAddress(body.getSubject());
 		user.setId(((String )body.get("UserId")));
 		user.setRole((String)body.get("role")) ;
-		user.setPhoneNumber((long)body.get("phoneNumber"));
-		user.setUserId((long)body.get("userId"));
+		
+		
+		String phn=  String.valueOf(body.get("phoneNumber"));
+		user.setPhoneNumber(Long.parseLong(phn));
+		
+		String id= String.valueOf(body.get("userId"));
+		user.setUserId(Integer.parseInt(id));
 		user.setUserName((String)body.get("userName"));
+		System.out.println("User Value Properly Set...");
 		}
-		catch(Exception e) {System.out.println(e);}
+		catch(Exception e) {System.out.println("JWt Validator Catch block "+e);}
+		System.out.println("return user");
 		return user;
 	}
 

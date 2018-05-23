@@ -2,13 +2,15 @@ package com.ecommerce.main.interceptors;
 
 import java.io.Serializable;
 
-@SuppressWarnings("serial")
+import org.springframework.stereotype.Component;
+
+@Component
 public class User implements Serializable{
     private String id;
     private String emailAddress;
     private String  role;
     private String userName;
-    private long userId;
+    private int userId;
     private long phoneNumber;
    
     public long getPhoneNumber() {
@@ -19,11 +21,11 @@ public class User implements Serializable{
 		this.phoneNumber = phoneNumber;
 	}
 
-	public long getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

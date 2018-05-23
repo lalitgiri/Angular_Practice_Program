@@ -17,6 +17,7 @@ import { CartComponent } from '../components/cart/cart.component';
 import { OrderComponent } from '../components/order/order.component';
 import { SearchResultComponentComponent } from '../components/search-result-component/search-result-component.component';
 import { UserModuleComponent } from '../components/user-module/user-module.component';
+import { ModifyVendorComponent } from '../components/admin-components/modify-vendor/modify-vendor.component';
 
 const appRoutes: Routes = [
   {path:'admin',component:AdminComponent,
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
     { path: 'delete',component:DeleteComponent, outlet:'admin'},
     { path: 'order',component:OrderDetailComponent, outlet:'admin'},
     { path: 'addProduct',component:AddProductComponent, outlet:'admin'},
+    { path: 'modifyUser',component:ModifyVendorComponent, outlet:'admin'},
     { path: 'exportdatabase',component:ExportDataBaseComponent, outlet:'admin'}
 
   ]},

@@ -37,17 +37,13 @@ public class SessionController {
 		String password = userRequest.get("lpassword");
 
 		UserDetails userDetails = userDetailsService.userAuthentication(emailId, password);
-	/*	{
-			System.out.println("Name= " + userDetails.getName() + "  Id: " + userDetails.getCart().getUserId());
 
-		}
-*/
 		if (userDetails != null) {
 
 			user.setEmailAddress(userRequest.get("Username"));
 			user.setId(userRequest.get("lpassword"));
 			user.setUserName(userDetails.getName());
-			user.setUserId((long)userDetails.getCart().getUserId());
+			user.setUserId((int)userDetails.getCart().getUserId());
 			user.setRole("User");
 			user.setPhoneNumber(userDetails.getPhoneNumber());
 
@@ -96,9 +92,9 @@ public class SessionController {
 			user.setEmailAddress(userRequest.get("Username"));
 			user.setId(userRequest.get("lpassword"));
 			user.setUserName(employeeDetails.getEmployeeName());
-			user.setUserId((long)employeeDetails.getEmployeeId());
+			user.setUserId((int)employeeDetails.getEmployeeId());
 			user.setRole(employeeDetails.getEmployeeRole());
-			user.setPhoneNumber(employeeDetails.getContactNumber());
+			user.setPhoneNumber((int)employeeDetails.getContactNumber());
 
 			User loggedUser = userService.loginUser(user);
 			if (loggedUser == null) {

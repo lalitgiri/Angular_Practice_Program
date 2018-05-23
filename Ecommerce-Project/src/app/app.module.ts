@@ -34,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { UserModuleComponent } from './components/user-module/user-module.component';
 import { AddHeaderInHttpService } from './service/add-header-in-http.service';
 import { BillGenerationComponent } from './components/bill-generation/bill-generation.component';
+import { ModifyVendorComponent } from './components/admin-components/modify-vendor/modify-vendor.component';
 
 
 //import { routing } from './routing/app-routing.module';
@@ -62,7 +63,8 @@ import { BillGenerationComponent } from './components/bill-generation/bill-gener
     SearchResultComponentComponent,
     FooterComponent,
     UserModuleComponent,
-    BillGenerationComponent
+    BillGenerationComponent,
+    ModifyVendorComponent
   ],
   imports: [
     BrowserModule,ReactiveFormsModule,FormsModule/*,routing*/,HttpModule,HttpClientModule, AppRoutingModule

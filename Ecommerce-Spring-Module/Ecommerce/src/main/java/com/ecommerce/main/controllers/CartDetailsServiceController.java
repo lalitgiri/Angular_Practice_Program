@@ -22,6 +22,7 @@ public class CartDetailsServiceController {
 	
 	@RequestMapping("token/getcart/{id}")
 	public String getCartDetails(@PathVariable int id){
+
 		return cartDetailsService.getCartDetails(id);
 	}
 	
