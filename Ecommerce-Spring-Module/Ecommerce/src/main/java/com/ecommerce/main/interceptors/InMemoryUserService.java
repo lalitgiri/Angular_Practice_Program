@@ -14,7 +14,7 @@ public class InMemoryUserService implements UserService {
 		if (user != null) {
 			users.add(user);
 			
-			  System.out.println(users); System.out.println(users.indexOf(user));
+			//  System.out.println(users); System.out.println(users.indexOf(user));
 			 
 			return true;
 		}
@@ -29,7 +29,7 @@ public class InMemoryUserService implements UserService {
 	public User loginUser(User user) {
 		Optional<User> loggedInUser = users.stream().filter(u -> validateUser(u, user)).findAny();
 		
-		System.out.println("Login User : "+users);
+		//System.out.println("Login User : "+users);
 		return loggedInUser.isPresent() ? loggedInUser.get() : null;
 	}
 

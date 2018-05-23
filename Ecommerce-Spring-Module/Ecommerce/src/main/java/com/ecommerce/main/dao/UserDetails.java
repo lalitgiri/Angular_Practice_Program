@@ -20,7 +20,6 @@ public class UserDetails implements Serializable {
 	private CartDetails cart;
 	@Id
 	private long  phoneNumber;	//primaryKey
-	private String countryCode;
 	private String name;
 	private String emailId; 
 	
@@ -74,12 +73,7 @@ public class UserDetails implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getCountryCode() {
-		return countryCode;
-	}
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
+	
 	
 
 }

@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
       this.SignUpForm=new FormGroup({
         "name":new FormControl(""),
         "emailId": new FormControl(""),
-        "countryCode":new FormControl(""),
         "phoneNumber": new FormControl(""),
         "password":new FormControl(""),
 

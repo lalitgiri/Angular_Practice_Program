@@ -12,7 +12,7 @@ private final String secret="lalit";
 
 	public User validate(String token) {
 		
-		System.out.println("JWT Validator");
+		//System.out.println("JWT Validator");
 		User user=null;
 		try {
 		Claims body=Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
@@ -32,10 +32,10 @@ private final String secret="lalit";
 		String id= String.valueOf(body.get("userId"));
 		user.setUserId(Integer.parseInt(id));
 		user.setUserName((String)body.get("userName"));
-		System.out.println("User Value Properly Set...");
+		//System.out.println("User Value Properly Set...");
 		}
 		catch(Exception e) {System.out.println("JWt Validator Catch block "+e);}
-		System.out.println("return user");
+	//	System.out.println("return user");
 		return user;
 	}
 

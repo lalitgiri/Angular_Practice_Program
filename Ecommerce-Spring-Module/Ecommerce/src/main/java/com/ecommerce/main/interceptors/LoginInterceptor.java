@@ -21,15 +21,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 		String uri= request.getRequestURI();
 	
-		System.out.println("Token before : "+request.getHeader("token"));
-
-		System.out.println("Uri before : "+uri);
-		//System.out.println(uri);
+		
 		if("OPTIONS".equals(request.getMethod()))
-			{
-				System.out.println("Options "+request.getRequestURI());
-				return true;
-			}
+			return true;
+		
 		else if(uri.contains("token"))
 			{
 			 			String token = request.getHeader("token");
@@ -37,7 +32,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 							
 						User valid = new User();
 						valid=userService.loginUser(user);
-							System.out.println("Valid : "+valid);
+						
 						if(valid!=null)
 							return true;
 						else
