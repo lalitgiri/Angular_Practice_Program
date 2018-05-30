@@ -81,13 +81,16 @@ public class CartDetailsServiceImpl implements CartDetailsService {
 
 	public String updateCartDetails(ProductTable product, int id, int quantity) {
 		boolean flag=false;
+		
+		CartDetails oldCart= cartDetailsRepository.findById(id).get();
+		
 		for (int i = 0; i < quantity; i++) {
 			if (product != null) {
 				cart.setUserId(id);
 				
 				if (addItemToCart(product, id))
 					cart.setProductId(productList);
-				cart.setDeliveryAddress(null);
+				cart.setDeliveryAddress(oldCart.getDeliveryAddress());
 				if (cartDetailsRepository.save(cart) != null)
 					flag=true;
 				else
