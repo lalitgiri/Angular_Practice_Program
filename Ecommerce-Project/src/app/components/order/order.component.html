@@ -20,7 +20,11 @@
     <div class="sub-div" *ngIf="flag==2">
       Address:
       <br/>
-      <small>{{userDetails.cart.deliveryAddress}}</small>
+      <small>{{address}}
+        <br/> <input type="text" [(ngModel)]='address' [disabled]='editAddressFlag'/> 
+          <button (click)='edit()'>{{editAddressButton}}</button>
+      </small>
+      
       <br/>
 
     </div>

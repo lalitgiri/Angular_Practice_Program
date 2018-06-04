@@ -33,8 +33,10 @@ public class EmployeeDetailsServiceController {
 		return employeeDetailsService.getEmployeeDetails(id);
 	}
 	@RequestMapping(method=RequestMethod.POST,value="/updateemployee/{id}")
-	public String updateEmployeeDetails(@RequestBody EmployeeDetails employee,int id) {
-		return employeeDetailsService.updateEmployeeDetails(employee, id);
+	public String updateEmployeeDetails(@RequestBody EmployeeDetails employee,@PathVariable int id) {
+		
+		System.out.println(id);
+		return employeeDetailsService.updateEmployeeDetails(employee,id);
 	}
 	@RequestMapping("/getallemployee")
 	public List<EmployeeDetails> getAllEmployeeDetails(){

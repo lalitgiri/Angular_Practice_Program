@@ -10,7 +10,7 @@ import { AddHeaderInHttpService } from '../../service/add-header-in-http.service
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
- 
+
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
@@ -23,6 +23,11 @@ export class OrderComponent implements OnInit {
   userId = this.parsedToken.phoneNumber;
   cartId = this.parsedToken.userId;
   userDetails;
+
+  address;
+  editAddressFlag = true;
+  editAddressButton = 'edit';
+
   cartDetails;
   products;
   productId;
@@ -31,7 +36,7 @@ export class OrderComponent implements OnInit {
   cost = 0;
   order;
   quantity = 0;
-  
+
   constructor(private tokenDecoder: TokenDecoderService, private route: ActivatedRoute, private http: AddHeaderInHttpService, private dataSharingService: DataSharingService) { }
 
 
@@ -42,8 +47,9 @@ export class OrderComponent implements OnInit {
       .map(response => response.json())
       .subscribe(data => {
         this.userDetails = data;
+        this.address = this.userDetails.cart.deliveryAddress;
         //  console.log(this.userDetails)
-        //console.log(data);
+        //console.log(this.address);
 
       }, (error: Error) => { alert(error.message) });
 
@@ -60,7 +66,17 @@ export class OrderComponent implements OnInit {
 
       this.findProductPrice();
     }
-   // console.log("hello" + this.products)
+    // console.log("hello" + this.products)
+
+  }
+
+
+  edit() {
+    this.editAddressFlag = !this.editAddressFlag;
+    if (this.editAddressButton == "save")
+      this.editAddressButton = 'edit';
+    else
+      this.editAddressButton = 'save';
 
   }
 
@@ -86,37 +102,48 @@ export class OrderComponent implements OnInit {
     if (this.summaryFlag == 'product') {
       this.order = {
         "userId": this.userDetails,
-        "address": this.userDetails.cart.deliveryAddress,
+        "address": this.address,
         "itemDetail": this.products,
         "quantity": this.quantity,
         "status": true
       }
-      //    console.log(this.products);
-      this.http.post(environment.serverUrl + 'addorder', this.order)
-        .subscribe((response) => {
-          this.flag = data;
-          this.pFlag = 'hi';
-        },
-          (error: Error) => { alert(error.message) });
-    }
+      console.log(this.address);
+      if (this.address != '')
+        if (this.address != '') {
 
+          this.http.post(environment.serverUrl + 'addorder', this.order)
+            .subscribe((response) => {
+              this.flag = data;
+              this.pFlag = 'hi';
+            },
+              (error: Error) => { alert(error.message) });
+        }
+
+        else
+          alert("Provide Address !!!")
+    }
     if (this.summaryFlag == 'cart') {
 
       this.order = {
         "userId": this.userDetails.phoneNumber,
-        "deliveryAddress": this.userDetails.cart.deliveryAddress,
+        "deliveryAddress": this.address,
         "productQuantity": this.products
 
       }
 
-      this.http.post(environment.serverUrl + 'add_cart_order', this.order)
-        .subscribe((response) => {
+      if (this.address != '')
+        if (this.address != null) {
+          this.http.post(environment.serverUrl + 'add_cart_order', this.order)
+            .subscribe((response) => {
 
 
-          this.flag = data;
-          this.pFlag = 'hi';
-        }//,(error: Error) => { alert(error.message) }
-        );
+              this.flag = data;
+              this.pFlag = 'hi';
+            }//,(error: Error) => { alert(error.message) }
+            );
+        }
+        else
+          alert("Provide Address !!!")
 
       // console.log(this.order);
 
@@ -217,6 +244,6 @@ export class OrderComponent implements OnInit {
       </html>`
     );
     popupWin.document.close();
-}
+  }
 
 }

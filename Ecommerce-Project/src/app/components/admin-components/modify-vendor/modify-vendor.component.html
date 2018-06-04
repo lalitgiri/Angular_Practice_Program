@@ -34,7 +34,7 @@
 
 <h3>Update details</h3>
 <br/>
-<form class="row container" [formGroup]="updateProductForm"  (ngSubmit)="onUpdate(updateProductForm.value)">
+<form class="row container" [formGroup]="updateEmployeeForm"  (ngSubmit)="onUpdate(updateEmployeeForm.value)">
 
   <div class="col-sm-6 row bottom-margin">
     <label for="employeeId" class="col">Employee Id : </label>
@@ -63,11 +63,7 @@
     <input type="text" name="contactNumber" [(ngModel)]="contactNumber" class="col" formControlName="contactNumber"/>
   </div>
 
-  <div class="col-sm-6 row bottom-margin">
-    <label for="joiningDate" class="col ">Joining Date : </label>
-    <input type="Date" name="joiningDate" class="  col defaultPropertyRemove"  formControlName="joiningDate"/>
-    
-  </div>
+  
   <div class="col-sm-6 row bottom-margin">
 
     <label for="password" class="col">Password : </label>
